@@ -4,6 +4,7 @@ import scormAPI from './scormAPI.js';
 let token = null;
 let SERVER_BASE = "https://rise.frumbert.org";
 let DATA_ENDPOINT = `${SERVER_BASE}/generate`;
+let questionText = "";
 
 function applyGlobalConfig() {
   const globalCfg = window.riseSCORMBridgeConfig || {};
@@ -11,6 +12,9 @@ function applyGlobalConfig() {
   if (globalCfg.serverBase) {
     SERVER_BASE = globalCfg.serverBase;
     DATA_ENDPOINT = `${SERVER_BASE}/generate`;
+  }
+  if (globalCfg.question) {
+    questionText = globalCfg.question;
   }
 }
 
@@ -55,7 +59,8 @@ function getInteractionUrl(courseId, learnerId, interactionId, key = "") {
       learner: learnerId,
       interaction: interactionId,
       key,
-      content: __latestTextToSave
+      content: __latestTextToSave,
+      question: questionText
     })
   })
     .then(res => res.json())
@@ -64,7 +69,7 @@ function getInteractionUrl(courseId, learnerId, interactionId, key = "") {
 
 let __latestTextToSave = "";
 
-async function saveTextContent(textContent, key = "") {
+async function saveTextContent(textContent, key = "", latency = "PT0H0M0S") {
   applyGlobalConfig();
   if (!scormAPI.isReady()) return false;
 
@@ -87,7 +92,8 @@ async function saveTextContent(textContent, key = "") {
   scormAPI.set(`${prefix}.${responseProp}`, url);
   scormAPI.set(`${prefix}.result`, "neutral");
   scormAPI.set(`${prefix}.time`, new Date().toISOString());
-  scormAPI.set(`${prefix}.latency`, "PT0H0M0S");
+  scormAPI.set(`${prefix}.latency`, latency);
+  if (scormAPI.getVersion() === "2004") scormAPI.set(`${prefix}.description`, questionText);
 
   return scormAPI.commit();
 }
@@ -107,7 +113,7 @@ async function loadTextContent() {
   try {
     const res = await fetch(url);
     const html = await res.text();
-    const match = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+    const match = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
     return match && match[1] ? match[1].trim() : null;
   } catch (e) {
     console.warn("Failed to load stored text content:", e);
