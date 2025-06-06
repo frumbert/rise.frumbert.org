@@ -11,27 +11,15 @@
     }
     body { font-family: sans-serif; padding: 1rem; background-color: var(--bg); color: var(--fg); }
     textarea { width: 100%; height: 150px; border: 1px solid var(--edge); }
-    button { margin: 1rem auto 0; }
+    button { margin: 1rem auto 0;}
   </style>
 </head>
 <body>
   <textarea id="notes"></textarea>
   <button id="save">💾 Save</button>
 
-  <!-- SCORM Bridge as a module -->
   <script type="module">
-    import riseSCORMBridge from "./riseSCORMBridge.js";
-
-    function getBlockScopedInteractionId(baseId = "notes") {
-      const hash = location.href.split("#")[1] || "";
-      const suffix = hash.replace(/[^\w]/g, "-").substring(0, 50);
-      return `${baseId}-${suffix}`;
-    }
-
-    function resolveInteractionId() {
-      const config = window.riseSCORMBridgeConfig || {};
-      return config.interactionId || getBlockScopedInteractionId("notes");
-    }
+    import riseSCORMBridge from './riseSCORMBridge.js';
 
     async function waitForConfig() {
       while (typeof window.riseSCORMBridgeConfig === "undefined") {
@@ -46,20 +34,20 @@
       if (token) riseSCORMBridge.setBearerToken(token);
       if (serverBase) riseSCORMBridge.updateServerBase(serverBase);
 
-      const interactionId = resolveInteractionId();
+      const interactionId = riseSCORMBridge.resolveInteractionId();
       const btn = document.getElementById("save");
+      btn.dataset.value = btn.textContent;
 
       btn.addEventListener("click", async () => {
         const val = document.getElementById("notes").value;
-        await riseSCORMBridge.saveTextContent(interactionId, val);
-        btn.textContent = '👍 Saved';
+        const saved = await riseSCORMBridge.saveTextContent(val);
+        btn.textContent = (saved) ? '👍 Saved' : '❌ Not saved';
+        setTimeout(()=>{btn.textContent=btn.dataset.value},2000);
       });
 
-      const html = await riseSCORMBridge.loadTextContent(interactionId);
+      const html = await riseSCORMBridge.loadTextContent();
       if (html) {
-        const text = html
-          .replace(/<p>(.*?)<\/p>/g, "$1\n")
-          .trim();
+        const text = html.replace(/<p>(.*?)<\/p>/g, "$1\n").trim();
         document.getElementById("notes").value = text;
       }
     }
@@ -71,9 +59,10 @@
 
   <script>
     window.riseSCORMBridgeConfig = {
-      token: "your-bearer-token-here",
-      serverBase: "https://yourdomain.com", // customize this if self-hosted
-      interactionId: "notes-instance-a" // optional: will fallback to auto
+      token: "a648785304ece6b8729d7f0cad5350a9",
+      serverBase: "https://rise.frumbert.org", // customize this if self-hosted
+      interactionId: "notes-instance-a", // optional: will fallback to auto
+      question: "How do you think Mary should respond to Joe in this situation?"
     };
   </script>
   <style>
