@@ -3,10 +3,11 @@
   --box: #ffffff;
   --text: #000000;
   --edge: #00000040;
-  --feedback: #f8f8f0;
+  --feedback: #b9dff46e;
   --radius: 5px;
 }
 
+* { box-sizing: border-box; }
 html,
 body {
   margin: 0;
@@ -40,12 +41,12 @@ main {
     width: 100%;
   }
   label, output {
+    width: 100%;
     align-self: flex-start;
   }
   output:not(:empty) {
     background-color: var(--feedback);
-    border-top: 1px solid var(--edge);
-    padding-top: .5rem;
+    padding: 1rem .25rem;
   }
 }
 
