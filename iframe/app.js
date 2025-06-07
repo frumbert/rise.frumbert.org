@@ -73,7 +73,7 @@ function formatLatency(ms) {
 
 async function init() {
   await waitForConfig();
-  const { token, serverBase, question, mediaAbove, mediaBelow, key, feedback } = window.riseSCORMBridgeConfig;
+  const { token, serverBase, question, mediaAbove, mediaBelow, key, feedback, required } = window.riseSCORMBridgeConfig;
 
   const questionNode = document.getElementById('question');
   const feedbackNode = document.getElementById('feedback');
@@ -100,6 +100,13 @@ async function init() {
   // store current value
   btn.addEventListener("click", async () => {
     const val = textArea.value;
+    if (!val.length) return;
+    required = ~~required;
+    if (val.length > 0 && val.length <= required) {
+      btn.textContent = '⚠️ Need more text';
+      setTimeout(()=>{btn.textContent=btn.dataset.value},2000);
+      return;
+    }
     const latency = interactionStartTime
       ? formatLatency(new Date() - interactionStartTime)
       : "PT0H0M0S";
@@ -107,7 +114,8 @@ async function init() {
     const saved = await riseSCORMBridge.saveTextContent(val, key, latency);
     btn.textContent = (saved) ? '👍 Saved' : '❌ Not saved';
     setTimeout(()=>{btn.textContent=btn.dataset.value},2000);
-    if (feedback) feedbackNode.innerHTML = feedback;
+    if (saved && feedback) feedbackNode.innerHTML = feedback;
+    if (saved) window.parent.postMessage({type: 'MIGHTY_INTERACTIVE_COMPLETE'});
 
   });
 
@@ -117,6 +125,7 @@ async function init() {
     const text = html.replace(/<p>(.*?)<\/p>/g, "$1\n").trim();
     textArea.value = text;
     if (feedback) feedbackNode.innerHTML = feedback;
+    window.parent.postMessage({type: 'MIGHTY_INTERACTIVE_COMPLETE'});
   }
 }
 
