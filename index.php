@@ -95,7 +95,7 @@ function showTokenForm() {
     file_put_contents(TOKEN_DIR . "/{$token}.json", json_encode($data, JSON_PRETTY_PRINT));
     pageStart();
     echo "<h2>Token Created</h2><p><b>Token:</b> <code>$token</code></p>";
-    echo "<p>Add this to the Mighty <em>Interactive HTML</em> custom javascript field:</p><pre>window.riseSCORMBridgeConfig = {\n  token: \"$token\"\nquestion: \"Ask your question here...\"\n};\n</pre>";
+    echo "<p>Add this to the Mighty <em>Interactive HTML</em> custom javascript field:</p><pre>window.riseSCORMBridgeConfig = {\n  token: \"$token\"\n  question: \"Ask your question here...\"\n};\n</pre>";
 
     showScriptHelp();
 
@@ -229,6 +229,7 @@ HTML;
 
 function showScriptHelp() {
   echo <<<HTML
+  <hr>
   <code>window.riseSCORMBridgeConfig = {}</code> has these settable properties. They are case sensitive.
   <table><thead>
     <tr><th>Property</th><th>Type</th><th>Meaning</th><th>Required?</th></tr>
@@ -240,8 +241,10 @@ function showScriptHelp() {
 <tr><td>interactionId</td><td>Text</td></td><td>Scorm interaction id, if empty built from question text or url</td><td>No</td></tr>
 <tr><td>mediaAbove</td><td>URL or HTML</td><td>URL to image (gif,jpg,png,webp), video (mp4,ogg,mov,webm), audio (mp3,wav), embed or html, shown above question text</td><td>No</td></tr>
 <tr><td>mediaBelow</td><td>URL or HTML</td><td>URL to image (gif,jpg,png,webp), video (mp4,ogg,mov,webm), audio (mp3,wav), embed or html, shown below question text</td><td>No</td></tr>
+<tr><td>required</td><td>Number</td><td>Number of characters required before allowed to save (default: 1)</td><td>No</td></tr>
 <tr><td>key</td><td>Text</td><td>Salt for hashing functions, normally empty</td><td>No</td></tr>
   </tbody></table>
+  <hr>
   <p>You can change some styling using custom css variables. Paste these into the custom CSS field and modify as required.</p>
   <pre>
   :root {
@@ -249,7 +252,7 @@ function showScriptHelp() {
     --box: #ffffff;       // box background color
     --text: #000000;      // text color
     --edge: #00000040;    // line / shadow color
-    --feedback: #f8f8f0;  // feedback background color
+    --feedback: #b9dff46e;  // feedback background color
     --radius: 5px;          // box edge smoothness
   }
   </pre>
