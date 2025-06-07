@@ -101,9 +101,9 @@ async function init() {
   btn.addEventListener("click", async () => {
     const val = textArea.value;
     if (!val.length) return;
-    required = ~~required;
-    if (val.length > 0 && val.length <= required) {
-      btn.textContent = '⚠️ Need more text';
+    const r = ~~required;
+    if (val.length > 0 && val.length <= r) {
+      btn.textContent = '⚠️ Needs more text';
       setTimeout(()=>{btn.textContent=btn.dataset.value},2000);
       return;
     }
