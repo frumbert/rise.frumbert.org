@@ -1,3 +1,30 @@
+/*
+ * app.js
+ *
+ * Copyright (c) 2025 frumbert
+ * Licensed under the MIT license.
+ *
+ * The MIT License (MIT)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 // load routines
 import riseSCORMBridge from './riseSCORMBridge.js';
 
@@ -23,11 +50,11 @@ function formatMedia(url) {
   if (!lc.length) return false;
   if (lc.endsWith('.jpg') || lc.endsWith('.jpeg') || lc.endsWith('.gif') || lc.endsWith('.png') || lc.endsWith('.webp')) { // images
     return `<img alt="" src="${url}" />`;
-  } else if (lc.endsWith('.mp3') || lc.endsWith('.wav') || lc.endsWith('.ogg')) { // audio
+  } else if (lc.endsWith('.mp3') || lc.endsWith('.wav')) { // audio
     return `<audio src="${url}" controls preload="none"></audio>`;
   } else if (lc.endsWith('.mp4') || lc.endsWith('.ogg') || lc.endsWith('.mov') || lc.endsWith('.webm')) { // video
     return `<video src="${url}" controls preload="none"></video>`;
-  } else if (isHTML(url)) { // embeds
+  } else if (isHTML(url)) { // embeds or raw html
     return url;
   } else { // not sure
     return `<iframe allowfullscreen="true" src="${url}"></iframe>`;
@@ -46,9 +73,10 @@ function formatLatency(ms) {
 
 async function init() {
   await waitForConfig();
-  const { token, serverBase, question, mediaAbove, mediaBelow } = window.riseSCORMBridgeConfig;
+  const { token, serverBase, question, mediaAbove, mediaBelow, key, feedback } = window.riseSCORMBridgeConfig;
 
   const questionNode = document.getElementById('question');
+  const feedbackNode = document.getElementById('feedback');
   const textArea = document.getElementById("notes");  
 
   if (token) riseSCORMBridge.setBearerToken(token);
@@ -76,16 +104,19 @@ async function init() {
       ? formatLatency(new Date() - interactionStartTime)
       : "PT0H0M0S";
 
-    const saved = await riseSCORMBridge.saveTextContent(val, "", latency);
+    const saved = await riseSCORMBridge.saveTextContent(val, key, latency);
     btn.textContent = (saved) ? '👍 Saved' : '❌ Not saved';
     setTimeout(()=>{btn.textContent=btn.dataset.value},2000);
+    if (feedback) feedbackNode.innerHTML = feedback;
+
   });
 
   // restore previously saved value
-  const html = await riseSCORMBridge.loadTextContent();
+  const html = await riseSCORMBridge.loadTextContent(key);
   if (html) {
     const text = html.replace(/<p>(.*?)<\/p>/g, "$1\n").trim();
     textArea.value = text;
+    if (feedback) feedbackNode.innerHTML = feedback;
   }
 }
 
