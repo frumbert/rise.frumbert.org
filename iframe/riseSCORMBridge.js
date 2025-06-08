@@ -131,7 +131,7 @@ let __latestTextToSave = "";
 async function saveTextContent(textContent, key = "", latency = "PT0H0M0S") {
   key = key ?? "";
   applyGlobalConfig();
-  if (!scormAPI.isReady()) return false;
+  if (!scormAPI.isReady()) return true; // no api? can't save anything. Assume ok to move on.
 
   const courseId = await getCourseId();
   const learnerId = scormAPI.getLearnerId();
