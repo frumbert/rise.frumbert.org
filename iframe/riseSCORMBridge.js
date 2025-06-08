@@ -85,7 +85,7 @@ async function getCourseId() {
 
 // saves the content and returns its public url
 function getInteractionUrl(courseId, learnerId, interactionId, key = "") {
-  key = "" ?? key; // coalesce undefined/null to empty
+  key = key ?? ""; // coalesce undefined/null to empty
   return fetch(DATA_ENDPOINT, {
     method: "POST",
     headers: {
@@ -107,7 +107,7 @@ function getInteractionUrl(courseId, learnerId, interactionId, key = "") {
 
 // gets the content without knowing its public url
 async function getInteractionData(courseId, learnerId, interactionId, key = "") {
-  key = "" ?? key;
+  key = key ?? "";
   const res = await fetch(VIEW_ENDPOINT, {
     method: "POST",
     headers: {
@@ -129,7 +129,7 @@ async function getInteractionData(courseId, learnerId, interactionId, key = "") 
 let __latestTextToSave = "";
 
 async function saveTextContent(textContent, key = "", latency = "PT0H0M0S") {
-  key = "" ?? key;
+  key = key ?? "";
   applyGlobalConfig();
   if (!scormAPI.isReady()) return false;
 
@@ -173,7 +173,7 @@ async function saveTextContent(textContent, key = "", latency = "PT0H0M0S") {
 }
 
 async function loadTextContent(key = "") {
-  key = "" ?? key;
+  key = key ?? "";
   applyGlobalConfig();
   if (!scormAPI.isReady()) return false;
 
