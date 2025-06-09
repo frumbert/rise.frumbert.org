@@ -95,7 +95,7 @@ function showTokenForm() {
     file_put_contents(TOKEN_DIR . "/{$token}.json", json_encode($data, JSON_PRETTY_PRINT));
     pageStart();
     echo "<h2>Token Created</h2><p><b>Token:</b> <code>$token</code></p>";
-    echo "<p>Add this to the Mighty <em>Interactive HTML</em> custom javascript field:</p><pre>window.riseSCORMBridgeConfig = {\n  token: \"$token\"\n  question: \"Ask your question here...\"\n};\n</pre>";
+    echo "<p>Add this to the Mighty <em>Interactive HTML</em> custom javascript field:</p><pre>window.riseSCORMBridgeConfig = {\n  token: \"$token\"\nquestion: \"Ask your question here...\"\n};\n</pre>";
 
     showScriptHelp();
 
@@ -219,17 +219,18 @@ function showStartup() {
   echo <<<HTML
 <h1>Rise Text-entry interaction</h1>
 <p>A way to store long text for SCORM 1.2 and 2004 text-entry interactions.</p>
+<p>Scorm 2004 can already store long text (in cmi.interactions), but Scorm 1.2 cannot. This utility is version independant and offers the same experience on both.</p>
 <ul>
   <li><a href='/textEntry.zip' download>Download the text-entry interaction</a> - then upload it via Mighty</li>
   <li><a href='/?new_token'>Create new token</a> - then copy the generated code into the Javascript for the interactive html block.</li>
 </ul>
+<p>You can reuse the same token across multiple interactions or even courses - it's just used to validate the domains that can read/store data.</p>
 HTML;
   pageEnd();
 }
 
 function showScriptHelp() {
   echo <<<HTML
-  <hr>
   <code>window.riseSCORMBridgeConfig = {}</code> has these settable properties. They are case sensitive.
   <table><thead>
     <tr><th>Property</th><th>Type</th><th>Meaning</th><th>Required?</th></tr>
@@ -244,7 +245,6 @@ function showScriptHelp() {
 <tr><td>required</td><td>Number</td><td>Number of characters required before allowed to save (default: 1)</td><td>No</td></tr>
 <tr><td>key</td><td>Text</td><td>Salt for hashing functions, normally empty</td><td>No</td></tr>
   </tbody></table>
-  <hr>
   <p>You can change some styling using custom css variables. Paste these into the custom CSS field and modify as required.</p>
   <pre>
   :root {
@@ -252,7 +252,7 @@ function showScriptHelp() {
     --box: #ffffff;       // box background color
     --text: #000000;      // text color
     --edge: #00000040;    // line / shadow color
-    --feedback: #b9dff46e;  // feedback background color
+    --feedback: #f8f8f0;  // feedback background color
     --radius: 5px;          // box edge smoothness
   }
   </pre>
