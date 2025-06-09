@@ -54,6 +54,12 @@ if (isset($_GET['new_token'])) {
   exit;
 }
 
+// === Handle GET /?edit_token (UI) ===
+if (isset($_GET['edit_token'])) {
+  editTokenForm();
+  exit;
+}
+
 // === Home / Startup code (generate a new token) ===
 if (empty($_GET) && $_SERVER['REQUEST_METHOD'] === 'GET') {
   showStartup();
@@ -75,22 +81,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['REQUEST_URI'], 'vi
 // === HTML Form for Token Creation ===
 function showTokenForm() {
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $domains = array_map('trim', explode(",", $_POST['domains'] ?? ''));
-
-    $domains[] = 'articulateusercontent.com';
-    $domains[] = '360.articulate.com';
-    $domains[] = 'rise.articulate.com';
-
-    $domains = array_unique($domains);
+    $domains = extractDomains($_POST['domains'], [
+      'articulateusercontent.com',
+      '360.articulate.com',
+      'rise.articulate.com',
+    ]);
 
     $note = $_POST['note'] ?? '';
-    $pw = $_POST['pw'] ?? '';
+    $pw = $_POST['password'] ?? '';
     $token = bin2hex(random_bytes(16));
     $data = [
       "created" => date('c'),
       "allowed_domains" => $domains,
       "note" => $note,
-      "password" => password_hash($pw, PASSWORD_BCRYPT),
+      "password" => base64_encode(password_hash($pw, PASSWORD_BCRYPT)),
     ];
     file_put_contents(TOKEN_DIR . "/{$token}.json", json_encode($data, JSON_PRETTY_PRINT));
     pageStart();
@@ -108,13 +112,64 @@ function showTokenForm() {
   echo <<<HTML
 <h2>Create New Token</h2>
 <form method="POST">
-  Allowed Domains (comma-separated):<br>
-  <input type="text" name="domains" size="60" value="articulateusercontent.com, 360.articulate.com, rise.articulate.com, " required><br><br>
-  Optional Note:<br>
-  <input type="text" name="note" size="60"><br><br>
+  Allowed Domains (host name only, one per line):<br>
+  <textarea name="domains" cols="60" rows="5" required>
+articulateusercontent.com
+360.articulate.com
+rise.articulate.com
+</textarea><br><br>
+  <input type="hidden" name="note" value="">
   Optional password (for editing):<br>
   <input type="password" name="password" size="30"><br><br>
   <button type="submit">Generate Token</button>
+</form>
+HTML;
+  pageEnd();
+}
+
+// === HTML Form for Token Creation ===
+function editTokenForm() {
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $domains = extractDomains($_POST['domains']);
+    $token = $_POST['token'];
+    $token_valid = (preg_match('/^[a-f0-9]{32}$/i', $token) === 1);
+    $password = $_POST['password'];
+    $file = TOKEN_DIR . "/{$token}.json";
+    pageStart();
+    if ($token_valid && file_exists($file)) {
+      $data = json_decode(file_get_contents($file));
+      if (isset($data->password) && password_verify($password, base64_decode($data->password))) {
+        $data->allowed_domains = $domains;
+        // $data['password'] = password_hash($password, PASSWORD_BCRYPT); // rehash?
+        file_put_contents(TOKEN_DIR . "/{$token}.json", json_encode($data, JSON_PRETTY_PRINT));
+        echo "<h2>Token updated</h2><p>Domains now include:</p><pre>";
+        echo implode(PHP_EOL, $domains);
+        echo "</pre>";
+      } else {
+        echo "<h2>Failed to update token</h2>";
+      }
+    } else {
+      echo "<h2>Missing required details</h2>";
+    }
+    echo "<p><a href='/'>Home</a></p>";
+    pageEnd();
+    return;
+  }
+  pageStart();
+  echo <<<HTML
+<h2>Edit Token</h2>
+<form method="POST">
+  Token:<br>
+  <input type="text" name="token" size="60" required><br><br>
+  Allowed Domains (host name only, one per line):<br>
+  <textarea name="domains" rows="5" cols="60" required>
+articulateusercontent.com
+360.articulate.com
+rise.articulate.com
+</textarea><br><br>
+  Password:<br>
+  <input type="password" name="password" size="30" required><br><br>
+  <button type="submit">Save changes</button>
 </form>
 HTML;
   pageEnd();
@@ -193,6 +248,42 @@ function handleView() {
   echo $content;
 }
 
+// === normalise user input of domains to just the host part
+function extractDomains(string $input, array $additional = []): array {
+    $lines = explode("\n", $input);
+    $domains = [];
+
+    foreach ($lines as $line) {
+        $line = trim($line);
+
+        if ($line === '') {
+            continue; // skip empty lines
+        }
+
+        // Add a scheme if missing to make parse_url work properly
+        if (!preg_match('/^https?:\/\//i', $line)) {
+            $line = 'http://' . $line;
+        }
+
+        $parts = parse_url($line);
+
+        if (!empty($parts['host'])) {
+            $domains[] = strtolower($parts['host']);
+        }
+    }
+
+    // add in any extras we might want
+    foreach ($additional as $add) {
+      $domains[] = $add;
+    }
+
+    // Optional: remove duplicates
+    $domains = array_unique($domains);
+
+    // Optional: reindex array
+    return array_values($domains);
+}
+
 // === wrap and sanitise line breaks into html ===
 function wrap($lines, $tag = "p") {
   $html = "";
@@ -223,6 +314,7 @@ function showStartup() {
 <ul>
   <li><a href='/textEntry.zip' download>Download the text-entry interaction</a> - then upload it via Mighty</li>
   <li><a href='/?new_token'>Create new token</a> - then copy the generated code into the Javascript for the interactive html block.</li>
+  <li><a href='/?edit_token'>Edit existing token</a> - if you remember the password.</li>
 </ul>
 <p>You can reuse the same token across multiple interactions or even courses - it's just used to validate the domains that can read/store data.</p>
 HTML;
