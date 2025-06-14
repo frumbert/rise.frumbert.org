@@ -1,7 +1,7 @@
 <?php
 
-require_once('../app.php');
-define("BASE_URL", 'https://rise.frumbert.org');
+require_once('../app.php'); // classes and functions
+define("BASE_URL", 'https://rise.frumbert.org'); // used to report public data url
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: HEAD, POST, GET, OPTIONS');
@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $Action = new UrlMatcher('route'); // matches $_GET param set in .htaccess
 $website = new Website(__FILE__, $Action->Args()); // context starts where this file is
 
+// yeah, this is my 'router' 🤣
 switch ($Action->Match()) {
     case "GET /":
     case "GET /article":
