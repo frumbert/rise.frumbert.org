@@ -71,6 +71,7 @@ class Website {
     $root = dirname($self);
     $grouped = [];
     $subfiles = glob($root . '/*/*.{txt,md,html,php}', \GLOB_BRACE);
+    sort($subfiles, SORT_NATURAL | SORT_FLAG_CASE);
     $allFiles = array_filter($subfiles, function($file) {
       return is_file($file) && basename($file)[0] !== '.';
     });
