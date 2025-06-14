@@ -62,13 +62,24 @@ function getBlockScopedInteractionId(baseId = "notes") {
   return `${baseId}-${suffix}`;
 }
 
+// The quick brown fox -> TheQuickBrownFox
+function toPascalCase(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '')  // remove punctuation
+    .split(/\s+/)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
+}
+
 function resolveInteractionId() {
   const cfg = window.riseSCORMBridgeConfig || {};
   if (cfg.interactionId) return cfg.interactionId;
   if (cfg.questionText) {
     const span = document.createElement('span');
     span.innerHTML = cfg.questionText; 
-    const text = span.textContent.trim().toLowerCase().replace(/[^a-z0-9]+|\s+/gm, '_').slice(0, 255);
+    const text = toPascalCase(span.textContent).slice(0, 255);
     return text;
   }
   return getBlockScopedInteractionId("notes");
