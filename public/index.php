@@ -40,19 +40,19 @@ switch ($Action->Match()) {
     default:
       if (preg_match('/^([a-f0-9]{32})\.html$/i', $Action->Raw(), $matches)) {
         $hash = $matches[1];
-        $filePath = realpath(__DIR__ . '/../data/' . $hash . '.html');
-
-        // Make sure the file exists and is still inside ../data (protect against traversal)
-        $dataDir = realpath(__DIR__ . '/../data');
-        if ($filePath && strpos($filePath, $dataDir) === 0 && file_exists($filePath)) {
-            header('Content-Type: text/html');
-            readfile($filePath);
-            exit;
+        $storage = new S3Storage();
+        $html = $storage->read("data/$hash.html");
+        if ($html === null || $html === false) {
+          http_response_code(404);
+          echo "Page not found";
+        } else {
+          header('Content-Type: text/html');
+          echo $html;
         }
+      } else {
+        http_response_code(418);
+        echo "I'm a teapot.";
       }
-
-      http_response_code(404);
-      echo "Page not found";
 }
 
 function renderPage() {  
