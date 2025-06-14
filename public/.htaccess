@@ -1,0 +1,9 @@
+Options -Indexes -MultiViews +FollowSymLinks
+RewriteEngine on
+
+# Skip existing files and folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route everything else to index.php
+RewriteRule ^(.*)$ index.php?route=$1 [NC,L,QSA]

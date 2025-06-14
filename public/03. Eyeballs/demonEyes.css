@@ -1,0 +1,12 @@
+#exampleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#demonEyes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 24px;
+}
