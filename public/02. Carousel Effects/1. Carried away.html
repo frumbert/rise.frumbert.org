@@ -1,0 +1,28 @@
+<h2>All I wanted was a better carousel</h2>
+
+<p>The slide transition in Rise is b-o-r-i-n-g. I wanted one with transitions between slides: fades, box-wipes, dissolves, star-wipes. I didn't do star wipes. Yet. But then I got carried away. There's a ripple effect which implements a third-party script. There's a side-by-side image comparison. And finally, there's the carousel effect. And a blurry thing.</p>
+
+<iframe allow="fullscreen transparency" style="width:100%;border:none;aspect-ratio:16/9;" src="./ImageFX/index.html"></iframe>
+
+<h2>A mighty Modloader</h2>
+
+<p>When trying to modify the Carousel to add image effects, I discovered that Rise renders HTMl just-in-time. If an object or image is not on screen until you interact with it (like pages in a carousel), the HTML isn't rendered until just before it needs to be shown. This is probably a React thing (Rise is a React app).</p>
+
+<p>What this means is if you need to examine the HTML of a control in order to modify it, the HTML might not yet exist. Which meant I needed to look at the underlying javascript objects that build the course to grab details, such as the captions. The coursedata isn't directly accessible through script and requires a special loader, which requires special timing, which yadda yadda ... requires a mod loader.</p>
+
+<p>The benefit here is that I can list all the block ids I want to target functionality for, the name of the routine to run (e.g. <code>Carousel</code>) and the Modloader takes care of ensuring it gets run and supplied with the data it needs.</p>
+
+<pre><code class="language-js hljs language-javascript">
+  const MODS = [
+      { block: "cma4q8q8f03bh3bbsafnl0tay", fn: Carousel, called: false },
+      { block: "cm9s1lu2p00db3b7c5v3o6tkd", fn: SideBySide, called: false },
+      { block: "cmbwtt66v00703b7clojmgez1", fn: Bleary, called: false },
+      // { block: "cmbycmrse011s3b7ct6j2uuxa", fn: Ripple, called: false },
+      { block: "cmbyduxaz02t33b7cmpjmx001", fn: Dropple, called: false }
+  ];
+  </code>
+</pre>
+
+<p>The mighty power-up code for all this is <a href="./ImageFX/locales/powerups.js" download>available to download here</a>.
+
+<p>In <a href="/article/carousel-effects/2">Part 2</a>, you can find the code for the Carousel that started all this.</p>

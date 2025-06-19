@@ -1,0 +1,569 @@
+<h2>I just want the Carousel</h2>
+
+<iframe allow="fullscreen transparency" style="width:100%;border:none;aspect-ratio:16/10;" src="./Carousel/index.html"></iframe>
+
+<p>Out of the box, the Carousel will add 5 different transitions as you navigate between slides (randomly chosen). It will add the caption in the lower-left corner using a contrasting text colour to make sure it is readable. It adds a subtle underglow effect (like a shadow) which reflects the main colour of the slide image. And is wired up to the standard Rise navigation buttons. You can swipe on mobile to navigate, or click the dots to jump to a specific slide.</p>
+
+<p>The Carousel comes with more options thn you probaby need, and you have to change them in the script.</p>
+
+<pre><code class="language-js">
+  maxRows: 8,           // maximum rows to split into
+  maxCols: 10,          // maximum columns to split into
+  interval: 100,        // milliseconds taken to animate each block
+  fadeDuration: 600,    // how long the overall effect should last (in milliseconds)
+                        // the names of the effects that can be run
+  patterns: ['squares', 'vbeams', 'hbeams', 'fade', 'rando'],
+  previous: undefined,  // a reference to the 'previous slide' button
+  next: undefined,      // a reference to the 'next slide' button
+  zoom: false,          // 'true' means the click-to-zoom feature works
+  dots: undefined,      // a references to the object containing the 'slide dots'
+  dotShapes: {          // the shapes of selected and unselected dots (as SVG path coordinates)
+      current: "M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z",
+      other: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+  }
+</code></pre>
+
+<p>All right, here's the full modloader with only the Carousel code.</p>
+
+<pre><code class="language-js">
+  (async () => {
+    window.__MODLOADER__ = window.__MODLOADER__ || {};
+
+    const MODS = [
+        { block: "cm9sdzd5000xk3bbrcj84q2vo", fn: Carousel, called: false }
+    ];
+
+    // re-render the carousel with random slide-change effects
+    function Carousel(node, blockData) {
+
+        const block = node.closest('div[data-block-id]');
+        if (block.hasAttribute('frumbert-carousel') || node.classList.contains('sparkle-fountain')) return;
+        if (blockData.family !== 'gallery') return;
+
+        // we like the dots but they are bound to scripts which don't work here - recreating them breaks the binding
+        const dots = node.querySelector('.carousel-controls-items'); if (dots) {
+            const cci = dots.cloneNode(true);
+            const p = dots.parentNode;
+            p.appendChild(cci);
+            dots.remove();
+        }
+
+        // Here's a thing. RISE does not create &lt;figcaption&gt; elements inside the &lt;figure&gt; until slightly before the slide is rendered. Because 🤷🏼
+        // So we need the blockData just to get the captions, and write them ourselves.
+        const container = node.querySelector('.carousel-slides');
+        const figures = container.querySelectorAll('figure');
+        for (let i=0;i<figures.length;i++) {
+          const fc = document.createElement('figcaption');
+          fc.innerHTML = blockData.items[i].caption;
+          if (fc.textContent.length>0) {
+            figures[i].appendChild(fc);
+          }
+        }
+
+        const fbc = new FrumbertCarousel(container, {
+            previous: node.querySelector('button.carousel-controls-prev'),
+            next: node.querySelector('button.carousel-controls-next'),
+            zoom: blockData.settings.zoomOnClick,
+            dots: block.querySelector('.carousel-controls-items')
+        });
+    }
+
+    class FrumbertCarousel {
+        constructor(sliderId, config) {
+            this.slider = sliderId instanceof HTMLElement ? sliderId : document.getElementById(sliderId);
+            this.slides = this.slider.querySelectorAll('figure');
+            this.config = Object.assign({
+                maxRows: 8,
+                maxCols: 10,
+                interval: 100,
+                fadeDuration: 600,
+                patterns: ['squares', 'vbeams', 'hbeams', 'fade', 'rando'],
+                previous: undefined,
+                next: undefined,
+                zoom: false,
+                dots: undefined,
+                dotShapes: {
+                    current: "M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z",
+                    other: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+                }
+            }, config);
+
+            this.current = 0;
+            [this.rows, this.cols] = [this.config.maxRows, this.config.maxCols];
+
+            this.init();
+        }
+
+        zoomContent(slide, index) {
+            const sw = 920;
+            const sh = (sw / parseFloat(slide.dataset.w) * parseFloat(slide.dataset.h)).toFixed();
+            return `<img src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' width='${sw}' height='${sh}' data-src='${slide.dataset.src}'>`;
+        }
+
+        // replicate the internal image zoom control
+        zoomOverlay(e) {
+            const src = e.target.dataset.src;
+            const control = `url('data:image/svg+xml,<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-up-right-and-arrow-down-left-from-center" class="svg-inline--fa fa-arrow-up-right-and-arrow-down-left-from-center " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 0h-160C327.2 0 320 7.156 320 16S327.2 32 336 32h121.4l-164.7 164.7c-6.25 6.25-6.25 16.38 0 22.62s16.38 6.25 22.62 0L480 54.63V176C480 184.8 487.2 192 496 192S512 184.8 512 176v-160C512 7.156 504.8 0 496 0zM196.7 292.7L32 457.4V336C32 327.2 24.84 320 16 320S0 327.2 0 336v160C0 504.8 7.156 512 16 512h160C184.8 512 192 504.8 192 496S184.8 480 176 480H54.63l164.7-164.7c6.25-6.25 6.25-16.38 0-22.62S202.9 286.4 196.7 292.7z"></path></svg>')`;
+            const dialog = document.createElement('dialog');
+            const clone = e.target.cloneNode(false);
+            const style = document.createElement('style');
+            style.textContent = `
+                dialog { padding: 0; border: 0; display: flex; align-items: center; justify-content: center; position: relative; border-radius: 1rem; box-shadow: 0 1rem 2rem #0000003f; }
+                dialog::backdrop { background-color: white; background-repeat: no-repeat; background-image: ${control}; background-position: top 2rem right 2rem; background-size: 2rem; }
+            `;
+            document.body.appendChild(style);
+            clone.removeAttribute('width');
+            clone.removeAttribute('height');
+            clone.src = clone.dataset.src;
+            clone.style.width = '100%';
+            clone.style.cursor = 'zoom-out';
+            dialog.appendChild(clone);
+            document.body.appendChild(dialog);
+            dialog.addEventListener('close', (event) => { dialog.remove(); style.remove(); });
+            dialog.addEventListener('click', (event) => { dialog.close('click'); });
+            dialog.showModal();
+        }
+
+        init() {
+            // ensure supporting css exists
+            if (!document.querySelector(`style[frumbert-carousel]`)) { // only needs one instance
+                const cssTag = document.createElement('style');
+                cssTag.setAttribute('frumbert-carousel', !0);
+                cssTag.textContent = `div[frumbert-carousel]{
+                  *{box-sizing: border-box;}
+                  position:relative;width:100%;overflow:hidden;
+                  figure.slide {
+                    margin-block-start:0;margin-block-end:0;margin-inline-start:0;margin-inline-end:0;margin:0;padding:0;
+                    position:absolute;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;z-index:1;pointer-events:none;
+                    transition:box-shadow .5s linear;overflow:hidden;
+                    figcaption {
+                      position:absolute;bottom:1rem;left:1rem;width:auto;
+                      em{font-style:italic;}
+                      strong{font-weight:bold}
+                      &:not(:empty) {
+                        background-color:var(--bg);backdrop-filter:blur(.5rem);color:var(--fg);padding:1rem;max-width:50%;border-radius:.5rem
+                      }
+                    }
+                    &.active {
+                      box-shadow:0 0 2rem var(--bg);opacity:1;pointer-events:auto
+                    }
+                    img {
+                      cursor:zoom-in;
+                      max-width:100%;
+                    }
+                  }
+                  .slice{
+                    position:absolute;opacity:0;background-repeat:no-repeat;pointer-events:none;z-index:2
+                  }
+                  .slide,.slice{
+                    will-change:opacity,transform
+                  }
+                }
+                .carousel-slides{transition:all .5s ease-in-out;}`;
+                document.body.appendChild(cssTag);
+            }
+            this.slider.closest('div[data-block-id]').setAttribute('frumbert-carousel', !0);
+
+            // Initialize slides - create anew to avoid rise bindings
+            this.slides.forEach((slide, i) => {
+                const div = slide.parentNode;
+                const figure = document.createElement('figure');
+                const img = slide.querySelector('img');
+                if (slide.querySelector('figcaption')) {
+                  const caption = document.createElement('figcaption');
+                  caption.innerHTML = slide.querySelector('figcaption').querySelector('p')?.parentNode?.innerHTML || '';
+                  figure.appendChild(caption);
+                }
+                for (const attr of div.attributes) figure.setAttribute(attr.name,attr.value);
+                figure.removeAttribute('class');
+                figure.removeAttribute('hidden');
+                figure.removeAttribute('inert');
+                figure.classList.add('slide');
+                figure.dataset.src = img.src;
+                figure.dataset.w = img.width;
+                figure.dataset.h = img.height;
+                this.slider.appendChild(figure);
+                if (i === 0) {
+                  figure.classList.add('active');
+                  this.adjustSliderHeight(figure);
+                }
+                this._getAverageColour(figure.dataset.src).then((c) => {
+                  figure.style.setProperty('--bg', c.average);
+                  figure.style.setProperty('--fg', c.contrast);
+                }).catch(err => console.warn);
+                if (this.config.zoom) {
+                    figure.insertAdjacentHTML('afterbegin', this.zoomContent(figure, i)); // creates the transparent dummy image
+                    figure.querySelector('img').addEventListener('click', this.zoomOverlay);
+                }
+                slide.remove();
+            });
+            Array.from(this.slider.querySelectorAll('div')).forEach((el) => { el.remove() });
+
+            this.slides = this.slider.querySelectorAll('figure'); // same name, different dom nodes
+
+            // Consume event listeners for navigation buttons
+            [this.config.previous, this.config.next].forEach((el, index) => {
+                if (el instanceof HTMLElement) {
+                    el.addEventListener('click', (e) => { e.stopPropagation(); e.preventDefault(); this.showNextSlide(index === 0 ? -1 : 1) });
+                }
+            });
+
+            // clicking on a dot takes you to the slide
+            if (this.config.dots) {
+              Array.from(this.config.dots.querySelectorAll('button')).forEach((el, index) => {
+                el.addEventListener('click', (e) => { e.preventDefault(); this.goToSlide(index); });
+              });
+            }
+
+            // Recalculate height on window resize
+            window.addEventListener('resize', () => {
+                this.adjustSliderHeight(this.slides[this.current]);
+            });
+
+            // touch swipes
+            this.addSwipeListener();
+        }
+
+        addSwipeListener() {
+          let touchStartX = 0;
+          let touchEndX = 0;
+          const minSwipeDistance = 50; // minimum distance for a swipe
+
+          this.slider.addEventListener('touchstart', (e) => {
+              touchStartX = e.touches[0].clientX;
+          }, false);
+
+          this.slider.addEventListener('touchend', (e) => {
+              touchEndX = e.changedTouches[0].clientX;
+              handleSwipe();
+          }, false);
+
+          const handleSwipe = () => {
+              const swipeDistance = touchEndX - touchStartX;
+              
+              // Only trigger if the swipe is long enough
+              if (Math.abs(swipeDistance) >= minSwipeDistance) {
+                  if (swipeDistance > 0) {
+                      // Swiped right to left
+                      this.showNextSlide(-1);
+                  } else {
+                      // Swiped left to right
+                      this.showNextSlide(1);
+                  }
+              }
+          };
+      }
+
+        adjustSliderHeight(slideElement) {
+          if (slideElement.dataset.src) {
+            slideElement.style.backgroundImage = `url('${slideElement.dataset.src}')`;
+          }
+          if (slideElement.dataset.w && slideElement.dataset.h) {
+            const aspectRatio = parseFloat(slideElement.dataset.h) / parseFloat(slideElement.dataset.w);
+            const containerWidth = this.slider.offsetWidth;
+            this.slider.style.height = `${containerWidth * aspectRatio}px`;
+          } else {
+            const src = slideElement.getAttribute('data-src');
+            const img = new Image();
+            img.onload = () => {
+                const aspectRatio = img.naturalHeight / img.naturalWidth;
+                const containerWidth = this.slider.offsetWidth;
+                this.slider.style.height = `${containerWidth * aspectRatio}px`;
+            };
+            img.src = src;
+          }
+        }
+
+        createSlice(data, width, height, left, top, delay, shape) {
+            const slice = document.createElement('div');
+            slice.className = `slice ${shape}`;
+            slice.style.width = `${width}px`;
+            slice.style.height = `${height}px`;
+            slice.style.left = `${left}px`;
+            slice.style.top = `${top}px`;
+            slice.style.backgroundImage = `url('${data.nextImageURL}')`;
+            slice.style.backgroundSize = `${data.sliderWidth}px ${data.sliderHeight}px`;
+            slice.style.backgroundPosition = `-${left}px -${top}px`;
+            return { el: slice, delay };
+        }
+
+        shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        rando(data) {
+            let ar = this.squares(data);
+            let delays = ar[0].map(item => item.delay);
+            this.shuffle(delays);
+            ar[0].forEach((item, index) => {
+                item.delay = delays[index];
+            });
+            return ar;
+        }
+
+        squares(data) {
+            const slices = [];
+            for (let r = 0; r < this.rows; r++) {
+                for (let c = 0; c < this.cols; c++) {
+                    const delay = data.reversed ? (this.rows - 1 - r + this.cols - 1 - c) * this.config.interval : (r + c) * this.config.interval;
+                    slices.push(this.createSlice(data, data.sliceWidth, data.sliceHeight, c * data.sliceWidth, r * data.sliceHeight, delay, 'square'));
+                }
+            }
+            const maxDelay = (this.rows + this.cols - 2) * this.config.interval + this.config.fadeDuration;
+            return [slices, maxDelay];
+        }
+
+        vbeams(data) {
+            const slices = [];
+            for (let c = 0; c < this.cols; c++) {
+                const delay = data.reversed ? (this.cols - 1 - c) * this.config.interval : c * this.config.interval;
+                slices.push(this.createSlice(data, data.sliceWidth, data.sliderHeight, c * data.sliceWidth, 0, delay, 'vbeam'));
+            }
+            const maxDelay = (this.cols - 2) * this.config.interval + this.config.fadeDuration;
+            return [slices, maxDelay];
+        }
+
+        hbeams(data) {
+            const slices = [];
+            for (let r = 0; r < this.rows; r++) {
+                const delay = data.reversed ? (this.rows - 1 - r) * this.config.interval : r * this.config.interval;
+                slices.push(this.createSlice(data, data.sliderWidth, data.sliceHeight, 0, r * data.sliceHeight, delay, 'hbeam'));
+            }
+            const maxDelay = (this.rows - 2) * this.config.interval + this.config.fadeDuration;
+            return [slices, maxDelay];
+        }
+
+        fade(data) {
+            const slices = [];
+            slices.push(this.createSlice(data, data.sliderWidth, data.sliderHeight, 0, 0, this.config.interval, 'fade'));
+            const maxDelay = this.config.interval + this.config.fadeDuration;
+            return [slices, maxDelay];
+        }
+
+        goToSlide(slideNumber) {
+            const targetIndex = slideNumber; //  - 1;
+            if (targetIndex < 0 || targetIndex >= this.slides.length) {
+                console.warn(`Invalid slide number: ${slideNumber}`);
+                return;
+            }
+            let difference = targetIndex - this.current;
+            if (Math.abs(difference) > this.slides.length / 2) {
+                if (difference > 0) {
+                    difference = difference - this.slides.length;
+                } else {
+                    difference = difference + this.slides.length;
+                }
+            }
+            this.showNextSlide(difference);
+        }
+
+        showNextSlide(n) {
+            const prev = this.current;
+
+            // Increment in positive/negative direction, looping
+            this.current = (this.current + ~~n) % this.slides.length;
+            if (this.current < 0) this.current = this.slides.length - 1;
+
+            // Pick a random number of divisions
+            this.rows = Math.floor(Math.random() * (this.config.maxRows - 2)) + 2;
+            this.cols = Math.floor(Math.random() * (this.config.maxCols - 2)) + 2;
+
+            const currentSlide = this.slides[prev];
+            const nextSlide = this.slides[this.current];
+            const sliderWidth = this.slider.clientWidth;
+            const sliderHeight = this.slider.clientHeight;
+            const data = {
+                sliderWidth,
+                sliderHeight,
+                sliceWidth: (sliderWidth / this.cols).toFixed(),
+                sliceHeight: (sliderHeight / this.rows).toFixed(),
+                nextImageURL: nextSlide.getAttribute('data-src'),
+                reversed: Math.random() < 0.5
+            };
+
+            // Create a mapping of pattern names to their corresponding functions
+            const patternFunctions = {
+                squares: this.squares.bind(this),
+                vbeams: this.vbeams.bind(this),
+                hbeams: this.hbeams.bind(this),
+                fade: this.fade.bind(this),
+                rando: this.rando.bind(this)
+            };
+
+            // Validate config.patterns against patternFunctions
+            const validPatterns = this.config.patterns.filter(pattern => patternFunctions[pattern]);
+
+            // Select a random pattern and call the corresponding function
+            const randomPattern = validPatterns[Math.floor(Math.random() * validPatterns.length)];
+            const [transitionUnits, maxDelay] = patternFunctions[randomPattern](data);
+
+            // Render the transition
+            for (const slide of transitionUnits) {
+                this.slider.appendChild(slide.el);
+                setTimeout(() => {
+                    slide.el.style.transition = `opacity ${this.config.fadeDuration}ms ease`;
+                    slide.el.style.opacity = 1;
+                }, slide.delay);
+            }
+
+            // Cleanup the transition and prepare for the next slide
+            setTimeout(() => {
+                nextSlide.classList.add('active');
+                this.updateDots();
+
+                // Hide current slide
+                currentSlide.style.transition = 'none';
+                currentSlide.classList.remove('active');
+                currentSlide.offsetHeight; // Force reflow
+                currentSlide.style.transition = '';
+
+                transitionUnits.forEach(slice => {
+                    slice.el.remove();
+                });
+                this.adjustSliderHeight(nextSlide);
+            }, maxDelay);
+        }
+
+        updateDots() {
+            if (!this.config.dots) return;
+            this.config.dots.closest('.carousel').style.setProperty('--carousel-active-index', this.current);
+            this.config.dots.querySelectorAll('path').forEach((el, index) => {
+                el.setAttribute('d', index === this.current ? this.config.dotShapes.current : this.config.dotShapes.other);
+            });
+        }
+
+        async _getAverageColour(src) {
+            return new Promise((resolve, reject) => {
+                const imgEl = new Image();
+                const defaultValue = {
+                    average: "#7f7f7f7f",
+                    contrast: 'black'
+                };
+                imgEl.onerror = () => resolve(defaultValue);
+                imgEl.onload = function () {
+                    let blockSize = 32,
+                        canvas = document.createElement('canvas'),
+                        context = canvas.getContext && canvas.getContext('2d'),
+                        i = -4,
+                        rgb = { r: 0, g: 0, b: 0 },
+                        count = 0,
+                        contrast = 'black',
+                        pixels = null,
+                        brightness = 0;
+
+                    if (!context) resolve(defaultValue);
+                    canvas.width = imgEl.naturalWidth || imgEl.offsetWidth;
+                    canvas.height = imgEl.naturalHeight || imgEl.offsetHeight;
+                    context.drawImage(imgEl, 0, 0);
+                    try {
+                        pixels = context.getImageData(0, 0, canvas.width, canvas.height);
+                    } catch (e) {
+                        return resolve(defaultValue);
+                    }
+                    if (!pixels?.data) return resolve(defaultValue);
+                    // console.trace(pixels);
+                    while ((i += blockSize * 4) < pixels.data.length) {
+                        ++count;
+                        rgb.r += pixels.data[i];
+                        rgb.g += pixels.data[i + 1];
+                        rgb.b += pixels.data[i + 2];
+                    }
+                    brightness = (Math.max(0, Math.min(255, parseInt(~~(rgb.r / count), 10))) * 299) +
+                        (Math.max(0, Math.min(255, parseInt(~~(rgb.g / count), 10))) * 587) +
+                        (Math.max(0, Math.min(255, parseInt(~~(rgb.b / count), 10))) * 114);
+                    brightness = brightness / 255000;
+                    contrast = brightness >= 0.5 ? 'black' : 'white';
+                    resolve({
+                        average: `#${[
+                            ("0" + Math.max(0, Math.min(255, parseInt(~~(rgb.r / count), 10))).toString(16)).substr(-2),
+                            ("0" + Math.max(0, Math.min(255, parseInt(~~(rgb.g / count), 10))).toString(16)).substr(-2),
+                            ("0" + Math.max(0, Math.min(255, parseInt(~~(rgb.b / count), 10))).toString(16)).substr(-2),
+                            '3f'
+                        ].join("")}`,
+                        contrast
+                    });
+                };
+                imgEl.src = src;
+            });
+        }
+    }
+
+
+/* ----------------------------------------------*/
+
+    function RunMods(blockData) {
+      MODS.forEach((mod) => {
+          if (!mod.called) {
+              if (mod.block) mod.match = `div[data-block-id='${mod.block}']`;
+              const node = document.querySelector(mod.match);
+              if (mod.once) {
+                  mod.fn(node, blockData);
+                  mod.called = true;
+                  return;
+              } else if (node && mod.block && mod.block === blockData.id) {
+                  mod.fn(node, blockData);
+                  mod.called = true;
+              } else if (node && !mod.block) {
+                  mod.fn(node);
+                  mod.called = true;
+              }
+          }
+      });
+    }
+
+    // listen to the React state store changing (triggers when pages change or when users interact)
+    if (!window.__MODLOADER__.getRiseStateStore) {
+        window.__MODLOADER__.getRiseStateStore = () => {
+            return new Promise((resolve) => {
+                const app = document.querySelector("#app");
+                const interval = setInterval(() => {
+                    const key = Object.keys(app)
+                        .filter((keyName) =>
+                            keyName.includes("__reactContainer")
+                        )
+                        .pop();
+                    if (key) {
+                        clearInterval(interval);
+                        const traverse = (element) => {
+                            const store =
+                                element?.memoizedState?.element?.props?.store ||
+                                element?.pendingProps?.store ||
+                                element?.stateNode?.store;
+                            if (store) {
+                                resolve(store);
+                            }
+                            if (element.child) {
+                                traverse(element.child);
+                            }
+                        };
+                        const internalRoot = app[key];
+                        traverse(internalRoot);
+                    }
+                }, 100);
+            });
+        };
+    }
+    const store = await window.__MODLOADER__.getRiseStateStore();
+    store.subscribe(() => {
+        const state = store.getState();
+        const id = state?.courseProgress?.currentLesson || location.href.split('/').pop();
+        if (state && id) {
+            const lesson = state.course.lessons.filter((el) => { return el.id === id });
+            if (lesson && lesson[0]) {
+                for (const block of lesson[0].items) {
+                    RunMods(block);
+                }
+            }
+        }
+    });
+  })();
+  </code>
+</pre>
+
+  <p>To use this, create a standard Carousel with all your images, and use the Powerups to add the code above, then change the blockid to the one your Carousel uses.</p>
+
+<p>The Rise example course (shown above) is <a href="./Carousel.zip" download>downloadable</a>.

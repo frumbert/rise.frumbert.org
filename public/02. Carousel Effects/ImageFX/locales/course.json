@@ -1,0 +1,1954 @@
+{
+  "course": {
+    "id": "-3PtUDyeZkTnmsDNp8mW5139WXSDYEad",
+    "originalId": null,
+    "author": "aid|0f19f4ce-3e63-4470-a4d8-4ddaaa8b3e49",
+    "selectedAuthorId": "none",
+    "color": "#ff631e",
+    "navigationMode": "",
+    "sharePassword": "",
+    "shareId": "MRkuprXWt4sc0x7QMY3tzLx30UAz5kIl",
+    "copyOf": "",
+    "order": "1750068775712",
+    "fonts": null,
+    "media": {},
+    "coverImage": null,
+    "lessons": [
+      {
+        "author": "aid|0f19f4ce-3e63-4470-a4d8-4ddaaa8b3e49",
+        "courseId": "-3PtUDyeZkTnmsDNp8mW5139WXSDYEad",
+        "createdAt": "2025-06-14T22:33:05.682Z",
+        "deleted": false,
+        "description": "",
+        "duplicatedFromId": "jc8tohOo9qqkku2Yd0geeCypylJpPTQL",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "id": "cArdYv4zwqfczYvC8Ri5LXI-y2rAoHNY",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0f19f4ce-3e63-4470-a4d8-4ddaaa8b3e49",
+        "media": {},
+        "originalId": null,
+        "piles": [],
+        "position": 1,
+        "ready": true,
+        "selectedAuthorId": "none",
+        "settings": {},
+        "sourceLessonLocaleId": null,
+        "title": "image effects",
+        "transferredAt": null,
+        "type": "blocks",
+        "updatedAt": "2025-06-16T09:31:49.838Z",
+        "items": [
+          {
+            "id": "cmbx0p5ce00003bds8j8lubcb",
+            "data": {},
+            "type": "interactive",
+            "items": [
+              {
+                "id": "cmbx0p5ce00003bdsrxho9x9b",
+                "title": "Mighty placeholder",
+                "description": "\n        <p style=\"text-align: center\"><strong>Mighty placeholder for the</strong></p>\n        <p style=\"text-align: center\"><span style=\"font-size: 2.4rem\"><span style=\"color: #CA00B2; text-decoration: inherit\"><strong>Transition block</strong></span></span></p>\n        <p style=\"text-align: center\"><br></p>\n        <p style=\"text-align: center\"><span style=\"font-size: 1.4rem\"><span><strong>Enable Mighty to view this block</strong></span></span></p>\n        <p style=\"text-align: center\"><span style=\"font-size: 1.4rem\"><a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/mighty/iookjkkaipndkbpfiniajpblkmoenidm\"><span style=\"background-color: initial\"><strong>Get the free Chrome extension</strong></span></a></span></p>\n    "
+              },
+              {
+                "id": "cmbx0p5cf00003bds392wfsy6",
+                "title": "Learn more",
+                "description": "\n        <p style=\"text-align: center\">This course is using Mighty. </p>\n        <p style=\"text-align: center\">You can download the free <a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/mighty/iookjkkaipndkbpfiniajpblkmoenidm\">Mighty extension</a> to view this block.</p>\n        <p style=\"text-align: center\"><br></p>\n        <p style=\"text-align: center; font-size: 1.4rem\"><a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://mighty-by-maestro.notion.site/Help-Center-c5ed5705346c49ec8a60e1d8d6a02666\">Learn more here</a></p>\n    "
+              }
+            ],
+            "family": "interactive",
+            "variant": "tabs",
+            "settings": {
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "zoomOnClick": true,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "backgroundColor": "",
+              "entranceAnimation": true,
+              "mightyBlockConfig": {
+                "id": "d162a410-706e-4f9f-add4-796de62de757",
+                "data": {
+                  "image": "transition/assets/default-transition-image.jpg",
+                  "offset": 44,
+                  "topColor": "#ffffff",
+                  "amplitude": 35,
+                  "direction": "up",
+                  "lineWidth": 100,
+                  "roundness": 100,
+                  "complexity": 3,
+                  "paddingTop": 20,
+                  "shapeStyle": "curve",
+                  "wavelength": 160,
+                  "bottomColor": "#ff631e",
+                  "strokeColor": "#DADADA",
+                  "strokeWidth": "full-width",
+                  "keepFrequency": false,
+                  "lineAlignment": "center",
+                  "paddingBottom": 0,
+                  "transitionType": "shape",
+                  "backgroundColor": "#FFFFFF",
+                  "bezierIntensity": 100,
+                  "strokeThickness": 1,
+                  "inheritBackground": false
+                },
+                "name": "Transition",
+                "tagName": "mighty-transition",
+                "version": 2,
+                "paragraphs": [],
+                "description": "Add smooth visual transitions between blocks for better looking courses.",
+                "blockOptions": {
+                  "layout": "full-width",
+                  "autocomplete": true
+                }
+              },
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            }
+          },
+          {
+            "id": "cmbyduxaz02t33b7cmpjmx001",
+            "type": "image",
+            "items": [
+              {
+                "id": "cmbyduxb002t53b7ci41wfx52",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/ocean.jpg",
+                    "src": "ocean.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/ocean_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1681,
+                      "originalHeight": 881
+                    },
+                    "originalUrl": "ocean.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": ""
+              }
+            ],
+            "family": "image",
+            "variant": "full",
+            "settings": {
+              "v": 2,
+              "opacity": 0.5,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": true,
+              "opacityColor": "#000000",
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "ACCENT",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {}
+          },
+          {
+            "id": "cmabux1dq015u3bbsx4s7qsq4",
+            "type": "image",
+            "items": [
+              {
+                "id": "cmabux1dr015z3bbsxmvxnpkf",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/night.jpg",
+                    "src": "night.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/night_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 945
+                    },
+                    "originalUrl": "night.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"9fcad15c-5982-4638-a209-53f162f823c2\"></div>"
+              },
+              {
+                "id": "cmabux1dr01603bbsrqsl0p17",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/beach_dusk.jpg",
+                    "src": "beach_dusk.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/beach_dusk_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "beach_dusk.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"70f5a74c-20d7-4480-bbe5-8c3efefedf2f\"></div>"
+              },
+              {
+                "id": "cmabux1dr01613bbstedg56le",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/sparkler.jpg",
+                    "src": "sparkler.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/sparkler_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "sparkler.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"24d1b2bd-e266-4c04-8d32-a2e2b973d658\"></div>"
+              }
+            ],
+            "family": "gallery",
+            "variant": "three column",
+            "settings": {
+              "v": 2,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": true,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "ACCENT",
+              "backgroundColor": null,
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {}
+          },
+          {
+            "id": "cmbx0pr7z01jb3b79ne7dq3ye",
+            "data": {},
+            "type": "interactive",
+            "items": [
+              {
+                "id": "cmbx0pr7z01jc3b79aa12m59m",
+                "title": "Mighty placeholder",
+                "description": "\n        <p style=\"text-align: center\"><strong>Mighty placeholder for the</strong></p>\n        <p style=\"text-align: center\"><span style=\"font-size: 2.4rem\"><span style=\"color: #CA00B2; text-decoration: inherit\"><strong>Transition block</strong></span></span></p>\n        <p style=\"text-align: center\"><br></p>\n        <p style=\"text-align: center\"><span style=\"font-size: 1.4rem\"><span><strong>Enable Mighty to view this block</strong></span></span></p>\n        <p style=\"text-align: center\"><span style=\"font-size: 1.4rem\"><a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/mighty/iookjkkaipndkbpfiniajpblkmoenidm\"><span style=\"background-color: initial\"><strong>Get the free Chrome extension</strong></span></a></span></p>\n    "
+              },
+              {
+                "id": "cmbx0pr8001jd3b79q7uc967t",
+                "title": "Learn more",
+                "description": "\n        <p style=\"text-align: center\">This course is using Mighty. </p>\n        <p style=\"text-align: center\">You can download the free <a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/mighty/iookjkkaipndkbpfiniajpblkmoenidm\">Mighty extension</a> to view this block.</p>\n        <p style=\"text-align: center\"><br></p>\n        <p style=\"text-align: center; font-size: 1.4rem\"><a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://mighty-by-maestro.notion.site/Help-Center-c5ed5705346c49ec8a60e1d8d6a02666\">Learn more here</a></p>\n    "
+              }
+            ],
+            "family": "interactive",
+            "variant": "tabs",
+            "settings": {
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "zoomOnClick": true,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "backgroundColor": "",
+              "entranceAnimation": true,
+              "mightyBlockConfig": {
+                "id": "a83aad78-e0d0-4adb-8bd5-d44b3ad16192",
+                "data": {
+                  "image": "transition/assets/default-transition-image.jpg",
+                  "offset": 44,
+                  "topColor": "#ff631e",
+                  "amplitude": 35,
+                  "direction": "down",
+                  "lineWidth": 100,
+                  "roundness": 100,
+                  "complexity": 3,
+                  "paddingTop": 0,
+                  "shapeStyle": "curve",
+                  "wavelength": 160,
+                  "bottomColor": "#ffffff",
+                  "strokeColor": "#DADADA",
+                  "strokeWidth": "full-width",
+                  "keepFrequency": false,
+                  "lineAlignment": "center",
+                  "paddingBottom": 20,
+                  "transitionType": "shape",
+                  "backgroundColor": "#FFFFFF",
+                  "bezierIntensity": 100,
+                  "strokeThickness": 1,
+                  "inheritBackground": false
+                },
+                "name": "Transition",
+                "tagName": "mighty-transition",
+                "version": 2,
+                "paragraphs": [],
+                "description": "Add smooth visual transitions between blocks for better looking courses.",
+                "blockOptions": {
+                  "layout": "full-width",
+                  "autocomplete": true
+                }
+              },
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            }
+          },
+          {
+            "id": "cm9sbuild00733bbrnsdrda0m",
+            "type": "text",
+            "items": [
+              {
+                "id": "cm9sbuilf00743bbrfso1kp8b",
+                "paragraph": "<div data-editor-id=\"79ca3303-7bdf-48b8-a3ff-1f16ddcf98fb\"><div data-editor-id=\"3bc4770d-33ca-4ec0-9ecb-dea0e6a370ea\"><div data-editor-id=\"72db16a8-7c1a-4368-a983-bfbab695fc86\"><p>What we have below is a side by side image comparison using the Two Column Grid block. When published or previewed, it will become interactive.</p></div></div></div>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "settings": {
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "backgroundColor": "",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {
+              "media": {
+                "image": {
+                  "type": "image",
+                  "sourcedFrom": "DEFAULT",
+                  "useCrushedKey": false
+                }
+              }
+            }
+          },
+          {
+            "id": "cm9s1lu2p00db3b7c5v3o6tkd",
+            "type": "image",
+            "items": [
+              {
+                "id": "cm9s1lu2p00dc3b7c7y5d1wgl",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/KFV96Z0RiAs9HUE5-colour.jpg",
+                    "type": "image",
+                    "crushedKey": "colour.jpg",
+                    "dimensions": {
+                      "originalWidth": 1296,
+                      "originalHeight": 730
+                    },
+                    "originalUrl": "colour.jpg",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"b585c28e-8d39-4767-a776-03e5b7959fca\"><div data-editor-id=\"904c0dba-fe72-4e7e-8b49-defe3cb22362\"><div data-editor-id=\"de4fe669-bd14-4713-b830-7aef426df31e\"><div data-editor-id=\"51923e78-28bb-41c1-a370-159e58f52f9c\"><p>Original - pretty scary</p></div></div></div></div>",
+                "paragraph": ""
+              },
+              {
+                "id": "cm9s1nmkc00dx3b7cggqh6niu",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/yfZ645fDnyVdO5lx-bw.jpg",
+                    "type": "image",
+                    "crushedKey": "bw.jpg",
+                    "dimensions": {
+                      "originalWidth": 1296,
+                      "originalHeight": 730
+                    },
+                    "originalUrl": "bw.jpg",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"89379f75-214f-4ac0-a6b9-1ad61dbf0456\"><div data-editor-id=\"38530d27-ef78-4639-8bf3-babfaf03244c\"><div data-editor-id=\"6704c13c-f053-493a-847b-e3303dd4eb8c\"><div data-editor-id=\"40e2593c-938d-4760-95cc-fc383983fc06\"><p>Alternate</p><p>Even more realistic?</p></div></div></div></div>",
+                "isNewlyInserted": true
+              }
+            ],
+            "family": "gallery",
+            "variant": "two column",
+            "settings": {
+              "v": 2,
+              "opacity": 0.5,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": false,
+              "opacityColor": "#000000",
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {
+              "media": {
+                "image": {
+                  "type": "image",
+                  "sourcedFrom": "DEFAULT",
+                  "useCrushedKey": false
+                }
+              }
+            }
+          },
+          {
+            "id": "cm9sbw2tx007u3bbrdcubzpfk",
+            "type": "text",
+            "items": [
+              {
+                "id": "cm9sbw2tx007v3bbrzpyy3amf",
+                "paragraph": "<div data-editor-id=\"82b0f74c-96dd-410d-95cb-54e421771405\"><p>The following example is the same but without any captions.</p></div>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "settings": {
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "backgroundColor": "",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {
+              "media": {
+                "image": {
+                  "type": "image",
+                  "sourcedFrom": "DEFAULT",
+                  "useCrushedKey": false
+                }
+              }
+            }
+          },
+          {
+            "id": "cm9sbg808003y3bbrbnrw7yat",
+            "type": "image",
+            "items": [
+              {
+                "id": "cm9sbg809003z3bbre9t92odg",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/cmEgtvj2pnYzPzG_-skynature.jpg",
+                    "type": "image",
+                    "crushedKey": "skynature.jpg",
+                    "dimensions": {
+                      "originalWidth": 1200,
+                      "originalHeight": 747
+                    },
+                    "originalUrl": "skynature.jpg",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"cfb0b52b-66a8-4e2c-99cb-bd7d1f2e5502\"></div>",
+                "paragraph": ""
+              },
+              {
+                "id": "cm9sbg80900403bbrelfie6kf",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/TxTwqEqUUS5kkTca-mod.jpg",
+                    "type": "image",
+                    "crushedKey": "mod.jpg",
+                    "dimensions": {
+                      "originalWidth": 1200,
+                      "originalHeight": 747
+                    },
+                    "originalUrl": "mod.jpg",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"80416913-17b4-4493-b706-26c6ba76c8e3\"></div>",
+                "isNewlyInserted": true
+              }
+            ],
+            "family": "gallery",
+            "variant": "two column",
+            "settings": {
+              "v": 2,
+              "opacity": 0.5,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": false,
+              "opacityColor": "#000000",
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {
+              "media": {
+                "image": {
+                  "type": "image",
+                  "sourcedFrom": "DEFAULT",
+                  "useCrushedKey": false
+                }
+              }
+            }
+          },
+          {
+            "id": "cma4t2fth041k3bbs3ed7s424",
+            "type": "text",
+            "items": [
+              {
+                "id": "cma4t2fti041l3bbs1nsnulje",
+                "paragraph": "<div data-editor-id=\"fbda91fe-b6ee-436e-bbbb-a332252555d7\"><div data-editor-id=\"1798aae8-7003-4622-960d-ec7bd9a3dff1\"><p>the carousel below has captions on one slide.</p></div></div>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "settings": {
+              "v": 2,
+              "cardMode": "WHITE",
+              "mightyMods": [
+                {
+                  "data": {
+                    "location": 0,
+                    "firstColor": "#ffffff",
+                    "blendAmount": 100,
+                    "secondColor": "#ffffff",
+                    "inheritColor": true,
+                    "gradientStyle": "linear-180",
+                    "radialDistance": "circular",
+                    "radialPosition": "center"
+                  },
+                  "tagName": "mighty-rise-block-mod-background-gradient"
+                }
+              ],
+              "paddingTop": 3,
+              "accentColor": null,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {
+              "media": {
+                "image": {
+                  "type": "image",
+                  "sourcedFrom": "DEFAULT",
+                  "useCrushedKey": false
+                }
+              }
+            }
+          },
+          {
+            "id": "cm9sdzd5000xk3bbrcj84q2vo",
+            "type": "image",
+            "items": [
+              {
+                "id": "cmabtipo000rv3bbs2lzypxrl",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/9WCwTpwKjaP2Vwxq-Earth-arrows-plate-movement-tectonic-plates-directions-2855192268.gif",
+                    "type": "image",
+                    "crushedKey": "Earth-arrows-plate-movement-tectonic-plates-directions-2855192268.gif",
+                    "dimensions": {
+                      "originalWidth": 1600,
+                      "originalHeight": 1100
+                    },
+                    "originalUrl": "Earth-arrows-plate-movement-tectonic-plates-directions-2855192268.gif",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"acecf342-95a1-44b4-b3b4-a80eb861cad9\"><div data-editor-id=\"8172de13-ed7d-4671-849d-f86adc5ad246\"><p>An accurate representation of all the boats in the world.</p><p>Boats are indicated by a <strong>grey arrow</strong>.</p></div></div>",
+                "isNewlyInserted": true
+              },
+              {
+                "id": "cm9sdzd5100xl3bbrvggc0xis",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/beach.jpg",
+                    "src": "LWr-JE/beach.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/beach_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 993
+                    },
+                    "originalUrl": "beach.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"cace3c89-70fb-4940-9201-3dc643944059\"></div>",
+                "paragraph": ""
+              },
+              {
+                "id": "cm9sdzd5100xm3bbrvqmnq5bl",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/concert.jpg",
+                    "src": "xSX8eC/concert.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/concert_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1681,
+                      "originalHeight": 992
+                    },
+                    "originalUrl": "concert.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"bae80a13-a07b-49d6-bb13-a00edcd96082\"></div>"
+              },
+              {
+                "id": "cm9se4kfe00ye3bbr8xj88mhm",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/gZZGQYPAEU-lZoMN-interior%2520colour%2520scheme.png",
+                    "type": "image",
+                    "crushedKey": "interior%20colour%20scheme.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1088
+                    },
+                    "originalUrl": "interior colour scheme.png",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"75a578f7-b363-4ef7-a220-e4b0379f4bbd\"></div>"
+              },
+              {
+                "id": "cm9se4swx00yk3bbrsg5j42sx",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/a_YS3BFhd8C0GAqW-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "KkJGDF/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1121
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"3a2a5e49-d06e-4dfe-8d93-8fba0a7f16d7\"></div>"
+              },
+              {
+                "id": "cm9se4wtk00yn3bbrth2w6ki7",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/-g89vJy4ibs3g-JU-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "tWcAN6/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1051
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"b325ae45-8f02-4969-af44-3839ef92f3a1\"></div>"
+              },
+              {
+                "id": "cm9se52k600yq3bbre6tbfe2u",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/i4leET1W64YllrQm-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "hHz9CW/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"a8bf79ad-8265-49ac-b232-a500dda33f2d\"><div data-editor-id=\"a49e3c4a-8b7a-438e-84a1-00275df122d4\"><div data-editor-id=\"57bc320d-7262-4edb-bd5e-1e32c7033cd7\"><p>In botany, a tree is a perennial plant with an elongated stem, or trunk, usually supporting branches and leaves. In some usages, the definition of a tree may be narrower, including only woody plants with secondary growth, plants that are usable as lumber or plants above a specified height. In wider definitions, the taller palms, tree ferns, bananas, and bamboos are also trees.<a href=\"https://en.wikipedia.org/wiki/Tree\" rel=\"noopener noreferrer\" target=\"_blank\"></a></p></div></div></div>"
+              },
+              {
+                "id": "cm9se586e00yt3bbr9kf52r99",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/z99XKRM3o0xmnTlE-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "c45ByQ/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"e34e3631-a4d3-476d-8e81-6c6784a4ceda\"></div>"
+              },
+              {
+                "id": "cm9se5m1v00yw3bbrwp3jvift",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/Cf5dbH8VV88DcFsh-Screenshot%25202024-06-04%2520at%252010.57.26.png",
+                    "type": "image",
+                    "crushedKey": "Screenshot%202024-06-04%20at%2010.57.26.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1088
+                    },
+                    "originalUrl": "Screenshot 2024-06-04 at 10.57.26.png",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"c0316661-71b1-4f24-bc05-167ca53b972b\"></div>"
+              },
+              {
+                "id": "cm9se5vp800yz3bbrb0ysfp13",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/c7afyoTLDh2NfNhA-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "yuysJI/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1155
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"cc3fe726-d6e6-46db-b715-f42b2afad372\"></div>"
+              }
+            ],
+            "family": "gallery",
+            "variant": "centered",
+            "settings": {
+              "v": 2,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": false,
+              "quotesInline": false,
+              "isCustomColor": true,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "COLOR",
+              "backgroundColor": "#f9f9ee",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {}
+          },
+          {
+            "id": "cma4t31qe042b3bbs0q0cr0qq",
+            "type": "text",
+            "items": [
+              {
+                "id": "cma4t31qf042c3bbsrohssmjc",
+                "paragraph": "<div data-editor-id=\"1f2e1797-9ac9-4a6a-b077-fd7d1a89b198\"><div data-editor-id=\"f5b127ae-ecba-4da5-98b7-687c55846510\"><div data-editor-id=\"35092747-54a9-48c2-8e3d-86c1cb2704a8\"><p>this is similar but has captions on each slide - if its working properly, you should see them in the bottom right of each picture. The carousel also has the default click-to-enlarge enabled.&nbsp;</p></div></div></div>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "settings": {
+              "v": 2,
+              "cardMode": "WHITE",
+              "mightyMods": [
+                {
+                  "data": {
+                    "location": 0,
+                    "firstColor": "#ffffff",
+                    "blendAmount": 100,
+                    "secondColor": "#285f9f",
+                    "inheritColor": true,
+                    "gradientStyle": "linear-180",
+                    "radialDistance": "circular",
+                    "radialPosition": "center"
+                  },
+                  "tagName": "mighty-rise-block-mod-background-gradient"
+                }
+              ],
+              "paddingTop": 3,
+              "accentColor": null,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {
+              "media": {
+                "image": {
+                  "type": "image",
+                  "sourcedFrom": "DEFAULT",
+                  "useCrushedKey": false
+                }
+              }
+            }
+          },
+          {
+            "id": "cma4q8q8f03bh3bbsafnl0tay",
+            "type": "image",
+            "items": [
+              {
+                "id": "cma4q8q8g03bi3bbst5oi9wsr",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/beach.jpg",
+                    "src": "LWr-JE/beach.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/beach_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 993
+                    },
+                    "originalUrl": "beach.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"11581cb9-f42f-4c93-90bf-aa30ef062006\"><div data-editor-id=\"cafb2909-fe6b-4796-85f5-14bfceedaabc\"><div data-editor-id=\"67b02616-17e7-4fab-8f72-e6fea79569de\"><p>A row of beach houses along a white sandy beach.</p><p>These houses are colourful but serve no real purpose. We can infer that the water here has no significant wave size.</p></div></div></div>",
+                "paragraph": ""
+              },
+              {
+                "id": "cma4q8q8g03bj3bbsn5ntgvd1",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/concert.jpg",
+                    "src": "xSX8eC/concert.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/concert_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1681,
+                      "originalHeight": 992
+                    },
+                    "originalUrl": "concert.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"c35d48ae-a448-41bb-841d-233f9de3e9e9\"><p>This person is letting everybody know that they have just returned from a very successful fishing trip.</p></div>"
+              },
+              {
+                "id": "cma4q8q8g03bk3bbs4g3rhlxp",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/By9ryUTpvB0Z65Rc-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "64sPfg/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"aa144de4-00fb-47bc-ac4d-552a67b32c31\"><p>These balloons are actually beside each other; one of them is much smaller than the other.</p></div>"
+              },
+              {
+                "id": "cma4q8q8g03bl3bbsrwfah7ai",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/hFSEbZkG8CtnoXjD-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "Eu46Xc/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1080
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"87f3c8c1-35d7-4e7a-9ad3-216797dbd1c0\"><div data-editor-id=\"f083eae0-be4d-447c-ac44-1db3881eeb03\"><p>They had to dip half their hand in arsenic paint to retieve this dropped sapling.</p></div></div>"
+              },
+              {
+                "id": "cma4q8q8g03bm3bbsqmpluq9c",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/a_YS3BFhd8C0GAqW-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "KkJGDF/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1121
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"0f4787e9-173d-4b27-90a7-f3e58f2d406a\"><p>A very high shutter speed is needed to capture this stamen.</p></div>"
+              },
+              {
+                "id": "cma4q8q8g03bn3bbs5e0xy0ln",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/-g89vJy4ibs3g-JU-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "tWcAN6/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1051
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"cce89959-4ed0-4d0c-b252-8b578e62a9ea\"><p>Is that Tibochina, Nerium or Bouganvillea?</p></div>"
+              },
+              {
+                "id": "cma4q8q8g03bo3bbsy07wit6k",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/i4leET1W64YllrQm-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "hHz9CW/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"f6a7b262-3d63-422f-a022-5486f6457438\"><div data-editor-id=\"57bc320d-7262-4edb-bd5e-1e32c7033cd7\"><p>In botany, a tree is a perennial plant with an elongated stem, or trunk, usually supporting branches and leaves. In some usages, the definition of a tree may be narrower, including only woody plants with secondary growth, plants that are usable as lumber or plants above a specified height. In wider definitions, the taller palms, tree ferns, bananas, and bamboos are also trees. <a href=\"https://en.wikipedia.org/wiki/Tree\" rel=\"noopener noreferrer\" target=\"_blank\">Wikipedia</a></p></div></div>"
+              },
+              {
+                "id": "cma4q8q8g03bp3bbs5ci9fh0p",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/z99XKRM3o0xmnTlE-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "c45ByQ/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"38b27087-6679-4ca8-95ec-ddad4c1897c4\"><div data-editor-id=\"d0ea8fe5-76f2-4d02-a424-13d8a0141c7a\"><p>It would appear that somebody has dropped their camera. Luckily, unline that time I dropped mine off a waterfall, it appears to have survived the incident. Perhaps not for very long, given its position. <em>Go, hurry</em>, grab that camera!</p></div></div>"
+              },
+              {
+                "id": "cma4q8q8g03bq3bbs2bach5bw",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/w72xV6dKabexqZOk-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "4Pn1EG/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"52f867cb-6685-475b-a889-df9869c85397\"><p>Fun: Yes. Edible: No.</p></div>"
+              },
+              {
+                "id": "cma4q8q8g03br3bbse3lg9lg2",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/c7afyoTLDh2NfNhA-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "yuysJI/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1155
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"e193d903-41c2-4f21-9f65-3c70e166e431\"><div data-editor-id=\"73ad5833-ab27-4160-8a4c-2267ea14a3f2\"><p>Who stole my pots?</p></div></div>",
+                "isNewlyInserted": true
+              }
+            ],
+            "family": "gallery",
+            "variant": "centered",
+            "settings": {
+              "v": 2,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": true,
+              "quotesInline": false,
+              "isCustomColor": true,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "COLOR",
+              "backgroundColor": "#285f9f",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {}
+          },
+          {
+            "id": "cma4t423s04383bbso4p02dut",
+            "type": "text",
+            "items": [
+              {
+                "id": "cma4t423t04393bbs7iwzhj91",
+                "paragraph": "<div data-editor-id=\"cdb921d3-0a7e-4b70-a614-a291f7bf38ef\"><p>the following carousel is the standard one for reference.</p></div>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "settings": {
+              "v": 2,
+              "cardMode": "WHITE",
+              "mightyMods": [
+                {
+                  "data": {
+                    "location": 0,
+                    "firstColor": "#ffffff",
+                    "blendAmount": 100,
+                    "secondColor": "#ffffff",
+                    "inheritColor": true,
+                    "gradientStyle": "linear-180",
+                    "radialDistance": "circular",
+                    "radialPosition": "center"
+                  },
+                  "tagName": "mighty-rise-block-mod-background-gradient"
+                }
+              ],
+              "paddingTop": 3,
+              "accentColor": null,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {
+              "media": {
+                "image": {
+                  "type": "image",
+                  "sourcedFrom": "DEFAULT",
+                  "useCrushedKey": false
+                }
+              }
+            }
+          },
+          {
+            "id": "cma26xhpz00da3b7b3jlt0ot0",
+            "type": "image",
+            "items": [
+              {
+                "id": "cma26xhpz00db3b7bczklqfwt",
+                "media": {
+                  "image": {
+                    "key": "assets/rise/assets/block-defaults/beach.jpg",
+                    "src": "LWr-JE/beach.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/beach_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 993
+                    },
+                    "originalUrl": "beach.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"3ec751ba-150f-4d8b-860b-d1d3e7ad0667\"><p>A row of beach houses along a white sandy beach. These houses are colourful but serve no real purpose.</p></div>",
+                "paragraph": ""
+              },
+              {
+                "id": "cma26xhpz00dc3b7bssoy17wm",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/ZbaZAK79-KOvRB-e-Screenshot%25202024-10-13%2520at%252021.01.24.png",
+                    "type": "image",
+                    "crushedKey": "Screenshot%202024-10-13%20at%2021.01.24.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1088
+                    },
+                    "originalUrl": "Screenshot 2024-10-13 at 21.01.24.png",
+                    "sourcedFrom": "USER",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00dd3b7bqxl52imb",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/By9ryUTpvB0Z65Rc-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "64sPfg/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00de3b7b2uue8259",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/hFSEbZkG8CtnoXjD-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "Eu46Xc/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1080
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00df3b7bntzxt8zf",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/a_YS3BFhd8C0GAqW-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "KkJGDF/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1121
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00dg3b7b6ct9sssk",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/-g89vJy4ibs3g-JU-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "tWcAN6/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1051
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00dh3b7bfysb4c3i",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/i4leET1W64YllrQm-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "hHz9CW/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00di3b7bw7ye5r2c",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/z99XKRM3o0xmnTlE-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "c45ByQ/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00dj3b7bg6ysjjoy",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/w72xV6dKabexqZOk-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "4Pn1EG/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": ""
+              },
+              {
+                "id": "cma26xhpz00dk3b7b4ps2g592",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/c7afyoTLDh2NfNhA-stock_image.jpg",
+                    "type": "image",
+                    "crushedKey": "yuysJI/stock-image.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1155
+                    },
+                    "originalUrl": "stock-image.jpg",
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "",
+                "isNewlyInserted": true
+              }
+            ],
+            "family": "gallery",
+            "variant": "centered",
+            "settings": {
+              "v": 2,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": true,
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "ACCENT",
+              "backgroundColor": null,
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            },
+            "background": {}
+          },
+          {
+            "id": "cmbycmrse011s3b7ct6j2uuxa",
+            "type": "image",
+            "items": [
+              {
+                "id": "cmbycmrsf011t3b7c44h0gd8c",
+                "media": {
+                  "image": {
+                    "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/ucLaqfyL2Km64-Gx.jpg",
+                    "type": "image",
+                    "isSquare": false,
+                    "crushedKey": "Screenshot%202024-09-23%20at%2019.22.28.jpg",
+                    "dimensions": {
+                      "top": 96,
+                      "left": 2,
+                      "width": 1678,
+                      "height": 934,
+                      "originalWidth": 1680,
+                      "originalHeight": 1088
+                    },
+                    "originalUrl": "Screenshot 2024-09-23 at 19.22.28.png",
+                    "sourcedFrom": "USER",
+                    "originalImage": {
+                      "key": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/ePdMKCwDFeb22RJz-Screenshot%25202024-09-23%2520at%252019.22.28.png",
+                      "type": "image",
+                      "crushedKey": "rise/courses/-3PtUDyeZkTnmsDNp8mW5139WXSDYEad/2gBIWpcNkeD9NRe4.jpg",
+                      "dimensions": {
+                        "originalWidth": 1680,
+                        "originalHeight": 1088
+                      },
+                      "originalUrl": "Screenshot 2024-09-23 at 19.22.28.png",
+                      "sourcedFrom": "USER",
+                      "useCrushedKey": true
+                    },
+                    "useCrushedKey": true
+                  }
+                },
+                "caption": "<div data-editor-id=\"6f59620d-b50e-4ad6-8dd6-bf8f872ecd3f\"><div data-editor-id=\"e42f3407-114a-4742-9d19-036d09c9e81d\"><div data-editor-id=\"26d883ae-9786-4b88-8486-4eb933717bfb\"><p></p></div></div></div>",
+                "paragraph": ""
+              }
+            ],
+            "family": "image",
+            "variant": "hero",
+            "settings": {
+              "v": 2,
+              "opacity": 0.5,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "accentColor": null,
+              "zoomOnClick": true,
+              "opacityColor": "#000000",
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "BLACK",
+              "backgroundColor": null,
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            }
+          },
+          {
+            "id": "cmbwtt66v00703b7clojmgez1",
+            "type": "image",
+            "items": [
+              {
+                "id": "cmbwtt66v00713b7cqbtmys8k",
+                "media": {
+                  "image": {
+                    "alt": "alt tag text",
+                    "key": "assets/rise/assets/block-defaults/bike.jpg",
+                    "src": "bike.jpg",
+                    "type": "image",
+                    "thumbnail": "https://cdn.articulate.com/assets/rise/assets/block-defaults/bike_thumb.jpg",
+                    "dimensions": {
+                      "originalWidth": 1680,
+                      "originalHeight": 1120
+                    },
+                    "originalUrl": "bike.jpg",
+                    "sourcedFrom": "DEFAULT"
+                  }
+                },
+                "caption": "<div data-editor-id=\"e42f3407-114a-4742-9d19-036d09c9e81d\"><div data-editor-id=\"26d883ae-9786-4b88-8486-4eb933717bfb\"><p><span style=\"font-size: 17px;\">Well, that&#39;s it. Time to leave the bar and cycle home. 🤣</span></p></div></div>",
+                "paragraph": ""
+              }
+            ],
+            "family": "image",
+            "variant": "hero",
+            "settings": {
+              "opacity": 0.5,
+              "cardMode": "WHITE",
+              "paddingTop": 3,
+              "zoomOnClick": true,
+              "opacityColor": "#000000",
+              "quotesInline": false,
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "backgroundType": "LIGHT",
+              "backgroundColor": "",
+              "entranceAnimation": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO",
+              "customBackgroundColorContrast": "AUTO"
+            }
+          }
+        ]
+      }
+    ],
+    "jobs": [],
+    "labelSetId": "",
+    "deleted": false,
+    "createdAt": "2025-06-14T22:31:58.253Z",
+    "updatedAt": "2025-06-16T10:12:55.712Z",
+    "markComplete": false,
+    "isDefault": false,
+    "ready": true,
+    "reviewId": "44003fa5-cacb-41f1-8998-6c32c074623f",
+    "exportSettings": {
+      "title": "ImageFX",
+      "format": "zip",
+      "quizId": null,
+      "target": "scorm12",
+      "shareId": "MRkuprXWt4sc0x7QMY3tzLx30UAz5kIl",
+      "activeLMS": 0,
+      "reporting": "passed-incomplete",
+      "exportType": "lms",
+      "identifier": "-3PtUDyeZkTnmsDNp8mW5139WXSDYEad_rise",
+      "targetName": "SCORM 1.2",
+      "storylineId": null,
+      "completeWith": "reporting",
+      "isTranslated": false,
+      "quizComplete": false,
+      "activeEdition": 0,
+      "disableCoverPage": true,
+      "enableExitCourse": false,
+      "resetLearnerData": false,
+      "updateResumeData": true,
+      "storylineComplete": false,
+      "localesPackageType": "single",
+      "completionPercentage": 100,
+      "translationModelVersion": null
+    },
+    "headingTypefaceId": "WcvJTNMavwpiNB2QEnMQPseNDATGXiI9",
+    "bodyTypefaceId": "-MPEM2R_v3eTh0hQInNv-2WAwVwql-Pw",
+    "uiTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+    "sidebarMode": "open",
+    "tenantId": "c8881c34-ec05-4f21-b0df-b604800138f5",
+    "showLessonCount": true,
+    "showNavigationButtons": true,
+    "allowSearch": true,
+    "animateBlockEntrance": true,
+    "transferredAt": null,
+    "allowCopy": false,
+    "enableVideoPlaybackSpeed": null,
+    "jobType": null,
+    "partnerContentId": null,
+    "cardImage": {},
+    "theme": {
+      "themeId": "imaginative",
+      "mightyMods": [
+        {
+          "data": {
+            "border": "4px",
+            "fontSize": 12,
+            "dropShadow": "large",
+            "labelColor": "#000000",
+            "borderColor": "#FF8503",
+            "labelCasing": "uppercase",
+            "borderRadius": "32",
+            "letterSpacing": 0,
+            "buttonLocation": "belowTableOfContents",
+            "buttonPosition": "fullWidth",
+            "backgroundColor": "#FFFFFF"
+          },
+          "tagName": "mighty-rise-theme-mod-begin-button"
+        }
+      ],
+      "navigation": false,
+      "showAuthor": true,
+      "allowSearch": true,
+      "colorAccent": "#ff631e",
+      "blockCorners": "ROUNDED",
+      "buttonScheme": "LIGHT",
+      "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "coverPageType": "CENTERED",
+      "accentContrast": "AUTO",
+      "bodyTypefaceId": "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+      "mightyPowerups": [
+        {
+          "data": {
+            "hideCoverPage": true
+          },
+          "tagName": "mighty-powerup-web-publish-settings"
+        },
+        {
+          "data": {
+            "customCss": null,
+            "customJavascript": "(async () => {\n    window.__MODLOADER__ = window.__MODLOADER__ || {};\n\n    const MODS = [\n        { block: \"cm9sdzd5000xk3bbrcj84q2vo\", fn: Carousel, called: false },\n        { block: \"cma4q8q8f03bh3bbsafnl0tay\", fn: Carousel, called: false },\n        { block: \"cm9s1lu2p00db3b7c5v3o6tkd\", fn: SideBySide, called: false },\n        { block: \"cm9sbg808003y3bbrbnrw7yat\", fn: SideBySide, called: false },\n        { block: \"cmbwtt66v00703b7clojmgez1\", fn: Bleary, called: false },\n        { block: \"cmbycmrse011s3b7ct6j2uuxa\", fn: Ripple, called: false },\n        { block: \"cmabux1dq015u3bbsx4s7qsq4\", fn: Dropple, called: false }\n    ];\n\n    /* ----------------------------------------------*/\n\n    class Comparison {\n        constructor(blockId, options = {}) {\n            this.id = blockId;\n            this.block = document.querySelector(`[data-block-id=\"${this.id}\"]`);\n            this.surface = this.block?.querySelector('.block-gallery__row');\n            this.initial = options.initial || '50%';\n            this.handle = options.handle || '|';\n            this.hStyle = options.style || {\n                'border-radius': '3px',\n                'background-color': '#99CEDB',\n                'color': 'black'\n            };\n            this.cStyle = options.caption || {\n                'background-color': '#0000007f',\n                'color': 'white',\n                'text-shadow': '1px 1px 0 #0000007f',\n                'padding': '1rem'\n            };\n            this.images = Array.from(this.block.querySelectorAll('img')).map(node => node.src);\n            this.captions = Array.from(this.block.querySelectorAll('.block-gallery__caption')).map(node => node.innerHTML);\n            this.labels = {};\n            this.minSize = 32;\n\n            this.customCSS();\n            this.setup();\n            this.listen();\n\n        }\n\n        customCSS() {\n            if (document.querySelector(`#cjs-${this.id}`)) return; // run on ths instance\n            const style = document.createElement('style');\n            style.id = `cjs-${this.id}`;\n            const handle = []; const caption = [];\n            for (const [key, value] of Object.entries(this.hStyle)) handle.push(`${key}:${value};`);\n            for (const [key, value] of Object.entries(this.cStyle)) caption.push(`${key}:${value};`);\n            style.textContent = `\n                .cjs-${this.id}-container { position: relative;\n                > img { max-width: 100%; display: block; }\n                .cjs-label { position: absolute; bottom:0; right: 0; margin:0; ${caption.join('')};\n                    &.cjs-hide { visibility: hidden; }\n                    p:last-of-type { margin-bottom: 0; }\n                }\n                > .cjs-cover { animation: cjs-bounce 1s; animation-delay: .5s; width: ${this.initial}; position: absolute; top:0;left:0;height:100%;overflow:hidden;background:url(${this.images[0]}) no-repeat top left; background-size:cover; transform:translateZ(0);backface-visibility:hidden;\n                    > .cjs-label { right: auto; left: 0 }\n                }\n                > .cjs-handle { ${handle.join('')}; cursor: pointer; position: absolute; top: 50%; left: ${this.initial}; transform: translate(-50%,-50%); font-size: 0;\n                    > svg { pointer-events: none }\n                }\n                }\n                @keyframes cjs-bounce { 0% { width: 0} 75% { width: calc(${this.initial} + 1rem)} 100% { width: ${this.initial} }}\n            `;\n            document.body.appendChild(style);\n        }\n\n        setup() {\n            if (!this.block) return;\n            this.surface.innerHTML = this.captions[1] ? `\n        <figure class='cjs-${this.id}-container'>\n            <img src='${this.images[1]}' alt='Comparison image'>\n            <span class='cjs-label'>${this.captions[1]}</span>\n            <div class='cjs-cover'>\n                <span class='cjs-label'>${this.captions[0]}</span>\n            </div>\n            <span class='cjs-handle'>${this.handle}</span>\n        </figure>` : `<figure class='cjs-${this.id}-container'>\n            <img src='${this.images[1]}' alt='Comparison image'>\n            <div class='cjs-cover'></div>\n            <span class='cjs-handle'>${this.handle}</span>\n        </figure>`;\n            this.block.dataset.mightyComparison = true; // mark this block as done\n            this.container = this.block.querySelector(`.cjs-${this.id}-container`);\n            this.handle = this.block.querySelector('.cjs-handle');\n            this.cover = this.block.querySelector('.cjs-cover');\n            this.container.style.maxWidth = this.surface.getBoundingClientRect().width + 'px';\n            this.minSize = this.handle.getBoundingClientRect().width / 2;\n            this.labels = {\n                right: { el: this.container.querySelector('.cjs-label') },\n                left: { el: this.container.querySelector('.cjs-cover .cjs-label') }\n            };\n        }\n\n        listen() {\n            if (!this.block) return;\n\n            let rect = {}; let containerWidth = 0;\n            let isDragging = false;\n\n            const onDragStart = (e) => {\n                e.preventDefault();\n                isDragging = true;\n                rect = this.container.getBoundingClientRect();\n                this.labels.right['size'] = this.labels.right.el?.getBoundingClientRect();\n                this.labels.left['size'] = this.labels.left.el?.getBoundingClientRect();\n                containerWidth = rect.width;\n            };\n\n            const onDragMove = (e) => {\n                if (!isDragging) return;\n\n                // Determine the current mouse/touch position relative to the container\n                const clientX = e.touches ? e.touches[0].clientX : e.clientX;\n                let offsetX = clientX - rect.left;\n\n                // Clamp the offset to stay within the container bounds\n                offsetX = Math.max(this.minSize, Math.min(offsetX, containerWidth - this.minSize));\n\n                // Calculate the percentage position\n                const percentage = (offsetX / containerWidth) * 100;\n\n                // Update the handle's position and the cover width\n                this.handle.style.left = `${percentage}%`;\n                this.cover.style.width = `${percentage}%`;\n\n                // check to see if the labels are visible (if we have captions)\n                this.labels.left.el?.classList[(offsetX < this.labels.left.size.width) ? 'add' : 'remove']('cjs-hide');\n                this.labels.right.el?.classList[(offsetX > containerWidth - this.labels.right.size.width) ? 'add' : 'remove']('cjs-hide');\n            };\n\n            const onDragEnd = () => {\n                isDragging = false;\n            };\n\n            // Add event listeners for mouse and touch events\n            this.handle.addEventListener('mousedown', onDragStart);\n            this.handle.addEventListener('touchstart', onDragStart);\n\n            document.addEventListener('mousemove', onDragMove);\n            document.addEventListener('touchmove', onDragMove);\n\n            document.addEventListener('mouseup', onDragEnd);\n            document.addEventListener('touchend', onDragEnd);\n        }\n    }\n\n    class FrumbertCarousel {\n        constructor(sliderId, config) {\n            this.slider = sliderId instanceof HTMLElement ? sliderId : document.getElementById(sliderId);\n            this.slides = this.slider.querySelectorAll('figure');\n            this.config = Object.assign({\n                maxRows: 8,\n                maxCols: 10,\n                interval: 100,\n                fadeDuration: 600,\n                patterns: ['squares', 'vbeams', 'hbeams', 'fade', 'rando'],\n                previous: undefined,\n                next: undefined,\n                zoom: false,\n                dots: undefined,\n                dotShapes: {\n                    current: \"M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z\",\n                    other: \"M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z\"\n                }\n            }, config);\n\n            this.current = 0;\n            [this.rows, this.cols] = [this.config.maxRows, this.config.maxCols];\n\n            this.init();\n        }\n\n        zoomContent(slide, index) {\n            const sw = 920;\n            const sh = (sw / parseFloat(slide.dataset.w) * parseFloat(slide.dataset.h)).toFixed();\n            return `<img src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' width='${sw}' height='${sh}' data-src='${slide.dataset.src}' style='cursor:zoom-in'>`;\n        }\n\n        // replicate the internal image zoom control\n        zoomOverlay(e) {\n            const src = e.target.dataset.src;\n            const control = `url('data:image/svg+xml,<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"arrow-up-right-and-arrow-down-left-from-center\" class=\"svg-inline--fa fa-arrow-up-right-and-arrow-down-left-from-center \" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M496 0h-160C327.2 0 320 7.156 320 16S327.2 32 336 32h121.4l-164.7 164.7c-6.25 6.25-6.25 16.38 0 22.62s16.38 6.25 22.62 0L480 54.63V176C480 184.8 487.2 192 496 192S512 184.8 512 176v-160C512 7.156 504.8 0 496 0zM196.7 292.7L32 457.4V336C32 327.2 24.84 320 16 320S0 327.2 0 336v160C0 504.8 7.156 512 16 512h160C184.8 512 192 504.8 192 496S184.8 480 176 480H54.63l164.7-164.7c6.25-6.25 6.25-16.38 0-22.62S202.9 286.4 196.7 292.7z\"></path></svg>')`;\n            const dialog = document.createElement('dialog');\n            const clone = e.target.cloneNode(false);\n            const style = document.createElement('style');\n            style.textContent = `\n                dialog { padding: 0; border: 0; display: flex; align-items: center; justify-content: center; position: relative; border-radius: 1rem; box-shadow: 0 1rem 2rem #0000003f; }\n                dialog::backdrop { background-color: white; background-repeat: no-repeat; background-image: ${control}; background-position: top 2rem right 2rem; background-size: 2rem; }\n            `;\n            document.body.appendChild(style);\n            clone.removeAttribute('width');\n            clone.removeAttribute('height');\n            clone.src = clone.dataset.src;\n            clone.style.width = '100%';\n            clone.style.cursor = 'zoom-out';\n            dialog.appendChild(clone);\n            document.body.appendChild(dialog);\n            dialog.addEventListener('close', (event) => { dialog.remove(); style.remove(); });\n            dialog.addEventListener('click', (event) => { dialog.close('click'); });\n            dialog.showModal();\n        }\n\n        init() {\n            // ensure supporting css exists\n            if (!document.querySelector(`style[frumbert-carousel]`)) { // only needs one instance\n                const cssTag = document.createElement('style');\n                cssTag.setAttribute('frumbert-carousel', !0);\n                cssTag.textContent = `div[frumbert-carousel]{em{font-style:italic;}strong{font-weight:bold}*{box-sizing: border-box;}position:relative;width:100%;overflow:hidden;figure.slide{margin-block-start:0;margin-block-end:0;margin-inline-start:0;margin-inline-end:0;margin:0;padding:0;figcaption{position:absolute;bottom:1rem;left:1rem;width:auto;&:not(:empty){background-color:var(--bg);backdrop-filter:blur(.5rem);color:var(--fg);padding:1rem;max-width:50%;border-radius:.5rem}}position:absolute;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;z-index:1;pointer-events:none;&.active{box-shadow:0 0 2rem var(--bg);opacity:1;pointer-events:auto}}.slice{position:absolute;opacity:0;background-repeat:no-repeat;pointer-events:none;z-index:2}.slide,.slice{will-change:opacity,transform}}.carousel-slides{transition:height .2s ease;}`;\n                document.body.appendChild(cssTag);\n            }\n            this.slider.closest('div[data-block-id]').setAttribute('frumbert-carousel', !0);\n\n            // Initialize slides - create anew to avoid rise bindings\n            this.slides.forEach((slide, i) => {\n                const div = slide.parentNode;\n                const figure = document.createElement('figure');\n                const img = slide.querySelector('img');\n                if (slide.querySelector('figcaption')) {\n                    const caption = document.createElement('figcaption');\n                    caption.innerHTML = slide.querySelector('figcaption').querySelector('p')?.parentNode?.innerHTML || '';\n                    figure.appendChild(caption);\n                }\n                for (const attr of div.attributes) figure.setAttribute(attr.name, attr.value);\n                figure.removeAttribute('class');\n                figure.removeAttribute('hidden');\n                figure.removeAttribute('inert');\n                figure.classList.add('slide');\n                figure.dataset.src = img.src;\n                figure.dataset.w = img.width;\n                figure.dataset.h = img.height;\n                this.slider.appendChild(figure);\n                if (i === 0) {\n                    figure.classList.add('active');\n                    this.adjustSliderHeight(figure);\n                }\n                this._getAverageColour(figure.dataset.src).then((c) => {\n                    figure.style.setProperty('--bg', c.average);\n                    figure.style.setProperty('--fg', c.contrast);\n                }).catch(err => console.warn);\n                if (this.config.zoom) {\n                    figure.insertAdjacentHTML('afterbegin', this.zoomContent(figure, i)); // creates the transparent dummy image\n                    figure.querySelector('img').addEventListener('click', this.zoomOverlay);\n                }\n                slide.remove();\n            });\n            Array.from(this.slider.querySelectorAll('div')).forEach((el) => { el.remove() });\n\n            this.slides = this.slider.querySelectorAll('figure'); // same name, different dom nodes\n\n            // Consume event listeners for navigation buttons\n            [this.config.previous, this.config.next].forEach((el, index) => {\n                if (el instanceof HTMLElement) {\n                    el.addEventListener('click', (e) => { e.stopPropagation(); e.preventDefault(); this.showNextSlide(index === 0 ? -1 : 1) });\n                }\n            })\n\n            // Recalculate height on window resize\n            window.addEventListener('resize', () => {\n                this.adjustSliderHeight(this.slides[this.current]);\n            });\n        }\n\n        adjustSliderHeight(slideElement) {\n            if (slideElement.dataset.src) {\n                slideElement.style.backgroundImage = `url('${slideElement.dataset.src}')`;\n            }\n            if (slideElement.dataset.w && slideElement.dataset.h) {\n                const aspectRatio = parseFloat(slideElement.dataset.h) / parseFloat(slideElement.dataset.w);\n                const containerWidth = this.slider.offsetWidth;\n                this.slider.style.height = `${containerWidth * aspectRatio}px`;\n            } else {\n                const src = slideElement.getAttribute('data-src');\n                const img = new Image();\n                img.onload = () => {\n                    const aspectRatio = img.naturalHeight / img.naturalWidth;\n                    const containerWidth = this.slider.offsetWidth;\n                    this.slider.style.height = `${containerWidth * aspectRatio}px`;\n                };\n                img.src = src;\n            }\n        }\n\n        createSlice(data, width, height, left, top, delay, shape) {\n            const slice = document.createElement('div');\n            slice.className = `slice ${shape}`;\n            slice.style.width = `${width}px`;\n            slice.style.height = `${height}px`;\n            slice.style.left = `${left}px`;\n            slice.style.top = `${top}px`;\n            slice.style.backgroundImage = `url('${data.nextImageURL}')`;\n            slice.style.backgroundSize = `${data.sliderWidth}px ${data.sliderHeight}px`;\n            slice.style.backgroundPosition = `-${left}px -${top}px`;\n            return { el: slice, delay };\n        }\n\n        shuffle(array) {\n            for (let i = array.length - 1; i > 0; i--) {\n                const j = Math.floor(Math.random() * (i + 1));\n                [array[i], array[j]] = [array[j], array[i]];\n            }\n            return array;\n        }\n\n        rando(data) {\n            let ar = this.squares(data);\n            let delays = ar[0].map(item => item.delay);\n            this.shuffle(delays);\n            ar[0].forEach((item, index) => {\n                item.delay = delays[index];\n            });\n            return ar;\n        }\n\n        squares(data) {\n            const slices = [];\n            for (let r = 0; r < this.rows; r++) {\n                for (let c = 0; c < this.cols; c++) {\n                    const delay = data.reversed ? (this.rows - 1 - r + this.cols - 1 - c) * this.config.interval : (r + c) * this.config.interval;\n                    slices.push(this.createSlice(data, data.sliceWidth, data.sliceHeight, c * data.sliceWidth, r * data.sliceHeight, delay, 'square'));\n                }\n            }\n            const maxDelay = (this.rows + this.cols - 2) * this.config.interval + this.config.fadeDuration;\n            return [slices, maxDelay];\n        }\n\n        vbeams(data) {\n            const slices = [];\n            for (let c = 0; c < this.cols; c++) {\n                const delay = data.reversed ? (this.cols - 1 - c) * this.config.interval : c * this.config.interval;\n                slices.push(this.createSlice(data, data.sliceWidth, data.sliderHeight, c * data.sliceWidth, 0, delay, 'vbeam'));\n            }\n            const maxDelay = (this.cols - 2) * this.config.interval + this.config.fadeDuration;\n            return [slices, maxDelay];\n        }\n\n        hbeams(data) {\n            const slices = [];\n            for (let r = 0; r < this.rows; r++) {\n                const delay = data.reversed ? (this.rows - 1 - r) * this.config.interval : r * this.config.interval;\n                slices.push(this.createSlice(data, data.sliderWidth, data.sliceHeight, 0, r * data.sliceHeight, delay, 'hbeam'));\n            }\n            const maxDelay = (this.rows - 2) * this.config.interval + this.config.fadeDuration;\n            return [slices, maxDelay];\n        }\n\n        fade(data) {\n            const slices = [];\n            slices.push(this.createSlice(data, data.sliderWidth, data.sliderHeight, 0, 0, this.config.interval, 'fade'));\n            const maxDelay = this.config.interval + this.config.fadeDuration;\n            return [slices, maxDelay];\n        }\n\n        showNextSlide(n) {\n            const prev = this.current;\n\n            // Increment in positive/negative direction, looping\n            this.current = (this.current + ~~n) % this.slides.length;\n            if (this.current < 0) this.current = this.slides.length - 1;\n\n            // Pick a random number of divisions\n            this.rows = Math.floor(Math.random() * (this.config.maxRows - 2)) + 2;\n            this.cols = Math.floor(Math.random() * (this.config.maxCols - 2)) + 2;\n\n            const currentSlide = this.slides[prev];\n            const nextSlide = this.slides[this.current];\n            const sliderWidth = this.slider.clientWidth;\n            const sliderHeight = this.slider.clientHeight;\n            const data = {\n                sliderWidth,\n                sliderHeight,\n                sliceWidth: (sliderWidth / this.cols).toFixed(),\n                sliceHeight: (sliderHeight / this.rows).toFixed(),\n                nextImageURL: nextSlide.getAttribute('data-src'),\n                reversed: Math.random() < 0.5\n            };\n\n            // Create a mapping of pattern names to their corresponding functions\n            const patternFunctions = {\n                squares: this.squares.bind(this),\n                vbeams: this.vbeams.bind(this),\n                hbeams: this.hbeams.bind(this),\n                fade: this.fade.bind(this),\n                rando: this.rando.bind(this)\n            };\n\n            // Validate config.patterns against patternFunctions\n            const validPatterns = this.config.patterns.filter(pattern => patternFunctions[pattern]);\n\n            // Select a random pattern and call the corresponding function\n            const randomPattern = validPatterns[Math.floor(Math.random() * validPatterns.length)];\n            const [transitionUnits, maxDelay] = patternFunctions[randomPattern](data);\n\n            // Render the transition\n            for (const slide of transitionUnits) {\n                this.slider.appendChild(slide.el);\n                setTimeout(() => {\n                    slide.el.style.transition = `opacity ${this.config.fadeDuration}ms ease`;\n                    slide.el.style.opacity = 1;\n                }, slide.delay);\n            }\n\n            // Cleanup the transition and prepare for the next slide\n            setTimeout(() => {\n                nextSlide.classList.add('active');\n                this.updateDots();\n\n                // Hide current slide\n                currentSlide.style.transition = 'none';\n                currentSlide.classList.remove('active');\n                currentSlide.offsetHeight; // Force reflow\n                currentSlide.style.transition = '';\n\n                transitionUnits.forEach(slice => {\n                    slice.el.remove();\n                });\n                this.adjustSliderHeight(nextSlide);\n            }, maxDelay);\n        }\n\n        updateDots() {\n            if (!this.config.dots) return;\n            this.config.dots.closest('.carousel').style.setProperty('--carousel-active-index', this.current);\n            this.config.dots.querySelectorAll('path').forEach((el, index) => {\n                el.setAttribute('d', index === this.current ? this.config.dotShapes.current : this.config.dotShapes.other);\n            });\n        }\n\n        async _getAverageColour(src) {\n            return new Promise((resolve, reject) => {\n                const imgEl = new Image();\n                const defaultValue = {\n                    average: \"#7f7f7f7f\",\n                    contrast: 'black'\n                };\n                imgEl.onerror = () => resolve(defaultValue);\n                imgEl.onload = function () {\n                    let blockSize = 32,\n                        canvas = document.createElement('canvas'),\n                        context = canvas.getContext && canvas.getContext('2d'),\n                        i = -4,\n                        rgb = { r: 0, g: 0, b: 0 },\n                        count = 0,\n                        contrast = 'black',\n                        pixels = null,\n                        brightness = 0;\n\n                    if (!context) resolve(defaultValue);\n                    canvas.width = imgEl.naturalWidth || imgEl.offsetWidth;\n                    canvas.height = imgEl.naturalHeight || imgEl.offsetHeight;\n                    context.drawImage(imgEl, 0, 0);\n                    try {\n                        pixels = context.getImageData(0, 0, canvas.width, canvas.height);\n                    } catch (e) {\n                        return resolve(defaultValue);\n                    }\n                    if (!pixels?.data) return resolve(defaultValue);\n                    // console.trace(pixels);\n                    while ((i += blockSize * 4) < pixels.data.length) {\n                        ++count;\n                        rgb.r += pixels.data[i];\n                        rgb.g += pixels.data[i + 1];\n                        rgb.b += pixels.data[i + 2];\n                    }\n                    brightness = (Math.max(0, Math.min(255, parseInt(~~(rgb.r / count), 10))) * 299) +\n                        (Math.max(0, Math.min(255, parseInt(~~(rgb.g / count), 10))) * 587) +\n                        (Math.max(0, Math.min(255, parseInt(~~(rgb.b / count), 10))) * 114);\n                    brightness = brightness / 255000;\n                    contrast = brightness >= 0.5 ? 'black' : 'white';\n                    resolve({\n                        average: `#${[\n                            (\"0\" + Math.max(0, Math.min(255, parseInt(~~(rgb.r / count), 10))).toString(16)).substr(-2),\n                            (\"0\" + Math.max(0, Math.min(255, parseInt(~~(rgb.g / count), 10))).toString(16)).substr(-2),\n                            (\"0\" + Math.max(0, Math.min(255, parseInt(~~(rgb.b / count), 10))).toString(16)).substr(-2),\n                            '3f'\n                        ].join(\"\")}`,\n                        contrast\n                    });\n                };\n                imgEl.src = src;\n            });\n        }\n    }\n\n    class RippleEffect {\n        constructor(imgEl, options = {}) {\n            if (!(imgEl instanceof HTMLImageElement)) {\n                throw new Error(\"RippleEffect: First argument must be an <img> element.\");\n            }\n\n            this.imageEl = imgEl;\n            this.options = Object.assign({\n                rippleSpeed: 2.0,\n                rippleFrequency: 40.0,\n                rippleStrength: 0.01,\n            }, options);\n\n            this.mouse = [0.5, 0.5];\n            this._init();\n        }\n\n        _init() {\n            const image = new Image();\n            image.src = this.imageEl.src;\n            image.crossOrigin = \"anonymous\";\n\n            image.onload = () => {\n                const width = image.naturalWidth;\n                const height = image.naturalHeight;\n\n                const canvas = document.createElement('canvas');\n                canvas.width = width;\n                canvas.height = height;\n                canvas.style.width = this.imageEl.width + \"px\";\n                canvas.style.height = this.imageEl.height + \"px\";\n                canvas.style.display = \"block\";\n\n                this.imageEl.replaceWith(canvas);\n                this.canvas = canvas;\n                this.gl = canvas.getContext(\"webgl\", { willReadFrequently: true });\n\n                if (!this.gl) {\n                    console.error(\"WebGL not supported\");\n                    return;\n                }\n\n                this._setupWebGL(image);\n            };\n        }\n\n        _setupWebGL(image) {\n            const gl = this.gl;\n\n            const vertexShaderSource = `\n          attribute vec2 a_position;\n          varying vec2 v_texCoord;\n          void main() {\n            v_texCoord = (a_position + 1.0) / 2.0;\n            gl_Position = vec4(a_position, 0, 1);\n          }\n        `;\n\n            const fragmentShaderSource = `\n          precision mediump float;\n          uniform sampler2D u_image;\n          uniform vec2 u_mouse;\n          uniform float u_time;\n          varying vec2 v_texCoord;\n\n          void main() {\n            vec2 uv = v_texCoord;\n            float dist = distance(uv, u_mouse);\n            float ripple = sin((dist - u_time * ${this.options.rippleSpeed.toFixed(1)}) * ${this.options.rippleFrequency.toFixed(1)}) * ${this.options.rippleStrength.toFixed(5)} / dist;\n            uv += normalize(uv - u_mouse) * ripple;\n            gl_FragColor = texture2D(u_image, uv);\n          }\n        `;\n\n            const compileShader = (type, source) => {\n                const shader = gl.createShader(type);\n                gl.shaderSource(shader, source);\n                gl.compileShader(shader);\n                if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {\n                    console.error(gl.getShaderInfoLog(shader));\n                    gl.deleteShader(shader);\n                    return null;\n                }\n                return shader;\n            };\n\n            const vertexShader = compileShader(gl.VERTEX_SHADER, vertexShaderSource);\n            const fragmentShader = compileShader(gl.FRAGMENT_SHADER, fragmentShaderSource);\n\n            const program = gl.createProgram();\n            gl.attachShader(program, vertexShader);\n            gl.attachShader(program, fragmentShader);\n            gl.linkProgram(program);\n            gl.useProgram(program);\n\n            const positionLoc = gl.getAttribLocation(program, \"a_position\");\n            const mouseLoc = gl.getUniformLocation(program, \"u_mouse\");\n            const timeLoc = gl.getUniformLocation(program, \"u_time\");\n            const imageLoc = gl.getUniformLocation(program, \"u_image\");\n\n            const positionBuffer = gl.createBuffer();\n            gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);\n            gl.bufferData(\n                gl.ARRAY_BUFFER,\n                new Float32Array([\n                    -1, -1, 1, -1, -1, 1,\n                    -1, 1, 1, -1, 1, 1\n                ]),\n                gl.STATIC_DRAW\n            );\n\n            gl.enableVertexAttribArray(positionLoc);\n            gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);\n\n            const texture = gl.createTexture();\n            gl.bindTexture(gl.TEXTURE_2D, texture);\n            gl.texImage2D(\n                gl.TEXTURE_2D,\n                0,\n                gl.RGBA,\n                gl.RGBA,\n                gl.UNSIGNED_BYTE,\n                image\n            );\n            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);\n\n            gl.uniform1i(imageLoc, 0);\n\n            this.canvas.addEventListener(\"mousemove\", (e) => {\n                const rect = this.canvas.getBoundingClientRect();\n                this.mouse = [\n                    (e.clientX - rect.left) / rect.width,\n                    1.0 - (e.clientY - rect.top) / rect.height\n                ];\n            });\n\n            const startTime = performance.now();\n\n            const render = () => {\n                const now = performance.now();\n                gl.clear(gl.COLOR_BUFFER_BIT);\n\n                gl.uniform2fv(mouseLoc, this.mouse);\n                gl.uniform1f(timeLoc, (now - startTime) / 1000);\n\n                gl.drawArrays(gl.TRIANGLES, 0, 6);\n                requestAnimationFrame(render);\n            };\n\n            render();\n        }\n    }\n\n    /* ----------------------------------------------*/\n\n    // make a side-by-side comparison image control\n    function SideBySide(node, blockData) {\n        if (node.hasAttribute('data-mighty-comparison') || node.classList.contains('sparkle-fountain')) return;\n        new Comparison(node.dataset.blockId, {\n            handle: '<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" viewBox=\"-1 0 19 19\"><path d=\"M16.42 9.58A7.92 7.92 0 1 1 8.5 1.66a7.92 7.92 0 0 1 7.92 7.92zm-2.5-.56-2.77-2.77a.8.8 0 0 0-1.12 1.12l1.42 1.42H5.54l1.41-1.42a.8.8 0 0 0-1.12-1.12L3.07 9.02a.8.8 0 0 0 0 1.12l2.77 2.77a.8.8 0 1 0 1.12-1.12l-1.42-1.42h5.9l-1.4 1.42a.8.8 0 0 0 1.11 1.12l2.77-2.77a.8.8 0 0 0 0-1.12z\"/></svg>',\n            style: {\n                'border-radius': '50%',\n                'background-image': 'linear-gradient(#5092A8,#004668)',\n                'border': '1px solid #002D427f',\n                'box-shadow': '0 5px 10px #00000020'\n            },\n            initial: '66%'\n        });\n    }\n\n    // re-render the carousel with random slide-change effects\n    function Carousel(node, blockData) {\n\n        const block = node.closest('div[data-block-id]');\n        if (block.hasAttribute('frumbert-carousel') || node.classList.contains('sparkle-fountain')) return;\n        if (blockData.family !== 'gallery') return;\n\n        // we like the dots but they are bound to scripts which don't work here - recreating them breaks the binding\n        const dots = node.querySelector('.carousel-controls-items'); if (dots) {\n            const cci = dots.cloneNode(true);\n            const p = dots.parentNode;\n            p.appendChild(cci);\n            dots.remove();\n        }\n\n        // Here's a thing. RISE does not create <figcaption> elements inside the <figure> until slightly before the slide is rendered. Because 🤷🏼\n        // So we need the blockData just to get the captions, and write them ourselves.\n        const container = node.querySelector('.carousel-slides');\n        const figures = container.querySelectorAll('figure');\n        for (let i = 0; i < figures.length; i++) {\n            const fc = document.createElement('figcaption');\n            fc.innerHTML = blockData.items[i].caption;\n            if (fc.textContent.length > 0) {\n                figures[i].appendChild(fc);\n            }\n        }\n\n        const fbc = new FrumbertCarousel(container, {\n            previous: node.querySelector('button.carousel-controls-prev'),\n            next: node.querySelector('button.carousel-controls-next'),\n            zoom: blockData.settings.zoomOnClick,\n            dots: block.querySelector('.carousel-controls-items')\n        });\n    }\n\n    // my attempt at a splatting ripple effect went wrong\n    function Ripple(node, blockData) {\n        const block = node.closest('div[data-block-id]');\n        const img = block.querySelector('img');\n        new RippleEffect(img, {\n            rippleSpeed: 2.5,\n            rippleFrequency: 50,\n            rippleStrength: 0.015\n        });\n    }\n\n    // make an image drunk\n    function Bleary(node, blockData) {\n        const block = node.closest('div[data-block-id]');\n        ((img) => {\n            let style = document.getElementById('drunken-css');\n            if (!style) {\n                style = document.createElement('style');\n                style.id = 'drunken-css';\n                document.body.appendChild(style);\n                style.textContent = `\n                #bleary-wrapper {\n                  display: inline-block;\n                  position: relative;\n                }\n                #bleary-eyed {\n                  display: block;\n                  max-width: 100%;\n                  height: auto;\n                }\n                .ripple-overlay {\n                  position: absolute;\n                  top: 0;\n                  left: 0;\n                  pointer-events: none;\n                }\n                .ripple-layer {\n                  position: absolute;\n                  left: 0;\n                  width: 100%;\n                  background-repeat: repeat;\n                  pointer-events: none;\n                }\n                `;\n            }\n\n            const wrap = document.createElement('div'); wrap.id = 'bleary-wrapper';\n            img.insertAdjacentElement('beforebegin', wrap); wrap.appendChild(img); img.id = 'bleary-eyed';\n            let overlay, width, height, rippleLayers = [];\n\n            // overkill? absolutely.\n            function getNextFibonacci(current) {\n                const φ = (1 + Math.sqrt(5)) / 2; // Phi (golden ratio, you know, 3,4,5, triangles, pythagoras? anybody? oknvm)\n                const n = Math.round(Math.log(current * Math.sqrt(5)) / Math.log(φ)); // Find position of current number in sequence\n                return Math.round(φ ** (n + 1) / Math.sqrt(5)); // Calculate next number using Binet's formula. reminds me, I must take the bins out.\n            }\n\n            let hasRun = false;\n\n            img.onload = () => {\n                hasRun = true;\n                const rect = img.getBoundingClientRect();\n                width = Math.round(rect.width);\n                height = Math.round(rect.height);\n\n                // Build overlay\n                overlay = document.createElement('div');\n                overlay.className = 'ripple-overlay';\n                overlay.style.width = width + 'px';\n                overlay.style.height = height + 'px';\n                overlay.style.backgroundImage = `url('${img.src}')`;\n                overlay.style.backgroundSize = `${width}px ${height}px`;\n\n                const wrapper = document.getElementById('bleary-wrapper');\n                wrapper.style.width = width + 'px';\n                wrapper.style.height = height + 'px';\n                wrapper.appendChild(overlay);\n\n                // Create ripple layers\n                const startY = 2; // Math.floor(height / 2);\n                let currentTop = startY;\n                let currentHeight = 1;\n\n                // incrementally grow\n                while (currentTop < height) {\n                    let layerHeight = currentHeight;\n                    if (currentTop + layerHeight > height) {\n                        layerHeight = height - currentTop;\n                    }\n\n                    const layer = document.createElement('div');\n                    layer.className = 'ripple-layer';\n                    layer.style.height = layerHeight + 'px';\n                    layer.style.top = currentTop + 'px';\n                    layer.style.backgroundImage = `url('${img.src}')`;\n                    layer.style.backgroundSize = `${width}px ${height}px`;\n                    layer.style.opacity = .66;\n\n                    // 🔁 Flip vertically by computing the mirrored region\n                    const flippedTop = height - (currentTop + layerHeight);\n                    layer.style.backgroundPosition = `center -${flippedTop}px`;\n\n                    overlay.appendChild(layer);\n                    rippleLayers.push(layer);\n\n                    currentTop += layerHeight;\n                    currentHeight *= 1.5;\n                    // currentHeight += getNextFibonacci(currentHeight);\n                }\n\n                requestAnimationFrame(animate);\n            };\n\n            if (img.complete && !hasRun) {\n                // console.info('ill do it myself then');\n                const evt = new Event('load');\n                img.dispatchEvent(evt);\n            }\n\n            let time = 0;\n            const yspeed = 0.02;\n            const xspeed = 0.04;\n\n            function animate() {\n                time += 1;\n\n                rippleLayers.forEach((layer) => {\n                    const top = parseFloat(layer.style.top);\n                    const layerHeight = layer.offsetHeight;\n\n                    const verticalAmplitude = 4; // magic numbers ftw\n                    const horizontalAmplitude = 11;\n                    const frequency = 0.01;\n\n                    const yOffset = Math.sin(time * yspeed + top * frequency) * verticalAmplitude; // wibbly wobbly\n                    const xOffset = Math.sin(time * xspeed + top * frequency * 0.5) * horizontalAmplitude; // timey wimey\n\n                    const depthRatio = (top - height / 2) / (height / 2);\n                    const scaleFactor = 1 + depthRatio * (Math.sin(time * frequency) * 0.005); // i think I'm gonna throw up .. \n                    const bgWidth = width * scaleFactor;\n                    const bgHeight = height * scaleFactor;\n\n                    const newX = -xOffset + (width - bgWidth) / 2;\n                    const newY = -top - yOffset + (height - bgHeight) / 2;\n\n                    layer.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;\n                    layer.style.backgroundPosition = `${newX}px ${newY}px`;\n                });\n\n                requestAnimationFrame(animate);\n            }\n        })(block.querySelector('img'));\n    }\n\n    // drips and drops effect\n    function Dropple(node, blockData) {\n        const block = node.closest('div[data-block-id]');\n        Array.from(block.querySelectorAll('img')).forEach((img) => {\n            img.parentNode.style.position = 'relative';\n            waterRipple(img);\n        });\n\n\n        /**\n        * Water ripple effect.\n        * Original code (Java) by Neil Wallis \n        * @link http://www.neilwallis.com/java/water.html\n        * \n        * @author Sergey Chikuyonok (serge.che@gmail.com)\n        * @link http://chikuyonok.ru\n        */\n        function waterRipple(img) {\n            var canvas = document.createElement('canvas'),\n                /** @type {CanvasRenderingContext2D} */\n                ctx = canvas.getContext('2d', { willReadFrequently: true }),\n                width = img.width,\n                height = img.height,\n                half_width = width >> 1,\n                half_height = height >> 1,\n                size = width * (height + 2) * 2,\n                delay = 30,\n                oldind = width,\n                newind = width * (height + 3),\n                riprad = 13,\n                ripplemap = [],\n                last_map = [],\n                ripple,\n                texture,\n                line_width = 20,\n                step = line_width * 2,\n                count = height / line_width;\n\n            img.crossOrigin = \"anonymous\";\n\n            canvas.style.position = 'absolute';\n            canvas.style.zIndex = 1;\n            canvas.width = width;\n            canvas.height = height;\n\n            ctx.drawImage(img, 0, 0);\n            canvas.style.left = img.offsetLeft + 'px';\n            canvas.style.top = img.offsetTop + 'px';\n\n            img.parentNode.insertBefore(canvas, img);\n\n            texture = ctx.getImageData(0, 0, width, height);\n            ripple = ctx.getImageData(0, 0, width, height);\n\n            for (var i = 0; i < size; i++) {\n                last_map[i] = ripplemap[i] = 0;\n            }\n\n            /**\n            * Main loop\n            */\n            function run() {\n                newframe();\n                ctx.putImageData(ripple, 0, 0);\n                requestAnimationFrame(run);\n            }\n\n            /**\n            * Disturb water at specified point\n            */\n            function disturb(dx, dy) {\n                dx <<= 0;\n                dy <<= 0;\n\n                // console.log('disturb', canvas, dx, dy);\n\n                for (var j = dy - riprad; j < dy + riprad; j++) {\n                    for (var k = dx - riprad; k < dx + riprad; k++) {\n                        ripplemap[oldind + (j * width) + k] += 128;\n                    }\n                }\n            }\n\n            /**\n            * Generates new ripples\n            */\n            function newframe() {\n                var a, b, data, cur_pixel, new_pixel, old_data;\n\n                var t = oldind; oldind = newind; newind = t;\n                var i = 0;\n\n                // create local copies of variables to decrease\n                // scope lookup time in Firefox\n                var _width = width,\n                    _height = height,\n                    _ripplemap = ripplemap,\n                    _last_map = last_map,\n                    _rd,\n                    _td,\n                    _half_width = half_width,\n                    _half_height = half_height;\n                try {\n                    _rd = ripple.data,\n                        _td = texture.data\n                } catch (x) {\n                    console.warn(x, ripple, texture);\n                }\n\n\n                for (var y = 0; y < _height; y++) {\n                    for (var x = 0; x < _width; x++) {\n                        var _newind = newind + i, _mapind = oldind + i;\n                        data = (\n                            _ripplemap[_mapind - _width] +\n                            _ripplemap[_mapind + _width] +\n                            _ripplemap[_mapind - 1] +\n                            _ripplemap[_mapind + 1]) >> 1;\n\n                        data -= _ripplemap[_newind];\n                        data -= data >> 5;\n\n                        _ripplemap[_newind] = data;\n\n                        //where data=0 then still, where data>0 then wave\n                        data = 1024 - data;\n\n                        old_data = _last_map[i];\n                        _last_map[i] = data;\n\n                        if (old_data != data) {\n                            //offsets\n                            a = (((x - _half_width) * data / 1024) << 0) + _half_width;\n                            b = (((y - _half_height) * data / 1024) << 0) + _half_height;\n\n                            //bounds check\n                            if (a >= _width) a = _width - 1;\n                            if (a < 0) a = 0;\n                            if (b >= _height) b = _height - 1;\n                            if (b < 0) b = 0;\n\n                            new_pixel = (a + (b * _width)) * 4;\n                            cur_pixel = i * 4;\n\n                            _rd[cur_pixel] = _td[new_pixel];\n                            _rd[cur_pixel + 1] = _td[new_pixel + 1];\n                            _rd[cur_pixel + 2] = _td[new_pixel + 2];\n                        }\n\n                        ++i;\n                    }\n                }\n            }\n\n            canvas.onmousemove = function (/* Event */ evt) {\n                disturb(evt.offsetX || evt.layerX, evt.offsetY || evt.layerY);\n            };\n\n            requestAnimationFrame(run);\n            // setInterval(run, delay);\n\n            // generate random ripples\n            var rnd = Math.random;\n            setInterval(function () {\n                disturb(rnd() * width, rnd() * height);\n            }, 700);\n\n        };\n\n    }\n\n    /* ----------------------------------------------*/\n\n    function RunMods(blockData) {\n        MODS.forEach((mod) => {\n            if (!mod.called) {\n                if (mod.block) mod.match = `div[data-block-id='${mod.block}']`;\n                const node = document.querySelector(mod.match);\n                if (mod.once) {\n                    mod.fn(node, blockData);\n                    mod.called = true;\n                    return;\n                } else if (node && mod.block && mod.block === blockData.id) {\n                    mod.fn(node, blockData);\n                    mod.called = true;\n                } else if (node && !mod.block) {\n                    mod.fn(node);\n                    mod.called = true;\n                }\n            }\n        });\n    }\n\n    // listen to the React state store changing (triggers when pages change or when users interact)\n    if (!window.__MODLOADER__.getRiseStateStore) {\n        window.__MODLOADER__.getRiseStateStore = () => {\n            return new Promise((resolve) => {\n                const app = document.querySelector(\"#app\");\n                const interval = setInterval(() => {\n                    const key = Object.keys(app)\n                        .filter((keyName) =>\n                            keyName.includes(\"__reactContainer\")\n                        )\n                        .pop();\n                    if (key) {\n                        clearInterval(interval);\n                        const traverse = (element) => {\n                            const store =\n                                element?.memoizedState?.element?.props?.store ||\n                                element?.pendingProps?.store ||\n                                element?.stateNode?.store;\n                            if (store) {\n                                resolve(store);\n                            }\n                            if (element.child) {\n                                traverse(element.child);\n                            }\n                        };\n                        const internalRoot = app[key];\n                        traverse(internalRoot);\n                    }\n                }, 100);\n            });\n        };\n    }\n    const store = await window.__MODLOADER__.getRiseStateStore();\n    store.subscribe(() => {\n        const state = store.getState();\n        const id = state?.courseProgress?.currentLesson || location.href.split('/').pop();\n        if (state && id) {\n            const lesson = state.course.lessons.filter((el) => { return el.id === id });\n            if (lesson && lesson[0]) {\n                for (const block of lesson[0].items) {\n                    RunMods(block);\n                }\n            }\n        }\n    });\n})();"
+          },
+          "tagName": "mighty-powerup-custom-code"
+        }
+      ],
+      "navigationType": "SIDEBAR",
+      "blockPaddingTop": 25,
+      "coverImageAlpha": 50,
+      "navigationStyle": "LIGHT",
+      "showLessonCount": true,
+      "lessonHeaderSize": "MEDIUM",
+      "buttonInlineStyle": "SQUARED",
+      "coverImageDefault": "https://cdn.articulate.com/assets/rise/assets/themes/classic/cover-image/18_abstract.jpg",
+      "headingTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "hideLessonHeaders": false,
+      "lessonHeaderColor": null,
+      "lessonHeaderStyle": "LIGHT",
+      "sidebarStartsOpen": true,
+      "blockPaddingBottom": 25,
+      "markLessonsComplete": false,
+      "animateBlockEntrance": false,
+      "navigationRestricted": false,
+      "buttonNavigationStyle": "FULL",
+      "showNavigationButtons": false,
+      "compactShowLessonCount": true,
+      "lessonHeaderImageAlpha": 0.2,
+      "lessonHeaderImageColor": "DARK",
+      "enableVideoPlaybackSpeed": false,
+      "customColorLessonHeaderContrast": "AUTO"
+    },
+    "lessonHeaderImage": {},
+    "overlayNavigationImage": {},
+    "type": null,
+    "locale": null,
+    "sourceCourseLocaleId": null,
+    "experiments": null,
+    "settings": {},
+    "description": "",
+    "title": "ImageFX",
+    "defaultLocaleId": null,
+    "features": {
+      "rise-course-navigation": true,
+      "rise-process-accessibility": true,
+      "rise-matching-accessibility": true,
+      "rise-block-controls-phase-four": true
+    },
+    "authors": [
+      {
+        "id": "aid|0f19f4ce-3e63-4470-a4d8-4ddaaa8b3e49",
+        "authorName": "Tim St. Clair"
+      }
+    ],
+    "mondrian": {},
+    "bodyTypeface": "DM Sans",
+    "headingTypeface": "Oswald",
+    "uiTypeface": "Montserrat",
+    "lmsOptions": {
+      "enableExitCourse": false,
+      "disableCoverPage": true
+    }
+  },
+  "labelSet": {
+    "id": "cXo5NdidOSItYUQ2Ul0CjZ2M",
+    "author": "aid|0f19f4ce-3e63-4470-a4d8-4ddaaa8b3e49",
+    "name": "English",
+    "defaultId": 1,
+    "defaultSet": true,
+    "labels": {
+      "a11yAnswerLive": "Your answer",
+      "a11yAuthorPrefix": "By",
+      "a11yBlockChartBar": "Bar chart",
+      "a11yBlockChartLine": "Line chart",
+      "a11yBlockChartPie": "Pie chart",
+      "a11yBlockCode": "Code",
+      "a11yBlockEmbed": "Embedded Content",
+      "a11yBlockFlashcardBack": "Back of card",
+      "a11yBlockFlashcardFront": "Front of card",
+      "a11yBlockFlashcardGrid": "Flashcard grid",
+      "a11yBlockFlashcardStack": "Flashcard carousel",
+      "a11yBlockFlashcardStackRoleDescription": "Carousel",
+      "a11yBlockFlashcardStackSlideControls": "Slide controls",
+      "a11yBlockFlashcardStackSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockFlashcardStackSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockFlashcardStackSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockFlashcardStackSlidePreposition": "of",
+      "a11yBlockFlashcardStackSlideRoleDescription": "Slide",
+      "a11yBlockImageCarousel": "Image Carousel",
+      "a11yBlockImageCarouselRoleDescription": "Carousel",
+      "a11yBlockImageCarouselSlideControls": "Slide controls",
+      "a11yBlockImageCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockImageCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockImageCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockImageCarouselSlidePreposition": "of",
+      "a11yBlockImageCarouselSlideRoleDescription": "Slide",
+      "a11yBlockKnowledgeCheck": "Knowledge check",
+      "a11yBlockKnowledgeCheckFIB": "Knowledge check: Fill in the blank",
+      "a11yBlockKnowledgeCheckM": "Knowledge check: Matching",
+      "a11yBlockKnowledgeCheckMC": "Knowledge check: Multiple choice",
+      "a11yBlockKnowledgeCheckMR": "Knowledge check: Multiple response",
+      "a11yBlockProcessCarousel": "Carousel",
+      "a11yBlockProcessRoleDescription": "Carousel",
+      "a11yBlockProcessSlideControls": "Slide controls",
+      "a11yBlockProcessSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockProcessSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockProcessSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockProcessSlideControlsIntroduction": "Introduction",
+      "a11yBlockProcessSlideControlsSummary": "Summary",
+      "a11yBlockProcessSlidePreposition": "of",
+      "a11yBlockProcessSlideRoleDescription": "Slide",
+      "a11yBlockQuoteCarousel": "Quote Carousel",
+      "a11yBlockQuoteCarouselRoleDescription": "Carousel",
+      "a11yBlockQuoteCarouselSlideControls": "Slide controls",
+      "a11yBlockQuoteCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockQuoteCarouselSlidePreposition": "of",
+      "a11yBlockQuoteCarouselSlideRoleDescription": "Slide",
+      "a11yBlockStoryline": "Storyline",
+      "a11yBlockTimeline": "Timeline",
+      "a11yCarouselNext": "Next",
+      "a11yCarouselPrevious": "Previous",
+      "a11yCertificateDownloadFailed": "Failed to download certificate",
+      "a11yCorrectLive": "Correct answer",
+      "a11yCoverCourseCompleted": "Course Completed",
+      "a11yCoverCourseLength": "Course Length",
+      "a11yCoverRequirementComplete": "Requirement complete",
+      "a11yCoverRequirementFailed": "Requirement failed",
+      "a11yCoverRequirementIncomplete": "Requirement incomplete",
+      "a11yExcelIcon": "Microsoft Excel spreadsheet",
+      "a11yFileIcon": "File",
+      "a11yGroupAudioPlayer": "Audio player",
+      "a11yGroupScenario": "Interactive scenario",
+      "a11yGroupVideoPlayer": "Video player",
+      "a11yLabeledGraphicBlock": "Labeled graphic",
+      "a11yLabeledGraphicButtonMarker": "Marker",
+      "a11yLabeledGraphicIconArrowDown": "Down arrow",
+      "a11yLabeledGraphicIconArrowDownLeft": "Down left arrow",
+      "a11yLabeledGraphicIconArrowDownRight": "Down right arrow",
+      "a11yLabeledGraphicIconArrowLeft": "Left arrow",
+      "a11yLabeledGraphicIconArrowRight": "Right arrow",
+      "a11yLabeledGraphicIconArrowUp": "Up arrow",
+      "a11yLabeledGraphicIconArrowUpLeft": "Up left arrow",
+      "a11yLabeledGraphicIconArrowUpRight": "Up right arrow",
+      "a11yLabeledGraphicIconCheck": "Check mark",
+      "a11yLabeledGraphicIconDot": "Dot",
+      "a11yLabeledGraphicIconHeart": "Heart",
+      "a11yLabeledGraphicIconInformation": "Information",
+      "a11yLabeledGraphicIconPin": "Map pin",
+      "a11yLabeledGraphicIconPlus": "Plus",
+      "a11yLabeledGraphicIconQuestion": "Question mark",
+      "a11yLabeledGraphicIconX": "X",
+      "a11yLabeledGraphicUnviewed": "Not viewed",
+      "a11yLabeledGraphicViewed": "Viewed",
+      "a11yMatchingColumn1": "Matching column 1",
+      "a11yMatchingColumn2": "Matching column 2",
+      "a11yMatchingItemMatchWith": "Match with",
+      "a11yMatchingItemMatchedWith": "Matched with",
+      "a11yMatchingItemSelectableItem": "Selectable item",
+      "a11yMatchingItemShowLess": "Show less",
+      "a11yMatchingItemShowMore": "Show more",
+      "a11yMediaPause": "Pause",
+      "a11yMediaPlay": "Play",
+      "a11yMediaSeek": "Seek",
+      "a11yNavigationMenuClose": "Close navigation menu",
+      "a11yNavigationMenuOpen": "Open navigation menu",
+      "a11yNoticeLinkNewTab": "(opens in a new tab)",
+      "a11yPageMarker": "Top of page",
+      "a11yPDFIcon": "PDF file",
+      "a11yPPTIcon": "PowerPoint presentation",
+      "a11yProgressSummaryRequirementCompleted": "Requirement completed, check mark",
+      "a11yProgressSummaryRequirementNotCompleted": "Requirement not completed, empty square",
+      "a11yQuizFailed": "Failed",
+      "a11yQuizFeedback": "Feedback",
+      "a11yQuizPassed": "Passed",
+      "a11yQuizReviewCorrectlyChecked": "Correctly checked",
+      "a11yQuizReviewCorrectlySelected": "Correctly selected",
+      "a11yQuizReviewCorrectlyUnchecked": "Correctly unchecked",
+      "a11yQuizReviewCorrectlyUnselected": "Correctly unselected",
+      "a11yQuizReviewIncorrectlyChecked": "Incorrectly checked",
+      "a11yQuizReviewIncorrectlySelected": "Incorrectly selected",
+      "a11yQuizReviewIncorrectlyUnchecked": "Incorrectly unchecked",
+      "a11yQuizReviewIncorrectlyUnselected": "Incorrectly unselected",
+      "a11yRegionMainLesson": "Lesson content",
+      "a11yRegionMainOverview": "Course overview",
+      "a11yRegionNavLesson": "Navigation menu",
+      "a11yRegionNavOverview": "Table of contents",
+      "a11yRestrictedNav": "This lesson is currently unavailable",
+      "a11yRTFIcon": "Rich Text File",
+      "a11ySearchClose": "Close search menu",
+      "a11ySearchInput": "Search",
+      "a11ySearchInputClear": "clear search term",
+      "a11ySearchOpen": "Open search menu",
+      "a11yStatusAdditionalContent": "Additional content has been loaded",
+      "a11yStatusContinued": "Continued",
+      "a11yUnzoomImage": "Unzoom image",
+      "a11yWordIcon": "Microsoft Word document",
+      "a11yZipIcon": "Zip file",
+      "a11yZoomImage": "Zoom image",
+      "blocksClickToFlip": "Click to flip",
+      "blocksPreposition": "of",
+      "certificateDownload": "Download certificate",
+      "certificateDownloadInProgress": "Downloading...",
+      "certificateRetryDownload": "Retry download",
+      "courseExit": "EXIT COURSE",
+      "courseFinish": "Finish",
+      "courseHome": "Home",
+      "courseResume": "RESUME COURSE",
+      "courseSkipToLesson": "SKIP TO LESSON",
+      "courseStart": "START COURSE",
+      "coverCompleteAllLessons": "Complete all lessons in this course",
+      "coverCompleted": "Completed",
+      "coverCompleteLessonsInCourse": "lessons in this course",
+      "coverCompleteLessonsName": "Complete",
+      "coverCompleteLessonsPreposition": "of",
+      "coverCourseRequirements": "Course Requirements",
+      "coverHour": "Hour",
+      "coverHours": "Hours",
+      "coverLesson": "Lesson",
+      "coverLessons": "Lessons",
+      "coverMinute": "Minute",
+      "coverMinutes": "Minutes",
+      "coverNoAttemptsRemaining": "No attempts remaining",
+      "coverPublished": "Published",
+      "coverQuizPercentOrHigher": "% or higher",
+      "coverQuizScoreOf": "Score of",
+      "curtainLoading": "Your content is loading.",
+      "curtainOffline": "Your computer is offline.",
+      "curtainOfflineReconnecting": "Attempting to reconnect…",
+      "curtainSessionTimedOut": "Your session has timed out.",
+      "curtainSessionTimedOutRefresh": "Refresh",
+      "curtainSessionTimedOutRestart": "Click refresh to restart your session.",
+      "curtainSomethingWrong": "Something went wrong.",
+      "curtainSomethingWrongRefresh": "Refresh",
+      "curtainSomethingWrongTryAgain": "Click to refresh and try again.",
+      "embedLinkGroup": "Embedded web content",
+      "embedPlayerGroup": "Embedded media player",
+      "embedReadMore": "Read more",
+      "embedViewOn": "VIEW ON",
+      "exitMessage": "🆇 Press Get Certificate to continue",
+      "knowledgeCheckCorrectAnswerRequiredBlock": "Requires a correct answer to continue",
+      "knowledgeCheckCorrectAnswerRequiredNav": "Complete previous knowledge checks to unlock this lesson",
+      "knowledgeCheckMaxRetriesReached": "You have reached the maximum amount of retries.",
+      "knowledgeCheckRetriesAttemptsRemaining": "Attempts remaining:",
+      "l10nChooseLanguage": "Choose your course language",
+      "l10nChooseLanguageContinue": "Continue",
+      "labeledGraphicMarkerLabel": "Labeled graphic marker",
+      "lessonComplete": "COMPLETE",
+      "lessonName": "",
+      "lessonPreposition": "of",
+      "lessonRestricted": "Pages must be completed in order",
+      "noResults": "No results for",
+      "numberedDividerGroup": "Numbered divider",
+      "overviewPageTitleSuffix": "Overview",
+      "pauseButtonLabel": "Pause",
+      "playButtonLabel": "Play",
+      "processComplete": "",
+      "processLandmark": "Process",
+      "processLessonName": "",
+      "processNextStep": " ",
+      "processStart": " ",
+      "processStartAgain": "",
+      "processStepName": "",
+      "processStepPreposition": "of",
+      "processSwipe": "Swipe to continue",
+      "progressPieClickToComplete": "Click to complete",
+      "progressPieClickToReset": "Click to reset",
+      "progressPieCompleted": "Completed",
+      "progressPieQuizFailed": "Failed",
+      "progressPieUnstarted": "Unstarted",
+      "progressSummary": "Progress Summary",
+      "progressSummaryBackToLearning": "Back to my learning",
+      "progressSummaryCompleted": "Completed:",
+      "progressSummaryCompletionRequirement": "Completion Requirement",
+      "progressSummaryCongratulations": "Congratulations!",
+      "progressSummaryNextUp": "Next up",
+      "progressSummaryNoAttemptsRemaining": "No attempts remaining.",
+      "progressSummaryNoTitle": "(No Title)",
+      "progressSummaryPercentComplete": "% Complete",
+      "progressSummaryPercentCompletion": "% Completion",
+      "progressSummaryQuizRequirement": "Quiz Requirement",
+      "progressSummaryRequirementsMet": "You've met all the requirements.",
+      "progressSummaryScoreOf": "Score of",
+      "progressSummaryScoreOfPreposition": "% on",
+      "progressSummaryStartOver": "Start Over",
+      "progressSummaryViewQuiz": "View quiz",
+      "progressSummaryYouCompleted": "You completed:",
+      "progressSummaryYouScored": "You scored",
+      "quizAcceptableResponses": "Acceptable responses",
+      "quizAnswerPlaceholder": "Type your answer here",
+      "quizContinue": "Continue",
+      "quizCorrect": "Correct",
+      "quizIncorrect": "Incorrect",
+      "quizNext": "NEXT",
+      "quizPassing": "PASSING",
+      "quizQuestion": "Question",
+      "quizRequireAnswer": "Please answer the question to continue",
+      "quizRequirePassingScore": "Must pass quiz before continuing",
+      "quizRestart": "Restart",
+      "quizResults": "Quiz results",
+      "quizScore": "Your score",
+      "quizStart": "START QUIZ",
+      "quizSubmit": "SUBMIT",
+      "quizTakeAgain": "TAKE AGAIN",
+      "quizTimerElapsed": "Time elapsed",
+      "quizTimerExpired": "Time expired",
+      "quizTimerExpiredAction": "OK",
+      "quizTimerExpiredMessage": "You have reached the time limit for this quiz. Your results will be automatically submitted",
+      "quizTimerHide": "Hide",
+      "quizTimerLimit": "Time limit",
+      "quizTimerMinute": "Minute",
+      "quizTimerMinutePlural": "Minutes",
+      "quizTimerRemaining": "Time left",
+      "quizTimerShow": "Show timer",
+      "result": "result",
+      "results": "results",
+      "salutation": "👋 See you later!",
+      "scenarioComplete": "Scenario Complete!",
+      "scenarioContinue": "CONTINUE",
+      "scenarioStartOver": "START OVER",
+      "scenarioTryAgain": "TRY AGAIN",
+      "search": "search",
+      "seekSliderLabel": "Seek",
+      "sortingCardsCorrect": "Cards Correct",
+      "sortingLandmark": "Sorting Activity",
+      "sortingReplay": "REPLAY",
+      "tabGroup": "Tab",
+      "codeGroup": "Code",
+      "noteGroup": "Note",
+      "quoteGroup": "Quote",
+      "buttonGroup": "Button",
+      "quizLandmark": "Quiz",
+      "courseDetails": "DETAILS",
+      "feedbackGroup": "Feedback",
+      "accordionGroup": "Accordion",
+      "statementGroup": "Statement",
+      "storylineGroup": "Storyline",
+      "attachmentGroup": "File Attachment",
+      "embedPhotoGroup": "Embedded photo",
+      "embedVideoGroup": "Embedded video",
+      "audioPlayerGroup": "Audio player. You can use the space bar to toggle playback and arrow keys to scrub.",
+      "buttonStackGroup": "Button stack",
+      "textOnImageGroup": "Text on image",
+      "timelineLandmark": "Timeline",
+      "urlEmbedLandmark": "URL/Embed",
+      "videoPlayerGroup": "Video player. You can use the space bar to toggle playback and arrow keys to scrub.",
+      "bulletedListGroup": "Bulleted list",
+      "checkboxListGroup": "Checkbox list",
+      "imageAndTextGroup": "Image and text",
+      "imageGalleryGroup": "Image gallery",
+      "numberedListGroup": "Numbered list",
+      "flashcardBackLabel": "Flashcard back",
+      "flashcardGridGroup": "Flashcard grid",
+      "nextFlashCardLabel": "Next flashcard",
+      "flashcardFrontLabel": "Flashcard front",
+      "flashcardStackGroup": "Flashcard stack",
+      "knowledgeCheckGroup": "Knowledge check",
+      "hamburgerButtonLabel": "Course Overview Sidebar",
+      "lessonHeaderLandmark": "Lesson Header",
+      "lessonContentLandmark": "Lesson Content",
+      "lessonSidebarLandmark": "Lesson Sidebar",
+      "labeledGraphicLandmark": "Labeled Graphic",
+      "previousFlashCardLabel": "Previous flashcard",
+      "timelineCardGroupPrefix": "Timeline Card",
+      "labeledGraphicBubbleLabel": "Labeled graphic bubble",
+      "labeledGraphicNextMarkerLabel": "Next marker",
+      "labeledGraphicPreviousMarkerLabel": "Previous marker"
+    },
+    "deleted": false,
+    "createdAt": "2019-12-16T01:36:28.758Z",
+    "updatedAt": "2023-09-20T09:37:57.364Z",
+    "iso639Code": "en",
+    "transferredAt": null
+  },
+  "fonts": [
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "assets/rise/fonts/Montserrat-SemiBold.woff",
+      "style": "normal",
+      "weight": "600"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "assets/rise/fonts/Montserrat-Medium.woff",
+      "style": "normal",
+      "weight": "500"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "assets/rise/fonts/Montserrat-Black.woff",
+      "style": "normal",
+      "weight": "900"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "assets/rise/fonts/Montserrat-Bold.woff",
+      "style": "normal",
+      "weight": "700"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "assets/rise/fonts/Montserrat-Italic.woff",
+      "style": "italic",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "assets/rise/fonts/Montserrat-Regular.woff",
+      "style": "normal",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "assets/rise/fonts/Montserrat-Light.woff",
+      "style": "normal",
+      "weight": "300"
+    },
+    {
+      "id": "-MPEM2R_v3eTh0hQInNv-2WAwVwql-Pw",
+      "name": "DM Sans",
+      "default": true,
+      "key": "assets/rise/fonts/DMSans-BoldItalic.woff",
+      "style": "italic",
+      "weight": "700"
+    },
+    {
+      "id": "-MPEM2R_v3eTh0hQInNv-2WAwVwql-Pw",
+      "name": "DM Sans",
+      "default": true,
+      "key": "assets/rise/fonts/DMSans-Bold.woff",
+      "style": "normal",
+      "weight": "700"
+    },
+    {
+      "id": "-MPEM2R_v3eTh0hQInNv-2WAwVwql-Pw",
+      "name": "DM Sans",
+      "default": true,
+      "key": "assets/rise/fonts/DMSans-Italic.woff",
+      "style": "italic",
+      "weight": "400"
+    },
+    {
+      "id": "-MPEM2R_v3eTh0hQInNv-2WAwVwql-Pw",
+      "name": "DM Sans",
+      "default": true,
+      "key": "assets/rise/fonts/DMSans-Regular.woff",
+      "style": "normal",
+      "weight": "400"
+    },
+    {
+      "id": "WcvJTNMavwpiNB2QEnMQPseNDATGXiI9",
+      "name": "Oswald",
+      "default": true,
+      "key": "assets/rise/fonts/Oswald-Bold.woff",
+      "style": "normal",
+      "weight": "700"
+    },
+    {
+      "id": "WcvJTNMavwpiNB2QEnMQPseNDATGXiI9",
+      "name": "Oswald",
+      "default": true,
+      "key": "assets/rise/fonts/Oswald-Regular.woff",
+      "style": "normal",
+      "weight": "400"
+    },
+    {
+      "id": "WcvJTNMavwpiNB2QEnMQPseNDATGXiI9",
+      "name": "Oswald",
+      "default": true,
+      "key": "assets/rise/fonts/Oswald-Light.woff",
+      "style": "normal",
+      "weight": "300"
+    }
+  ],
+  "media": []
+}
