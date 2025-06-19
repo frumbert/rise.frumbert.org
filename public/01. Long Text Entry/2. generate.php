@@ -145,17 +145,36 @@ function showScriptHelp() {
 <tr><td>mediaBelow</td><td>URL or HTML</td><td>URL to image (gif,jpg,png,webp), video (mp4,ogg,mov,webm), audio (mp3,wav), embed or html, shown below question text</td><td>No</td></tr>
 <tr><td>required</td><td>Number</td><td>Number of characters required before allowed to save (default: 1)</td><td>No</td></tr>
 <tr><td>key</td><td>Text</td><td>Salt for hashing functions, normally empty</td><td>No</td></tr>
+<tr><td>placeholder</td><td>Text</td><td>Placeholder for textarea</td><td>No</td></tr>
   </tbody></table>
-  <p>You can change some styling using custom css variables. Paste these into the custom CSS field and modify as required. </p>
+  <p>You can change some styling using custom css variables. Add a <code>:root{ }</code> block in Mighty's CSS editor for the interaction instance, and copy in the variables you wish to override. The full list of variables you can use is:</p>
   <pre>
-  :root {
-    --page: transparent;    // page background color
-    --box: #ffffff;       // box background color
-    --text: #000000;      // text color
-    --edge: #00000040;    // line / shadow color
-    --feedback: #f8f8f0;  // feedback background color
-    --radius: 5px;          // box edge smoothness
-  }
+:root {
+
+  --fb-textentry__page-background: transparent;
+  --fb-textentry__page-text: #000;
+  --fb-textentry__page-font: sans-serif;
+
+  --fb-textentry__container-shadow: 0 .4rem 1.2rem .2rem #0000000d;
+  --fb-textentry__container-border: .1rem solid #ddd;
+  --fb-textentry__container-background: #fff;
+  --fb-textentry__container-radius: 5px;
+
+  --fb-textentry__feedback-background: #f8f8f8;
+  --fb-textentry__feedback-alignment: left;
+  --fb-textentry__feedback-text: #666;
+
+  --fb-textentry__textarea-border: .1rem solid #ddd;
+  --fb-textentry__textarea-background: #fff;
+  --fb-textentry__textarea-resize: none;
+
+  --fb-textentry__button-border: none;
+  --fb-textentry__button-background: lightgrey;
+  --fb-textentry__button-text: #000;
+  --fb-textentry__button-radius: 2rem;
+  --fb-textentry__button-padding: .75rem 3rem;
+
+}
   </pre>
 HTML;
 }
