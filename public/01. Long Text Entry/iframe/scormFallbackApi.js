@@ -36,6 +36,7 @@ const maxDepth = 8;
 function findScorm2004API(win = window) {
     let frameElement = win;
     let attempts = 0;
+    try {
     while (!api && attempts < maxDepth) {
         attempts++;
         if (frameElement.API_1484_11) {
@@ -46,12 +47,16 @@ function findScorm2004API(win = window) {
         }
         frameElement = frameElement.parent;
     }
+    } catch (err) {
+      console.warn('Failed to find Scorm 2004 window', err);
+    }
     return false;
 }
 
 function findScorm12API(win = window) {
     let frameElement = win;
     let attempts = 0;
+    try {
     while (!api && attempts < maxDepth) {
         attempts++;
         if (frameElement.API) {
@@ -61,6 +66,9 @@ function findScorm12API(win = window) {
             break;
         }
         frameElement = frameElement.parent;
+    }
+    } catch (ex) {
+      console.warn('Failed to find Scorm 1.2 window', err);
     }
     return false;
 }
