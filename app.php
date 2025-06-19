@@ -179,23 +179,24 @@ class Website {
       // get the page content
       $ext = pathinfo($page, PATHINFO_EXTENSION);
       switch ($ext) {
-        case "md":
+        case "md": // markdown is rendered as html
           $parser = new Parsedown([
             "linkPrefix" => '/' . $path // account for locally pathed resources like images and file links in the current folder
           ]);
           $parser->setSafeMode(false);
           $article = $parser->text(file_get_contents($page));
           break;
-        case "txt":
+        case "txt": // text stays text
           $article = Wrap(file_get_contents($page), 'p');
           break;
-        case "php":
+        case "php": // php is executed
           ob_start();
+          $AbsolutePath = "/$path"; // e.g. /01. Long Text Entry/ - used for file reference links
           include($page);
           $article = ob_get_contents();
           ob_end_clean();
           break;          
-        default:
+        default: // html is loaded and references to absolute paths are added (be careful)
           $article = file_get_contents($page);
           $article = str_replace(['="./',"='./"],['="/'.$path,"='/".$path],$article);
       }
