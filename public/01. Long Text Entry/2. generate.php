@@ -10,7 +10,6 @@ switch ($route) {
 }
 
 function showInstructions($AbsolutePath) {
-  echo "AbsolutePath=$AbsolutePath";
   echo <<<HTML
   <h2>Where to get everything you need.</h2>
   <p>Other than Articulate Rise with Mighty, You need to do three things to make this work:</p>
