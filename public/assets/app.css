@@ -14,6 +14,8 @@
   --shadow-margin: var(--gap);
   --shadow-width: calc(var(--gap) * 3); 
 
+  --header-flex: row;
+
 }
 
 * { box-sizing: border-box;}
@@ -22,6 +24,13 @@
   :root {
     --width: 100%;
   }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-flex: column;
+  }
+  header > nav { margin: 0 0 .5rem 0 !important }
 }
 
 body {
@@ -44,7 +53,7 @@ body {
 
 header {
   display: flex;
-  flex-direction: row;
+  flex-direction: var(--header-flex);
   align-items: center;
   justify-content: space-around;
   position: relative;
