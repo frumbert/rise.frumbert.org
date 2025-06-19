@@ -6,16 +6,17 @@ $route = $Action->Args()[2] ?? '';
 switch ($route) {
   case "new": showTokenForm(); break;
   case "edit": editTokenForm(); break;
-  default: showInstructions();
+  default: showInstructions($AbsolutePath);
 }
 
-function showInstructions() {
+function showInstructions($AbsolutePath) {
+  echo "AbsolutePath=$AbsolutePath";
   echo <<<HTML
   <h2>Where to get everything you need.</h2>
   <p>Other than Articulate Rise with Mighty, You need to do three things to make this work:</p>
   <ol>
     <li><a href="/article/long-text-entry/2/new/">Generate a new token</a>, which authorizes data and ensures it only comes from your domains.</li>
-    <li><a href="/assets/iframe.zip" download>Download the latest ZIP</a>, which is the interaction that you will add to Rise. All the source code is in the zip - it's not compressed or minified so feel free to poke around or make your own modifications.</li>
+    <li><a href="{$AbsolutePath}iframe/Archive.zip" download>Download the latest ZIP</a>, which is the interaction that you will add to Rise. All the source code is in the zip - it's not compressed or minified so feel free to poke around or make your own modifications.</li>
     <li>Drop in the <code>Initialisation Script</code> into Mighty. You'll get this after you generate a token, and it lets you set options and customise the appearance.</li>
   </ol>
   <p>You can <b>reuse the same token</b> across multiple interactions or even courses - it's just used to validate the domains that can read/store data. Most of the time you'll probably only need one token.</p>
@@ -45,11 +46,10 @@ function showTokenForm() {
       "password" => base64_encode(password_hash($pw, PASSWORD_BCRYPT)),
     ];
 
-    $storage = new S3Storage();
-    if ($storage->write("tokens/{$token}.json", json_encode($data, JSON_PRETTY_PRINT))) {
+    if (StorageIO::Write("tokens/{$token}.json", json_encode($data, JSON_PRETTY_PRINT))) {
 
       echo "<h2>Token Created</h2><p><b>Token:</b> <code>$token</code></p>";
-      echo "<p>Add this to the Mighty <em>Interactive HTML</em> custom javascript field:</p><pre>window.riseSCORMBridgeConfig = {\n  token: \"$token\"\nquestion: \"Ask your question here...\"\n};\n</pre>";
+      echo "<p>Add this to the Mighty <em>Interactive HTML</em> custom javascript field:</p><pre>window.riseSCORMBridgeConfig = {\n  token: \"$token\",\n question: \"Ask your question here...\"\n};\n</pre>";
       showScriptHelp();
 
     } else {
@@ -83,12 +83,11 @@ function editTokenForm() {
     $token = $_POST['token'];
     $token_valid = (preg_match('/^[a-f0-9]{32}$/i', $token) === 1);
     $password = $_POST['password'];
-    $storage = new S3Storage();
 
     if (!$token_valid) {
       echo "<h2>Token format not accepted</h2>";
     } else {
-      $file = $storage->read("tokens/$token.json");
+      $file = StorageIO::Read("tokens/$token.json");
       if ($file === null) {
         echo "<h2>Missing required details</h2>";
       } else if ($file === false) {
@@ -97,7 +96,7 @@ function editTokenForm() {
         $data = json_decode($file);
         if (isset($data->password) && password_verify($password, base64_decode($data->password))) {
           $data->allowed_domains = $domains;
-          if ($storage->write("tokens/{$token}.json", json_encode($data, JSON_PRETTY_PRINT))) {
+          if (StorageIO::Write("tokens/{$token}.json", json_encode($data, JSON_PRETTY_PRINT))) {
             echo "<h2>Token updated</h2><p>Domains now include:</p><pre>";
             echo implode(PHP_EOL, $domains);
             echo "</pre>";
