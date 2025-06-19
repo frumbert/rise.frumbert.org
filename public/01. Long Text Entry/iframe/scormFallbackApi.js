@@ -67,7 +67,7 @@ function findScorm12API(win = window) {
         }
         frameElement = frameElement.parent;
     }
-    } catch (ex) {
+    } catch (err) {
       console.warn('Failed to find Scorm 1.2 window', err);
     }
     return false;
