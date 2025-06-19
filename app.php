@@ -194,9 +194,10 @@ class Website {
           include($page);
           $article = ob_get_contents();
           ob_end_clean();
-          break;
+          break;          
         default:
           $article = file_get_contents($page);
+          $article = str_replace(['="./',"='./"],['="/'.$path,"='/".$path],$article);
       }
 
       // load page-local resources
@@ -251,6 +252,29 @@ class Website {
   }
 }
 
+// just abstracting storage read/write in case we want to swap it out at some point
+// StorageIO::Read(filename)
+class StorageIO {
+  private static $storage;
+  protected function __construct() {}
+  protected function __clone() {}
+  public static function Init() {
+    self::$storage = new S3Storage();
+  }
+  public static function Write($filename, $contents) {
+    if (!isset(self::$storage)) self::Init();
+    return self::$storage->write($filename, $contents);
+  }
+  public static function Read($filename, $default = null) {
+    if (!isset(self::$storage)) self::Init();
+    $contents = self::$storage->read($filename);
+    if (!is_null($default) && ($contents===null||$contents===false)) {
+      return $default;
+    }
+    return $contents;
+  }
+}
+
 // $security = new TokenValidator();
 //if (!$security->CheckToken()) {
 //  http_status_code(403);
@@ -261,10 +285,8 @@ class TokenValidator {
   private bool $valid = false;
   private string $reason = "";
   private string $token = "";
-  private $storage;
 
   public function __construct() {
-    $this->storage = new S3Storage();
     $auth = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
     $this->valid = false;
     $this->reason = "Invalid token (auth = $auth)";
@@ -283,7 +305,7 @@ class TokenValidator {
     if (!$this->valid) {
       return false;
     }
-    $file = $this->storage->read("tokens/$this->token.json");
+    $file = StorageIO::Read("tokens/$this->token.json");
     if ($file === null) {
       $this->reason = "Missing";
       $this->valid = false;
