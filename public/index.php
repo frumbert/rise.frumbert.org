@@ -75,7 +75,7 @@ function handleGenerate() {
   $security = new TokenValidator();
   if (!$security->CheckToken()) {
     http_response_code(403);
-    echo $security->Reason();
+    echo $security->Reason();;
     exit;
   }
 
@@ -93,16 +93,16 @@ function handleGenerate() {
 
   $hashInput = $course . "|" . $learner . "|" . $interaction . "|" . $key;
   $hash = substr(hash('sha256', $hashInput), 0, 32); // safe hash
-  $filename = DATA_DIR . "/{$hash}.html";
+  $filename ="data/{$hash}.html";
 
   $html = "<!DOCTYPE html><html><head><meta charset='UTF-8'>";
   $html .= "<style>body{font-family:sans-serif;}header{font-style:italic}</style>";
   $html .= "</head><body><header>" . Wrap($question) . "</header>";
   $html .= "<main>" . Wrap($content) . "</main>";
-  file_put_contents($filename, $html . "</body></html>");
+  StorageIO::Write($filename, $html . "</body></html>");
 
   header('Content-Type: application/json');
-  echo json_encode(["url" => BASE_URL . "{$hash}.html"]);
+  echo json_encode(["url" => BASE_URL . "/{$hash}.html"]);
 }
 
 // === Lookup entry ===
@@ -126,13 +126,9 @@ function handleView() {
 
   $hashInput = $course . "|" . $learner . "|" . $interaction . "|" . $key;
   $hash = substr(hash('sha256', $hashInput), 0, 32); // safe hash
-  $filename = DATA_DIR . "/{$hash}.html";
+  $filename = "data/$hash.html";
 
-  $content = '';
   http_response_code(200);
   header('Content-Type: text/html');
-  if (file_exists($filename)) {
-    $content = file_get_contents($filename);
-  }
-  echo $content;
+  echo StorageIO::Read($filename, '');
 }
