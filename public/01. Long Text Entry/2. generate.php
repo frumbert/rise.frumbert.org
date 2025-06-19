@@ -5,8 +5,13 @@ global $Action; // because we are an include, it's in the parent scope
 $route = $Action->Args()[2] ?? '';
 switch ($route) {
   case "new": showTokenForm(); break;
-  case "edit": editTokenForm(); break;
+  case "edit": editTokenForm(); showBackButton(); break;
+  case "help": showScriptHelp(); showBackButton(); break;
   default: showInstructions($AbsolutePath);
+}
+
+function showBackButton() {
+  echo "<p><a href='/article/long-text-entry/2/'>Back</a>";
 }
 
 function showInstructions($AbsolutePath) {
@@ -20,7 +25,7 @@ function showInstructions($AbsolutePath) {
   </ol>
   <p>You can <b>reuse the same token</b> across multiple interactions or even courses - it's just used to validate the domains that can read/store data. Most of the time you'll probably only need one token.</p>
   <p>You might also like to <a href='/article/long-text-entry/2/edit/'>edit an existing token</a>, to modify the domains (if you remember the password). If you can't remember the password, you can't edit.</li>
-
+  <p><a href='/article/long-text-entry/2/help/'>Script options/documentation</a>.</p>
   <h3>Under the hood</h3>
   <p>Tokens and user data is stored on a private, encrypted S3 Bucket, which needs a specific API key and whole rigmarole to get access to. In my implementation, I set up an Amazon IAM user and policy to handle everything If you choose to host your own server to store your data and want a simple reference implementation as a starting point, check out <a href="/article/long-text-entry/3/">Part 3</a> of this series.</p>
 HTML;
@@ -131,7 +136,12 @@ HTML;
 
 function showScriptHelp() {
   echo <<<HTML
-  <code>window.riseSCORMBridgeConfig = {}</code> has these settable properties. They are case sensitive.
+  <p>The Javascript to initialise the frame has many optional settable properties.</p>
+  <code><pre>
+  window.riseSCORMBridgeConfig = {
+    token: (your-token-code)
+  }</pre></code>
+  <p>Note: Properties are case sensitive - ensure they added exactly as shown.</p>
   <table><thead>
     <tr><th>Property</th><th>Type</th><th>Meaning</th><th>Required?</th></tr>
   </thead><tbody>
@@ -139,12 +149,12 @@ function showScriptHelp() {
 <tr><td>question</td><td>Text/HTML</td><td>Question to show (html ok)</td><td>No, Recommended</td></tr>
 <tr><td>feedback</td><td>Text/HTML</td><td>Feedback to show after submission (html ok)</td><td>No</td></tr>
 <tr><td>serverBase</td><td>URL</td><td>Defaults to https://rise.frumbert.org, for self-hosted solutions (<a href="https://github.com/frumbert/rise.frumbert.org">documentation</a>)</td><td>No</td></tr>
-<tr><td>interactionId</td><td>Text</td></td><td>Scorm interaction id, if empty built from question text or url</td><td>No</td></tr>
+<tr><td>interactionId</td><td>Text</td></td><td>Scorm interaction id. If omitted, this is built from question text or url</td><td>No</td></tr>
 <tr><td>mediaAbove</td><td>URL or HTML</td><td>URL to image (gif,jpg,png,webp), video (mp4,ogg,mov,webm), audio (mp3,wav), embed or html, shown above question text</td><td>No</td></tr>
 <tr><td>mediaBelow</td><td>URL or HTML</td><td>URL to image (gif,jpg,png,webp), video (mp4,ogg,mov,webm), audio (mp3,wav), embed or html, shown below question text</td><td>No</td></tr>
 <tr><td>required</td><td>Number</td><td>Number of characters required before allowed to save (default: 1)</td><td>No</td></tr>
 <tr><td>key</td><td>Text</td><td>Salt for hashing functions, normally empty</td><td>No</td></tr>
-<tr><td>placeholder</td><td>Text</td><td>Placeholder for textarea</td><td>No</td></tr>
+<tr><td>placeholder</td><td>Text</td><td>Placeholder text for textarea</td><td>No</td></tr>
   </tbody></table>
   <p>You can change some styling using custom css variables. Add a <code>:root{ }</code> block in Mighty's CSS editor for the interaction instance, and copy in the variables you wish to override. The full list of variables you can use is:</p>
   <pre>
