@@ -75,9 +75,7 @@ function updateServerBase(url) {
 }
 
 function getBlockScopedInteractionId(baseId = "notes") {
-  const hash = location.href.split("#")[1] || "";
-  const suffix = hash.replace(/[^\w]/g, "-").substring(0, 50);
-  // in Rise this will look like -lessons-gJtPxWyYT-IY7c7uKRitatRbMsKrYCBZ
+  const suffix = decodeURIComponent(location.href.toLowerCase()).replace(/[^\w]/g, "").slice(0,240 - baseId.length);
   return `${baseId}-${suffix}`;
 }
 
@@ -94,10 +92,12 @@ function toPascalCase(text) {
 
 function resolveInteractionId() {
   const cfg = window.riseSCORMBridgeConfig || {};
-  if (cfg.interactionId) return cfg.interactionId;
-  if (cfg.questionText) {
+  if (cfg.interactionId) {
+    return cfg.interactionId;
+  }
+  if (questionText.length) {
     const span = document.createElement('span');
-    span.innerHTML = cfg.questionText; 
+    span.innerHTML = questionText; 
     const text = toPascalCase(span.textContent).slice(0, 255);
     return text;
   }
