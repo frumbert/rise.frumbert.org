@@ -1,6 +1,8 @@
 function setupCodeClipboard() {
-  document.addEventListener('DOMContentLoaded', () => {
+  // console.log('setupCodeClipboard');
+  // document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('pre > code').forEach(codeBlock => {
+      // console.log('hljs on pre', codeBlock);
       const pre = codeBlock.parentNode;
 
       // Wrap <pre> in a container div
@@ -59,7 +61,7 @@ function setupCodeClipboard() {
         setTimeout(() => (button.textContent = original), 2000);
       }
     });
-  });
+ // });
 }
 
 function checkOverflow() {
@@ -71,8 +73,9 @@ function checkOverflow() {
 function addFontSizeAdjustment() {
   const cachedSize = localStorage.getItem('--font-size');
   if (cachedSize) document.documentElement.style.setProperty('--font-size', cachedSize + 'px');
-  document.querySelector('header').insertAdjacentHTML('beforeend', `<div class='font-size-adjust'><a href='#1'>A+</a><a href='#-1'>A-</a></div>`);
-  document.querySelector('.font-size-adjust').addEventListener('click', (event) => {
+  const ul = document.querySelector('body>nav>ul:last-of-type');
+  ul.classList.add('font-size-adjust');
+  ul.addEventListener('click', (event) => {
     event.preventDefault();
     AddFontSize(~~event.target.href.split('#')[1]);
   })

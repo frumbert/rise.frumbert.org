@@ -1,0 +1,128 @@
+:root {
+	--text-fg: #222;
+	--text-size: 20px;
+	--button-bg: #31b7f9;
+	--button-bg-alpha-10: rgba(49, 183, 249, .1);
+	--button-bg-alpha-50: rgba(49, 183, 249, .5);
+	--button-bg-light: #a6dffc;
+	--body-bg: #f8f8f8;
+}
+
+.boxes {
+	box-shadow: 0 0 2rem rgba(0,0,0,.1);
+	border-radius: .25rem;
+}
+.boxes > div {
+	background-color: white;
+	border: 1px solid rgba(0,0,0,.125);
+	margin-bottom: -1px;
+	min-height: 3rem;
+}
+.boxes > div:first-of-type {
+	border-radius: .25rem .25rem 0 0;
+}
+.boxes > div:last-of-type {
+	border-radius: 0 0 .25rem .25rem;
+	margin-bottom: 0;
+}
+.boxes > div > span {
+	padding: .75rem 1.25rem;
+	display: block;
+}
+.boxes > div > img {
+	width: 100%;
+	object-fit: contain;
+	display: block; /* important to prevent bottom margin, vertical-align: top; also works */
+	text-align: left;
+}
+
+#connectors {
+	position: relative;
+}
+#connectors .hint {
+	position: absolute;
+	width: 1rem;
+	height: 1rem;
+	z-index: 1;
+}
+.hint::before {
+	position: absolute;
+	content: '';
+	display: block;
+	left: .4rem;
+	top: .4rem;
+	background-color: var(--button-bg-light);
+	border-radius: 50px;
+	width: .2rem;
+	height: .2rem;
+}
+.hint::after {
+	position: absolute;
+	border-radius: 100rem;
+    content: '';
+    border: 1px solid var(--button-bg-light);
+    width: 1rem;
+    height: 1rem;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    display: block;
+    opacity: 1;
+}
+#connectors .connector {
+	position: absolute;
+	background-color: var(--button-bg);
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50px;
+}
+#connectors .connector.start {
+	background-color: var(--button-bg-light);
+	z-index: 2;
+}
+#connectors .connector.end {
+	/* left: .25rem; */
+	z-index: 3;
+}
+#line-wrapper {
+	width: 0;
+	height: 0;
+	position: relative;
+}
+#connectors.drop-hint .active-snap::after {
+  background-color: var(--button-bg-light);
+	animation: puddle .4s ease infinite !important;
+}
+#connectors.drop-hint .hint::after {
+	animation: puddle 2s ease infinite;
+}
+
+@keyframes puddle {
+	100% {
+		transform: scale(3);
+		opacity: 0;
+	}
+}
+
+.check {
+	margin: 1rem 0;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	:root {
+		--text-size: 16px;
+	}
+	body { margin-left: 0; }
+	body > img { display: none; }
+}
+
+@media screen and (max-width: 1024px) {
+	:root {
+		--text-size: 16px;
+	}
+	body { margin-left: 8rem; }
+	body > img { width: 8rem; }
+}
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Multiple Choice Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.0/style.css">
+</head>
+<body class="interaction binary">
+  <main>
+    <label id="question"></label>
+    <section class="flex-column-wide">
+      <label class="checkbox-label">
+        <input type="checkbox" name="answer">
+        <span class="control"></span>
+        <span>Loading ...</span>
+      </label>
+    </section>
+    <button id="save">💾 Save</button>
+    <output id="feedback" aria-live="polite"></output>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: "Which of these items are laws of thermodynamics:",
+    mediaAbove: "https://placehold.co/400x100/skyblue/white/webp/?text=Is+it+cold+in+here?.png",
+    distractors: {
+      order: "random",
+      items: [
+        { "a": "The zeroth law of thermodynamics states that if two systems are in thermal equilibrium with a third system, they are not necessarily in equilibrium with each other."},
+        { "b": "The first law of thermodynamics states that energy cannot be created or destroyed, only transformed from one form to another."},
+        { "c": "The second law of thermodynamics states that entropy in an isolated system always decreases over time."},
+        { "d": {
+            text: "The third law of thermodynamics implies that it is impossible to reach absolute zero temperature in a finite number of steps.",
+            }},
+        { "e": "The laws of thermodynamics apply to everything from engines to black holes."}
+      ]
+    },
+    correct: "b,d,e",
+    feedback: {
+      correct: "That is the correct answer.",
+      incorrect: "Sorry"
+    }
+  }
+  </script>
+</body>
+</html>

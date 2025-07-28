@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  class CountdownTimer {
+    constructor(options = {}) {
+      const {
+        start = "60",
+        end = () => {},
+        tick = () => {}
+      } = options;
+
+      this.totalSeconds = CountdownTimer.parseTime(start);
+      this.remaining = this.totalSeconds;
+      this.onEnd = end;
+      this.onTick = tick;
+      this.interval = null;
+    }
+
+    static parseTime(str) {
+      const parts = str.split(':').map(Number).reverse();
+      let seconds = 0;
+      if (parts[0]) seconds += parts[0];
+      if (parts[1]) seconds += parts[1] * 60;
+      if (parts[2]) seconds += parts[2] * 3600;
+      return seconds;
+    }
+
+    start() {
+      if (this.interval) return;
+      this.interval = setInterval(() => {
+        this.remaining--;
+        if (typeof this.onTick === 'function' && this.remaining > -1) {
+          this.onTick(this.remaining, (this.remaining/this.totalSeconds)*100, this.getTime() );
+        }
+        if (this.remaining <= 0) {
+          if (typeof this.onEnd === 'function') this.onEnd();
+          this.stop();
+        }
+      }, 1000);
+    }
+
+    stop() {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
+
+    reset() {
+      this.stop();
+      this.remaining = this.totalSeconds;
+    }
+
+    getTime() {
+      let s = this.remaining;
+      const hours = Math.floor(s / 3600);
+      s %= 3600;
+      const minutes = Math.floor(s / 60);
+      const seconds = s % 60;
+      if (hours > 0) {
+        return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      } else {
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+      }
+    }
+
+  }
+</script>
+<style>
+#source-element {
+  display: none;
+}
+
+#puzzle-container {
+  --cols: 4;
+  --rows: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  aspect-ratio: 16 / 9;
+  width: 80vw;
+  max-width: 100vw;
+  position: relative;
+  margin: auto;
+  background: black;
+  box-shadow: 0 0 1rem #00000040;
+  transition: gap 1s ease;
+  gap: 1rem;
+  &.done { 
+    gap: 0;
+  }
+}
+
+.puzzle-piece {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  cursor: grab;
+}
+
+.puzzle-piece > * {
+  position: absolute;
+  width: calc(var(--cols) * 100%);
+  height: calc(var(--rows) * 100%);
+  top: calc(-1 * var(--row) * 100%);
+  left: calc(-1 * var(--col) * 100%);
+  object-fit: cover;
+  pointer-events: none;
+  clip-path: var(--clip);
+}
+
+#puzzle-container.dragging > *:not(.sortable-swap-highlight) {
+  filter:grayscale(.5);
+}
+
+.graph { width: 80vw; max-width: 100vw; display: flex; gap: 1rem; margin: 1rem auto; align-items: center; }
+.graph meter { flex: 1; }
+.graph button { display: none; }
+
+meter::-webkit-meter-optimum-value, meter::-webkit-meter-suboptimum-value, meter::-webkit-meter-even-less-good-value {
+    transition: .5s width;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="puzzle-container" data-tiles="4x3" data-src="#source-element" data-timer="2:00"></div>
+<div class="graph"><label for="remaining"></label><meter id="remaining" min="0" max="100" low="10" high="50" optimum="90" value="0"></meter><button></button></div>
+
+<video id="source-element" src="1720220-480p_25fps.mp4" muted loop playsinline></video>
+
+<script type="module">
+import { Sortable, Swap } from 'https://cdn.jsdelivr.net/npm/sortablejs/modular/sortable.core.esm.js';
+Sortable.mount(new Swap());
+
+let started = false;
+let timerFn = undefined;
+let sortable = undefined;
+
+const text = {
+  waiting: '⋯',
+  fail:    '❌',
+  win:     '✅',
+  running: '⏰',
+  reset:   '🔄'
+}
+
+const container = document.getElementById('puzzle-container');
+const source = document.querySelector(container.dataset.src);
+const [cols, rows] = container.dataset.tiles.split('x').map(Number);
+const remaining = document.querySelector('.graph>label');
+const meter = document.querySelector('.graph>meter');
+const reset = document.querySelector('.graph>button');
+
+container.style.setProperty('--cols', cols);
+container.style.setProperty('--rows', rows);
+
+remaining.textContent = text.waiting;
+reset.textContent = text.reset;
+
+const pieces = [];
+
+reset.addEventListener('click',() => {
+  reset.style.display = "none";
+  if (timerFn) timerFn.reset();
+  started = false;
+  meter.value = "100";
+  sortable.option("disabled",false);
+  remaining.textContent = text.waiting;
+  reShuffle();
+})
+
+for (let row = 0; row < rows; row++) {
+  for (let col = 0; col < cols; col++) {
+    const piece = document.createElement('div');
+    piece.className = 'puzzle-piece';
+    piece.dataset.key = row * cols + col;
+
+    const x1 = (col / cols) * 100;
+    const y1 = (row / rows) * 100;
+    const x2 = ((col + 1) / cols) * 100;
+    const y2 = ((row + 1) / rows) * 100;
+    const clip = `polygon(${x1}% ${y1}%, ${x2}% ${y1}%, ${x2}% ${y2}%, ${x1}% ${y2}%)`;
+
+    let content;
+    const tag = source.tagName.toLowerCase();
+
+    if (tag === 'video') {
+      content = document.createElement('video');
+      content.src = source.currentSrc || source.src;
+      content.autoplay = true;
+      content.muted = true;
+      content.loop = true;
+      content.playsInline = true;
+    } else if (tag === 'img') {
+      content = document.createElement('img');
+      content.src = source.currentSrc || source.src;
+    } else {
+      content = source.cloneNode(true);
+      content.removeAttribute('id');
+    }
+
+    content.style.setProperty('--row', row);
+    content.style.setProperty('--col', col);
+    content.style.setProperty('--clip', clip);
+
+    piece.appendChild(content);
+    pieces.push(piece);
+  }
+}
+// source.remove();
+reShuffle();
+
+sortable = Sortable.create(container, {
+  swap: true,
+  animation: 150,
+  swapClass: "sortable-swap-highlight",
+  onStart: (evt) => {
+    if (!started) start();
+    container.classList.add('dragging');
+  },
+  onEnd: () => {
+    container.classList.remove('dragging');
+    checkPuzzle(container);
+  }
+});
+
+function start() {
+  started = true;
+  timerFn = new CountdownTimer({
+    start: container.dataset.timer,
+    end: () => {
+      remaining.textContent = text.fail;
+      sortable.option("disabled",true);
+      showReset();
+    },
+    tick: (seconds,percentage,readable) => {
+      meter.value = percentage;
+    }
+  });
+  remaining.textContent = text.running;
+  timerFn.start();
+  reSyncVideo();
+};
+
+function checkPuzzle(el) {
+  const solved = [...el.children].every((child, i) =>
+    parseInt(child.dataset.key, 10) === i
+  );
+  if (solved) {
+    el.classList.add('done');
+    remaining.textContent = text.win;
+    sortable.option("disabled",true);
+    timerFn.stop();
+    reSyncVideo();
+  }
+}
+
+function showReset() {
+  reset.style.display = "block";
+}
+
+function reSyncVideo() {
+  Array.from(container.querySelectorAll('video')).forEach(v=>{ v.currentTime=0;});
+}
+
+function reShuffle() {
+  pieces.sort(() => Math.random() - 0.5).forEach(p => container.appendChild(p));
+}
+
+</script>
+
+</body>
+</html>

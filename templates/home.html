@@ -9,15 +9,41 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/app.css"></link>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥔</text></svg>">
   {{styles}}
 </head>
-<body class="home">
-  <header>
-    <h1>rise.frumbert.org</h1>
-    <nav>{{navbar}}</nav>
-  </header>
-  <main>{{article}}</main>
-  <footer>{{footer}}</footer>
+<body>
+  <nav class='site-nav'>
+    <ul>
+    <li title='frumbert.org'><img src="/assets/logo.svg" alt='frumbert logo'></li>
+    <li>Interactions for Rise</li>
+    </ul>
+
+    <ul>
+    <li><a href="/">home</a></li>
+    <!--li><a href="/home/about">about</a></li>
+    <li><a href="/home/pricing">pricing</a></li-->
+    </ul>
+
+    <ul>
+    <li><a href='#1'>A+</a></li>
+    <li><a href='#-1'>A-</a></li>
+    </ul>
+  </nav>
+
+  <main class='page-wrapper home'>
+
+    <section class='home-header'>
+    {{article}}
+    </section>
+
+    <section class='tile-grid'>
+    {{navtiles}}
+    </section>
+
+    <footer>{{footer}}</footer>
+    </main>
+
   <script type="module" src="/assets/app.js"></script>
   {{scripts}}
 </body>

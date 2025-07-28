@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Reorder list Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.0/style.css">
+</head>
+<body class="interaction binary">
+  <main>
+    <label id="question"></label>
+    <section class="flex-column-wide boxes">
+      <label class="draggable-label">
+        <input type="hidden" name="answer">
+        <span class="control"></span>
+        <span>Loading ...</span>
+      </label>
+    </section>
+    <button id="save">💾 Save</button>
+    <output id="feedback" aria-live="polite"></output>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: "Drag the list below into the correct order.",
+    distractors: {
+      order: "random",
+      items: [
+        { "a": "always"},
+        { "b": "bring"},
+        { "c": {text:"chocolate",mediaBelow:"https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hvY29sYXRlfGVufDB8fDB8fHwwz=.jpg"}},
+        { "d": {text:"during"}},
+        { "e": "every" },
+        { "f": "fun" },
+        { "g": "gathering" }
+      ]
+    },
+    correct: "a,b,c,d,e,f,g",
+    feedback: {
+      correct: "✅ Behold, an alphabeticist",
+      incorrect: "❌ step back and have a think; perhaps read it aloud"
+    },
+  }
+  </script>
+</body>
+</html>

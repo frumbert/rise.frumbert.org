@@ -54,6 +54,7 @@ class Website {
   private array $extraScripts = [];
   private array $inlineScripts = [];
   private array $arguments = [];
+  private array $allPages = [];
 
   public function __construct($self, array $args = []) {
     $this->arguments = $args;
@@ -65,16 +66,17 @@ class Website {
     * this crazy logic
     * - ignores folder names that don't match a pattern (so I can store other things in folders that aren't navigation)
     * - have numbered folders to control the order of top-level menu items (based on the folder name)
-    * - filter to folders that contain either a .txt, .md or .html file and ignore others
+    * - filter to folders that contain either a .txt, .md, .php or .html file and ignore others
     * - find either the first page or requested page (sub-pages have the same top-level title but a different page argument in the route)
     */
     $root = dirname($self);
-    $grouped = [];
+    // $grouped = [];
     $subfiles = glob($root . '/*/*.{txt,md,html,php}', \GLOB_BRACE);
     sort($subfiles, SORT_NATURAL | SORT_FLAG_CASE);
     $allFiles = array_filter($subfiles, function($file) {
       return is_file($file) && basename($file)[0] !== '.';
     });
+
     foreach ($allFiles as $file) {
       $parts = explode('/', $file);
       $folderParts = array_slice($parts, -2, 1); // grab the second-to-last part (folder name)
@@ -82,11 +84,11 @@ class Website {
       $parentPath = dirname($file);
       // Only include folders that match the /^\d{2,}\.\s*/ pattern - "01. Some Title"
       if (preg_match('/^\d{2,}\.\s+/', $parentFolder)) {
-          $grouped[$parentPath][] = $file;
+        $this->allPages[$parentPath][] = $file;
       }
     }
     $firstFiles = [];
-    foreach ($grouped as $filesInFolder) {
+    foreach ($this->allPages as $filesInFolder) {
         sort($filesInFolder, SORT_NATURAL | SORT_FLAG_CASE);
         $chosen = null;
         if ($preferredPrefix !== null) {
@@ -147,6 +149,61 @@ class Website {
     }
   }
 
+  public function FindOther($slug) {
+    $slug = preg_replace('/\-/', ' ', $slug);
+    foreach ($this->allPages as $page) {
+      $matches = preg_grep('/\/(?!\d{2,}\.\s*)' . $slug . '/i', $page);
+      if (!empty($matches)) {
+        return $page;
+      }
+    }
+    return false;
+  }
+
+  private function _ReplaceModifiers($content, $location, $page_title) {
+    $dir = pathinfo($location, PATHINFO_DIRNAME);
+    preg_match_all('/\{\{(\w+)\:\:([^\}]+)\}\}/', $content, $matches, PREG_SET_ORDER);
+    $replacements = [];
+    foreach ($matches as $match) {
+      $full = $match[0];
+      $key = $match[1];
+      $value = $match[2];
+      switch ($key) {
+        case "session":
+          $token = empty($_SESSION[$value]) ? "da5399da5a1a97bf437b6e38dba38db5" : $_SESSION[$value];
+          $replacements[$full] = $token;
+          break;
+        case "embed":
+          switch ($value) {
+            case "iframe":
+              if (file_exists($dir.'/iframe')) {
+                $replacements[$full] = '<iframe src="/'.$dir.'/iframe/" style="width:100%;min-height:500px;resize:vertical;border-radius:10px;" allowtransparency></iframe>';
+              }
+              break;
+            case "example":
+              if (file_exists($dir.'/example')) {
+                $replacements[$full] = '<iframe src="/'.$dir.'/example/" style="width:100%;min-height:600px;resize:vertical;border:none" allowtransparency></iframe>';
+              }
+              break;
+          }
+          break;
+        case "download":
+          switch($value) {
+            case "interaction":
+              $replacements[$full] = '<a download="'. $page_title . '.zip" href="/dl/' . base64_encode($dir . "/iframe") . '" class="download-button">⤵️ Download interaction</a>';
+            break;
+            case "example":
+              $replacements[$full] = '<a download="'. $page_title . '.zip" href="/dl/' . base64_encode($dir . "/example") . '" class="download-button">⤵️ Download example</a>';
+            break;
+          }
+      }
+    }
+    if (!empty($replacements)) {
+        $content = str_replace(array_keys($replacements), array_values($replacements), $content);
+    }
+    return $content;
+  }
+
   // figure out everything needed by the page (kinda the Model)
   public function Prepare(array $arguments = []) {
     $template = "";
@@ -156,17 +213,23 @@ class Website {
     $footer = "";
     $styles = "";
     $scripts = "";
+    $tiles = "";
+    $tabs = "";
+    $breadcrumb = "";
 
     if ($this->current_page > -1) {
       $page = $this->pages[$this->current_page];
 
       $path = substr($page, 0, strpos($page, '/') + 1);
       $matches = preg_grep('/^\d{2,}\.\s/', $this->pages);
-
       // build the navigation bar
       foreach ($matches as $nav) {
         if (preg_match('/^\d+\.\s([^\/]+)/', $nav, $found)) {
           $navbar .= '<a href="/article/' . str_replace(' ', '-', strtolower($found[1])) . '/1">' . $found[1] . '</a>';
+          $thumb = '/' . rawurlencode(explode('/', $nav, 2)[0]) . '/thumb.jpg';
+          if ($found[1]!=='Home') {
+            $tiles .= '<a class="tile" href="/article/' . str_replace(' ', '-', strtolower($found[1])) . '/1"><figure><img src="' . $thumb . '"><figcaption>' . $found[1] . '</figcaption></figure></a>';
+          }
         }
       }
       $navbar = str_replace('/article/home/1', '/', $navbar); // home is a special case
@@ -201,6 +264,8 @@ class Website {
           $article = str_replace(['="./',"='./"],['="/'.$path,"='/".$path],$article);
       }
 
+      $article = $this->_ReplaceModifiers($article, $page, $page_title);
+
       // load page-local resources
       foreach(glob($path . '*.css') as $file) { // css files inside the matched folder
         $styles .= "<link rel='stylesheet' href='/" . $file . "'>";
@@ -223,14 +288,26 @@ class Website {
 
       // if there are multiple matching compatible content scripts in this folder, create pagination to link to these via arguments.
       $current_slug = str_replace(' ','-', strtolower($page_title));
-      $subfiles = glob($path . '/*.{txt,md,html,php}', \GLOB_BRACE); // naturally alpha-indexed
+      $subfiles = glob($path . '*.{txt,md,html,php}', \GLOB_BRACE); // ordering on glob is *usually* alpha but maybe not depending on os
+      sort($subfiles, SORT_NATURAL | SORT_FLAG_CASE); // so now it's alpha sorted
+
       if (count($subfiles) > 1) {
+        $footer .= 'Page: ';
         foreach ($subfiles as $index => $name) {
-          if (preg_match('/^\d+\.\s([^\/]+)/', $name, $found)) {
-            $footer .= '<a href="/article/' . $current_slug . '/' . ($index+1) . '">Page ' . ($index+1) . '</a>';
+          if (preg_match('/^\d+\.\s([^\/]+)\/\d+\.\s([^\/]+)\./', $name, $found)) { // in the path /00. Token/1. some file name.ext we want to match 'some file name'
+            $footer .= '<a href="/article/' . $current_slug . '/' . ($index+1) . '">' . ($index+1) . '</a>';
+            $tabs .= '<a href="/article/' . $current_slug . '/' . ($index+1) . '"';
+            if (isset($this->arguments[1]) && intval($this->arguments[1]) == $index+1) {
+              $breadcrumb .= '&gt; ' . $found[2];
+              $tabs .= ' class="active"';
+            }
+            $tabs .= '><span>' . $found[2] . '</span></a>';
           }
         }
+        $tabs .= '<a></a>';
       }
+
+      $breadcrumb = '<a href="/">Home</a> &gt; <a href="/article/' . $current_slug . '/1">' . $page_title . '</a> ' . $breadcrumb;
     }
 
     // set the template for this page
@@ -240,7 +317,7 @@ class Website {
 
     // and return everything we just calculated
     return [
-      $template, $page_title, $navbar, $article, $footer, $styles, $scripts
+      $template, $page_title, $navbar, $article, $footer, $styles, $scripts, $tiles, $tabs, $breadcrumb
     ];
   }
 
@@ -274,6 +351,7 @@ class StorageIO {
     }
     return $contents;
   }
+  // todo implement exists($filename) and delete($filename)
 }
 
 // $security = new TokenValidator();

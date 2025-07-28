@@ -1,0 +1,53 @@
+div {
+  margin-block-start: 1rem;
+}
+
+[data-type='single'] label:first-of-type,
+[data-type='matching']>label:first-of-type,
+[data-type='dropdown'] label:first-of-type,
+[data-type='fillin'] label:first-of-type,
+[data-type='numeric'] label:first-of-type,
+[data-type='truefalse'] label:first-of-type {
+  display: block;
+}
+
+input[type='radio'][id$='_0'] {
+  margin-inline-start: 0
+}
+
+[role='control-group'] {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+[role='control-group'] label {
+  display: block;
+}
+
+[data-type='likert'],
+[data-type='likert'] td,
+[data-type='likert'] th {
+  border: 1px solid #00000040;
+  border-collapse: collapse;
+  text-align: center;
+  font-weight: normal;
+}
+
+[data-type='likert'] tbody th {
+  text-align: right;
+}
+
+[data-type='likert'] th,
+[data-type='likert'] td {
+  padding: .3rem
+}
+
+[data-type='label'] .header {
+  border-top: 1px dashed #00000040;
+  line-height: 2rem;
+  background: #f8f8f8;
+}
+
+[data-type='label']>*:last-child {
+  border-bottom: 1px dashed #00000040;
+}

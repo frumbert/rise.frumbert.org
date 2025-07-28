@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Sequencing Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.0/style.css">
+</head>
+<body class="interaction binary">
+  <main>
+    <div class="flex-row flex-3-1">
+      <label id="question"></label>
+      <fieldset class="boxes">
+        <legend>Words:</legend>
+        <section class="flex-row-even flex-wrap">
+          <label class="draggable-label">
+            <input type="hidden" name="answer">
+            <span class="control"></span>
+            <span>Loading ...</span>
+          </label>
+        </section>
+      </fieldset>
+    </div>
+    <button id="save">💾 Save</button>
+    <output id="feedback" aria-live="polite"></output>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: `<em style='font-size:0.9rem;opacity:0.6'>Drag items from the <b>Word list</b> to the empty spaces. There may be more words than spaces.</em>\nThe quick brown box jumps over the ----- dog. Quidquid latine dictum sit, alrum videtur. Or "anything said in Latin sounds profound". A recent ironic Latin phrase to poke fun at people who seem to use Latin phrases and quotations only to make themselves sound more important or "educated". Similar to the less common omnia dicta fortiora si dicta Latina (Everything said is stronger if said in Latin). Pack my box with five ----- liquor jugs. The five boxing ----- jump quickly. Glib jocks ----- nymph to vex -----.`,
+    distractors: {
+      order: "random",
+      items: [
+        { "a": "lazy"},
+        { "b": "jesus"},
+        { "c": "dozen"},
+        { "d": { mediaAbove: "https://placehold.co/100x20/?text=Wizards.png" }},
+        { "e": "quiz" },
+        { "f": "snails" },
+        { "g": "dwarf" }
+      ],
+      label: "Word list"
+    },
+    correct: "a,c,d,e,g",
+    feedback: {
+      correct: "✅ We are in the presence of a true wordsmith",
+      incorrect: "❌ Time to hit the books"
+    },
+  }
+  </script>
+</body>
+</html>

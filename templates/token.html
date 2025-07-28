@@ -11,40 +11,14 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥔</text></svg>">
   {{styles}}
 </head>
-<body>
-  <nav class='site-nav'>
-    <ul>
-    <li title='frumbert.org'><img src="/assets/logo.svg" alt='frumbert logo'></li>
-    <li>Interactions for Rise</li>
-    </ul>
-
-    <ul>
-    <li><a href="/">home</a></li>
-    <!--li><a href="/about">about</a></li>
-    <li><a href="/pricing">pricing</a></li>
-    <li><a href="/contact">contact</a></li-->
-    </ul>
-
-    <ul>
-    <li><a href='#1'>A+</a></li>
-    <li><a href='#-1'>A-</a></li>
-    </ul>
-  </nav>
-
-  <main class='page-wrapper article'>
-
-    <nav class='breadcrumb'>
-      {{breadcrumb}}
-    </nav>
-    <nav class='tabs'>{{tabs}}</nav>
-
-    <article class='article-body'>
-      {{article}}
-    </article>
-
-    <footer>{{footer}}</footer>
-  </main>
-
+<body class="token">
+  <header>
+    <h1>{{page_title}}</h1>
+    <h2>rise.frumbert.org</h2>
+  </header>
+  <nav>{{navbar}}</nav>
+  <article>{{article}}</article>
+  <footer>{{footer}}</footer>
   <script type="module" src="/assets/app.js"></script>
   <script src="/assets/scorm12server.js"></script>
   {{scripts}}

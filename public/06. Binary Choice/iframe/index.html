@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Binary Choice Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.0/style.css">
+</head>
+<body class="interaction binary">
+  <main>
+    <label id="question"></label>
+    <section class="flex-row-even">
+      <label class="radio-label">
+        <input type="radio" name="answer">
+        <span class="control"></span>
+        <span>Loading ...</span>
+      </label>
+    </section>
+    <button id="save">💾 Save</button>
+    <output id="feedback" aria-live="polite"></output>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: "Why is a duck?",
+    mediaAbove: "https://placehold.co/300x100/orange/white/jpg/?text=file.jpg",
+    feedback: {
+      correct: "✅ You seem to know your taxi driver jokes",
+      incorrect: "❌ What kind of excuse is that?"
+    },
+    distractors: {
+      order: "natural",
+      items: [
+        { "t": {
+            text: "Because one of its legs is both the same"
+            }},
+        { "f": {
+            text: "This picture is purple and cyan"
+          }
+        }
+      ]
+    },
+    correct: "t"
+  }
+  </script>
+</body>
+</html>

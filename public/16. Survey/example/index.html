@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="styled.css">
+</head>
+<body>
+<textarea hidden>
+truefalse:[Oui,Non]
+I am fluent in <em>Le français</em>
+
+label:The choice presents several dichotomies which are idential for each choice row.
+
+choice:[ Dogs , Cats , Horses ,  , Mice ]
+Elephants are afraid of
+Cats are afraid of
+Mice are afraid of
+Dogs are afraid of
+
+page:dropdowns
+
+label:Dropdowns can either be a single value, or multiple values.
+When using multiple dropdowns, each option can only be selected once.
+
+matching : [ Electricity=Light globes , Water=Faucets,  Alcohol = Drunkards, Sugar =Doughnuts]
+Match the item to its filling
+
+dropdown : [Wine,Beer,Tequila,Asprin,Caffiene]
+What is your vice?
+
+page:regular items
+
+label : some regular form controls are supported too
+
+numeric:[50,100]
+How many roads can a man walk down?
+How long is a peice of string (in cm)
+What? This statement has no numeric value.
+
+fillin:[1]
+What is your name
+
+fillin:[5]
+Tell something personal about yourself
+
+page:other details
+
+label:everything that doesn't match is a comment. the first line of a label has a classname to differentiate it.
+labels are possible
+even multiline labels <strong>with tags</strong>.
+
+because this line doesn't start with the correct word, this isn't a label and should be ignored.
+
+The next tag is also ignored since it doesn't match to a known handler.
+
+bokers:[1,2,3]
+it looks like it should work
+doesn't it?
+
+label: Choices use checkboxes instead of radios and their answers are CSV
+
+choices:[Tracks,Roads,Streets,Avenues]
+Cities have
+Towns have
+Villages have
+
+page:
+
+label: likert questions are presented in a table.
+
+likert
+
+likert:[Disagree,Neutral,Agree,]
+Purple is the best colour
+Cats are mind-controlling humans
+Water can be dehydrated
+
+label: It's just utf-8, so you can use emoji too:
+
+likert:[😂,😃,🤨,😟,😭]
+🌅
+🌌
+🏞
+
+url: https://formsubmit.co/b6a16f20c30551573ce803b59fc63704
+
+</textarea>
+
+<script type="text/javascript" src="survey.js"></script>
+
+</body>
+</html>

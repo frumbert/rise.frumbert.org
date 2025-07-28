@@ -1,0 +1,18 @@
+<p>This extension is a bit like a jigsaw puzzle - it allows you to unjumble any block-level object with an added <b>time pressure</b>.</p>
+<p>It's not a SCORM interaction yet - still tinkering 😊</p>
+<p>You can specify the number of divisions (4x3, 5x4, etc) and the time that the puzzle should be solved in (e.g. 2:35). A progress bar underneath the puzzle starts as soon as you start dragging. This changes colour as time passes to <i>heighten the excitement</i>.</p>
+<p>The space between cells shrinks away when you solve the puzzle, and if you run out of time before solving it, you can reset and have another turn.</p>
+
+{{download::example}}
+
+<h2>image</h2>
+<p>Images are the standard use of these sorts of puzzle.</p>
+<iframe src="./example/image.html" height="600" width="100%" style="border:none"></iframe>
+
+<h2>text</h2>
+<p>It works on block-level elements. Here we have a div with a background gradient, and text rendered using CSS columns, with an image thrown in too. Good for comprehension exercises.</p>
+<iframe src="./example/text.html" height="600" width="100%" style="border:none"></iframe>
+
+<h2>video</h2>
+<p>Yes, it works with video too - but be careful of the number of divisions as playing multiple videos tends to tax the browser significantly. Please optimise your video (for instance, this one is 609k).</p>
+<iframe src="./example/video.html" height="600" width="100%" style="border:none"></iframe>

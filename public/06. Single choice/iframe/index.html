@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Single Choice Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.0/style.css">
+</head>
+<body class="interaction binary">
+  <main>
+    <label id="question"></label>
+    <section class="flex-column-wide">
+      <label class="radio-label">
+        <input type="radio" name="answer">
+        <span class="control"></span>
+        <span>Loading ...</span>
+      </label>
+    </section>
+    <button id="save">💾 Save</button>
+    <output id="feedback" aria-live="polite"></output>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: "A man, a horse and a baboon walk into a bar, and the barkeep says:",
+    mediaAbove: "https://dma0ixu6zshxu.cloudfront.net/wp-content/uploads/20200422121425/assorted-wine-bottles-1283219-720x405.jpg",
+    feedback: "You seem to know your taxi driver jokes",
+    distractors: {
+      order: "natural",
+      items: [
+        { "a": {
+            text: "A. It's not going to be a funny joke"
+            }},
+        { "b": {
+            text: "B. I will have heard something like it before",
+            mediaBelow: "https://placehold.co/400x100/orange/white/jpg/?text=B.jpg"
+            }},
+        { "c": {
+            text: "",
+            mediaBelow: "https://placehold.co/400x100/darkgreen/white/webp/?text=C.webp"
+            }},
+        { "d": "D. all of the above"}, 
+        { "e": "E. I refuse to take part in this fiction"}
+      ]
+    },
+    correct: "e"
+  }
+  </script>
+</body>
+</html>

@@ -1,4 +1,9 @@
 // SCORM 1.2 API Simulation - adapted from Moodle 3.4
+function _underscore(str) {
+    str = String(str).replace(/.N/g,".");
+    return str.replace(/\./g,"__");
+}
+
 function SCORMapi1_2() {
 
   var _this = this;
@@ -347,8 +352,7 @@ function SCORMapi1_2() {
         break;
 
     }
-    if (field.length) document.querySelector("form [name='" + field + "']").value = value;
-    document.querySelector("#lastError").value = errorCode;
+    if (field.length) console.info("LMSSetValue", field, value, "=>", errorCode);
 
     return (errorCode === "0") ? "true" : "false";
   }
@@ -451,7 +455,7 @@ function SCORMapi1_2() {
 
   function TotalTime() {
     total_time = AddTime(cmi.core.total_time, cmi.core.session_time);
-    return '&' + underscore('cmi.core.total_time') + '=' + encodeURIComponent(total_time);
+    return '&' + _underscore('cmi.core.total_time') + '=' + encodeURIComponent(total_time);
   }
 
   function CollectData(data, parent) {
@@ -477,7 +481,7 @@ function SCORMapi1_2() {
 
             if (eval('datamodel["' + element + '"].mod') != 'r') {
 
-              elementstring = '&' + underscore(element) + '=' + encodeURIComponent(data[property]);
+              elementstring = '&' + _underscore(element) + '=' + encodeURIComponent(data[property]);
 
               if ((typeof eval('datamodel["' + element + '"].defaultvalue')) != "undefined") {
 

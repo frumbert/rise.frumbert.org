@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Text Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.0/style.css">
+</head>
+<body class="interaction longtext">
+  <main>
+    <label for="notes" id="question"></label>
+    <textarea id="notes"></textarea>
+    <div stats></div>
+    <button id="save">💾 Save</button>
+    <output id="feedback"></output>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: "Write a essay of about 300 words on this topic.",
+    mediaAbove: "https://placehold.co/300x100/orange/white/jpg/?text=The+environment.jpg",
+    feedback: "✅ Thanks, i'm sure it was informative.",
+    required: '100w', // 100 = 100 characters; 100w = 100 words; 100l = 100 lines;
+    placeholder: "Enter your essay here. Remember to use a classic essay structure."
+  }
+  </script>
+
+</body>
+</html>

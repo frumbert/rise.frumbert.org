@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Sort lists Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.0/style.css">
+</head>
+<body class="interaction binary">
+  <main>
+    <label id="question"></label>
+    <section class="flex-row-even">
+      <label class="draggable-label">
+        <input type="hidden" name="answer">
+        <span class="control"></span>
+        <span>Loading ...</span>
+      </label>
+    </section>
+    <button id="save">💾 Save</button>
+    <output id="feedback" aria-live="polite"></output>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: "Drag items to their correct lists.",
+    lists: [
+      {
+        label: "Flavours",
+        items: [
+          { "a": "Vanilla"},
+          { "b": "Pepper"},
+          { "c": "Mint"},
+          { "d": "Salt"},
+          { "e": "Banana" },
+          { "f": "Chocolate" },
+          { "g": "Caramel" }
+        ]
+      },
+      {
+        label: "Colours",
+        items: [
+          { "h": "Aquamarine"},
+          { "i": "Goldenrod"},
+          { "j": "Navy"},
+          { "k": "Puce"},
+          { "l": "Mauve" },
+          { "m": "Ochre" }
+        ]
+      }
+    ],
+    // correct: "[a,b,c,d,e,f,g],[h,i,j,k,l,m],[n,o,p,q]",
+    feedback: "I'm sure you gave it your best",
+  }
+  </script>
+</body>
+</html>

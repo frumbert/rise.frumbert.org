@@ -1,6 +1,9 @@
 <?php
 
 /*
+S3 STORAGE DONE MINIMALLY
+=========================
+
 $storage = new S3Storage();
 bucket & credentials are picked up through environment variables
 
@@ -50,6 +53,7 @@ class S3Storage {
             mkdir($this->cacheDir, 0777, true);
         }
 
+        // didn't implement safety around environment variables because a) needs trust to implement, b) they only error once then you fix them
         $this->s3 = new S3Client([
             'version'     => 'latest',
             'region'      => getenv('AWS_REGION'),
@@ -57,7 +61,7 @@ class S3Storage {
                 'key'    => getenv('AWS_ACCESS_KEY_ID'),
                 'secret' => getenv('AWS_SECRET_ACCESS_KEY'),
             ],
-            'suppress_php_deprecation_warning' => true, // i'll get around to it ok?
+            'suppress_php_deprecation_warning' => true, // can probably remove this now
         ]);
     }
 
