@@ -86,10 +86,83 @@ function addFontSizeAdjustment() {
   }
 }
 
+// a thing where you mouse-over an image and it zooms up on it
+// applies automatically if the width of the image exceeds its container.
+function setupImageZoom() {
+  document.querySelectorAll('article.article-body img').forEach(img => {
+    if (!img.complete || img.naturalWidth <= img.clientWidth) return;
+
+    // Create wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'img-zoom-container';
+    wrapper.style.position = 'relative';
+    wrapper.style.overflow = 'hidden';
+    wrapper.style.display = 'inline-block';
+    wrapper.style.width = img.clientWidth + 'px';
+    wrapper.style.height = img.clientHeight + 'px';
+
+    // Set image styles for zooming
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '100%';
+    // img.style.transition = 'transform 0.2s, max-width 0s, max-height 0s';
+    img.style.cursor = 'zoom-in';
+    img.style.display = 'block';
+
+    // Insert wrapper
+    img.parentNode.insertBefore(wrapper, img);
+    wrapper.appendChild(img);
+
+    // Mouse events
+    wrapper.addEventListener('mouseenter', () => {
+      img.style.maxWidth = 'none';
+      img.style.maxHeight = 'none';
+      img.style.cursor = 'zoom-out';
+      //img.classList.add('natural');
+      img.style.transform = `scale(${img.naturalWidth / img.clientWidth})`;
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      img.style.maxWidth = '100%';
+      img.style.maxHeight = '100%';
+      img.style.transform = '';
+      img.style.cursor = 'zoom-in';
+      //img.classList.remove('natural');
+    });
+
+    wrapper.addEventListener('mousemove', (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      const scale = img.naturalWidth / img.clientWidth;
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      // Calculate the max translation
+      const maxX = img.naturalWidth - rect.width;
+      const maxY = img.naturalHeight - rect.height;
+      // Calculate the cursor's percent position
+      const percentX = x / rect.width;
+      const percentY = y / rect.height;
+      // Calculate the translation so the zoomed image follows the cursor
+      const translateX = -maxX * percentX;
+      const translateY = -maxY * percentY;
+      img.style.transformOrigin = 'top left';
+      img.style.transform = `scale(${scale}) translate(${translateX / scale}px, ${translateY / scale}px)`;
+    });
+  });
+}
+
+function addRepo() {
+  const a = document.createElement('a');
+  a.href = 'https://github.com/frumbert/rise.frumbert.org';
+  a.innerHTML = '<img src="/assets/github-svgrepo-com.svg" />';
+  a.classList.add('gh-repo');
+  document.body.appendChild(a);
+}
+
 async function app() {
   setupCodeClipboard();
   checkOverflow();
   addFontSizeAdjustment();
+  setupImageZoom();
+  addRepo();
 }
 
 async function main() {

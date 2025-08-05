@@ -230,6 +230,28 @@ img[src*='center'] { /* e.g. path.jpg#center */
 pre code.hljs {
   font-size: 0.9rem;
 }
+.article-body img:not([src*='#']) {
+  max-width: 100%;
+}
+.img-zoom-container {
+  border: 1px solid #00000010;
+}
+.img-zoom-container img {
+  pointer-events: all;
+  user-select: none;
+}
+/* img.natural {
+  max-width: none;
+  max-height: none;
+} */
+
+.gh-repo {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  width: 40px;
+  img { max-width: 100%; }
+}
 
 .copy-btn {
   position: absolute;
