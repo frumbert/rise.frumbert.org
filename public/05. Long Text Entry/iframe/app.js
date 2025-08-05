@@ -27,8 +27,8 @@
  */
 
 // load routines (from CDN)
-import {default as riseSCORMBridge} from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.1';
-import utils from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.1/utils.js';
+import {default as riseSCORMBridge} from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.3';
+import utils from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.3/utils.js';
 
 // store latency (time learner takes inside interaction)
 let interactionStartTime = null;

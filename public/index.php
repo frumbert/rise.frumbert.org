@@ -65,8 +65,8 @@ switch ($Action->Match()) {
         error_log($dir);
       }
       if ($zipFile > "") {
-        // header('Content-Type: application/zip');
-        // header('Content-Disposition: attachment; filename="download.zip"');
+        header('Content-Type: application/zip');
+        header('Content-Disposition: attachment; filename="download.zip"');
         header('Content-Length: ' . filesize($zipFile));
         readfile($zipFile);
         unlink($zipFile);

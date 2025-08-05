@@ -27,8 +27,8 @@
  */
 
 // load routines
-import {default as riseSCORMBridge} from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.1';
-import utils from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.1/utils.js';
+import {default as riseSCORMBridge} from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.3';
+import utils from 'https://esm.sh/gh/frumbert/rise-esm@v1.1.3/utils.js';
 import Sortable from 'https://esm.sh/sortablejs';
 
 // store latency (time learner takes inside interaction)
