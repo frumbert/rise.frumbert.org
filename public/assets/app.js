@@ -155,6 +155,11 @@ function addRepo() {
   a.innerHTML = '<img src="/assets/github-svgrepo-com.svg" />';
   a.classList.add('gh-repo');
   document.body.appendChild(a);
+
+  document.head.insertAdjacentHTML('beforeend', `<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="meax3" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="🙌" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>`);
+  document.body.insertAdjacentHTML('beforeend', `<a href="https://www.buymeacoffee.com/meax3" target="_blank" style="position:fixed;left:calc(2rem + 40px);bottom:1rem"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important" ></a>`);
+
+
 }
 
 async function app() {
