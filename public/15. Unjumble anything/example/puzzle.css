@@ -1,0 +1,63 @@
+.puzzle-container {
+    --cols: 4;
+    --rows: 3;
+    display: grid;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    background: black;
+    box-shadow: 0 0 1rem #00000040;
+    transition: gap 1s ease;
+    gap: 1rem;
+
+    &.done {
+        gap: 0;
+    }
+}
+
+.puzzle-piece {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    cursor: grab;
+}
+
+.puzzle-piece>* {
+    position: absolute;
+    width: calc(var(--cols) * 100%);
+    height: calc(var(--rows) * 100%);
+    top: calc(-1 * var(--row) * 100%);
+    left: calc(-1 * var(--col) * 100%);
+    object-fit: cover;
+    pointer-events: none;
+    clip-path: var(--clip);
+}
+
+#puzzle-container.dragging>*:not(.sortable-swap-highlight) {
+    filter: grayscale(.5);
+}
+
+.graph {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem auto;
+    align-items: center;
+}
+
+.graph meter {
+    flex: 1;
+}
+
+.graph button {
+    display: none;
+}
+
+meter::-webkit-meter-optimum-value,
+meter::-webkit-meter-suboptimum-value,
+meter::-webkit-meter-even-less-good-value {
+    transition: .5s width;
+}
