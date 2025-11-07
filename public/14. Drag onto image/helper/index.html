@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rectangle Coordinates</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; }
+    img { max-width: 100%; height: auto; border: 1px solid #ccc; cursor: crosshair; user-select: none;}
+    label { display: block }
+    p { margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <h2>Drag to Get Rectangle Coordinates</h2>
+  <label>Choose image: <input type="file" accept="image/*"></label>
+  <img id="clickable-image"  alt="Image" draggable="false">
+  <p id="output">Click and drag on the image to get coordinates</p>
+
+  <script>
+    const source = document.querySelector('input[type="file"]');
+    const img = document.getElementById("clickable-image");
+    const output = document.getElementById("output");
+
+    source.addEventListener("change", function(e) {
+      const file = source.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    let startX = 0, startY = 0;
+
+    img.addEventListener("mousedown", function(event) {
+      const rect = img.getBoundingClientRect();
+      const scaleX = img.naturalWidth / img.width;
+      const scaleY = img.naturalHeight / img.height;
+
+      startX = Math.round((event.clientX - rect.left) * scaleX);
+      startY = Math.round((event.clientY - rect.top) * scaleY);
+
+      // Create the box overlay
+      box = document.createElement("div");
+      box.style.position = "absolute";
+      box.style.border = "2px dashed #0074d9";
+      box.style.pointerEvents = "none";
+      box.style.zIndex = 10;
+      box.style.left = event.clientX + window.scrollX + "px";
+      box.style.top = event.clientY + window.scrollY + "px";
+      box.style.width = "0px";
+      box.style.height = "0px";
+      document.body.appendChild(box);
+
+      function onMouseMove(e) {
+        const curX = e.clientX;
+        const curY = e.clientY;
+        const left = Math.min(event.clientX, curX);
+        const top = Math.min(event.clientY, curY);
+        const width = Math.abs(curX - event.clientX);
+        const height = Math.abs(curY - event.clientY);
+        box.style.left = left + window.scrollX + "px";
+        box.style.top = top + window.scrollY + "px";
+        box.style.width = width + "px";
+        box.style.height = height + "px";
+      }
+
+      function onMouseUp(e) {
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", onMouseUp);
+
+        // Remove the box after mouseup
+        if (box && box.parentNode) box.parentNode.removeChild(box);
+        box = null;
+      }
+
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseup", onMouseUp);
+    });
+
+    img.addEventListener("mouseup", function(event) {
+      const rect = img.getBoundingClientRect();
+      const scaleX = img.naturalWidth / img.width;
+      const scaleY = img.naturalHeight / img.height;
+
+      const endX = Math.round((event.clientX - rect.left) * scaleX);
+      const endY = Math.round((event.clientY - rect.top) * scaleY);
+
+      const topLeftX = Math.min(startX, endX);
+      const topLeftY = Math.min(startY, endY);
+      const width = Math.abs(endX - startX);
+      const height = Math.abs(endY - startY);
+
+      const message = `<p>{x:${topLeftX}, y:${topLeftY}, w:${width}, h:${height}}</p>`;
+      output.innerHTML = message;
+      console.log(message);
+    });
+  </script>
+</body>
+</html>

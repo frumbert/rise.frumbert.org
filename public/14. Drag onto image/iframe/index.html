@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rise SCORM Drag-onto-image Interaction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frumbert/rise-esm@v1.1.3/style.css">
+  <style>
+  section {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    aside {
+      z-index: 2;
+      label {
+        position: relative;
+        img {
+          display: block;
+        }
+      }
+    }
+    article {
+      flex: 1;
+      position: relative;
+      background-image: var(--image);
+      aspect-ratio: var(--ratio);
+      background-position: top left;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1;
+      .drop { position: absolute; }
+      &.dropzones .drop { /* optional - when drag starts, hint where droppable zones are */
+        border: 1px dashed #99999999;
+      }
+    }
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+  }
+  .controls {
+    text-align: center;
+  }
+  </style>
+</head>
+<body class="interaction dragdrop">
+  <main>
+    <p class="intro">
+      <label id="question"></label>
+    </p>
+    <section>
+      <aside></aside>
+      <article></article>
+      <span class='drop'></span>
+      <label class="drag">
+        <input type="hidden" name="answer">
+        <span>Loading ...</span>
+      </label>
+    </section>
+    <p class="controls">
+      <button id="save">💾 Save</button>
+    </p>
+    <output id="feedback" aria-live="polite"></output>
+  </main>
+  <script src="https://unpkg.com/plain-draggable"></script>
+  <script type="module" src="app.js"></script>
+  <script>
+  window.riseSCORMBridgeConfig = {
+    token: "da5399da5a1a97bf437b6e38dba38db5",
+    question: `<em style='font-size:0.9rem;opacity:0.6'>Drag the items below to their correct spaces</em>`,
+    image: '/14.%20Drag%20onto%20image/background.png',
+    distractors: {
+      order: "random",
+      items: [
+        { "a": "Red",      target: {x:18,  y:143, w:530, h:152, css:"special"}},
+        { "b": "Green",    target: {x:450, y:407, w:487, h:145}},
+        { "c": { mediaAbove: "https://placehold.co/125x32/gold/black?text=Yellow.jpg" },   target: {x:851, y:144, w:551, h:149}},
+        { "d": "Purple",   target: {x:911, y:686, w:522, h:148}},
+        { "e": "Orange",   target: {x:20,  y:691, w:521, h:146}}
+      ]
+    },
+    feedback: {
+      correct: "✅ Well done, you know your stuff",
+      incorrect: "❌ Time to hit the books"
+    },
+  }
+  </script>
+</body>
+</html>
