@@ -177,12 +177,17 @@ class Website {
           switch ($value) {
             case "iframe":
               if (file_exists($dir.'/iframe')) {
-                $replacements[$full] = '<iframe src="/'.$dir.'/iframe/" style="width:100%;min-height:500px;resize:vertical;border-radius:10px;" allowtransparency></iframe>';
+                $replacements[$full] = '<iframe src="/'.$dir.'/iframe/" style="width:100%;min-height:600px;resize:vertical;border-radius:10px;" allowtransparency></iframe>';
               }
               break;
             case "example":
               if (file_exists($dir.'/example')) {
-                $replacements[$full] = '<iframe src="/'.$dir.'/example/" style="width:100%;min-height:600px;resize:vertical;border:none" allowtransparency></iframe>';
+                $replacements[$full] = '<a target="_blank" href="/'.$dir.'/example/" class="small">(Open in a new window)</a><br><iframe src="/'.$dir.'/example/" style="width:100%;min-height:600px;resize:vertical;border:none" allowtransparency></iframe>';
+              }
+              break;
+            default:
+              if (file_exists($dir.'/'.$value)) {
+                $replacements[$full] = '<a target="_blank" href="/'.$dir.'/'.$value.'/" class="small">(Open in a new window)</a><br><iframe src="/'.$dir.'/'.$value.'/" style="width:100%;min-height:600px;resize:vertical;border:none" allowtransparency></iframe>';
               }
               break;
           }
@@ -227,6 +232,7 @@ class Website {
         if (preg_match('/^\d+\.\s([^\/]+)/', $nav, $found)) {
           $navbar .= '<a href="/article/' . str_replace(' ', '-', strtolower($found[1])) . '/1">' . $found[1] . '</a>';
           $thumb = '/' . rawurlencode(explode('/', $nav, 2)[0]) . '/thumb.jpg';
+          if (!file_exists(explode('/', $nav, 2)[0]. '/thumb.jpg')) $thumb = 'https://placehold.co/158x119/748873/white?text=' . $found[1];
           if ($found[1]!=='Home') {
             $tiles .= '<a class="tile" href="/article/' . str_replace(' ', '-', strtolower($found[1])) . '/1"><figure><img src="' . $thumb . '"><figcaption>' . $found[1] . '</figcaption></figure></a>';
           }
